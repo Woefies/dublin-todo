@@ -10,12 +10,64 @@ body {
   inset: 0;
 }
 
-#filters {
+#controls {
   position: absolute;
   top: 10px;
   left: 10px;
   right: 10px;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 420px;
+}
+
+#search-input {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+#search-input:focus-visible {
+  outline: 2px solid #1a73e8;
+  outline-offset: 2px;
+}
+
+#search-results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#search-results:empty {
+  display: none;
+}
+
+.search-result {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.search-result:hover,
+.search-result:focus-visible {
+  background: #f0f0f0;
+  outline: none;
+}
+
+#filters {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
@@ -43,4 +95,95 @@ body {
 .chip:focus-visible {
   outline: 2px solid #1a73e8;
   outline-offset: 2px;
+}
+
+#detail {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 100%;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+#detail[hidden] {
+  display: none;
+}
+
+#detail-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: none;
+  background: none;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+#detail-close:focus-visible {
+  outline: 2px solid #1a73e8;
+  outline-offset: 2px;
+}
+
+#detail h2 {
+  margin: 0 32px 8px 0;
+  font-size: 18px;
+}
+
+.detail-categories {
+  color: #666;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 0 0 8px;
+}
+
+.detail-address {
+  color: #555;
+  font-size: 13px;
+}
+
+.fee-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.fee-badge.fee-free {
+  background: #d7f4dd;
+  color: #1a7431;
+}
+
+.fee-badge.fee-paid {
+  background: #fde3d0;
+  color: #a34f0d;
+}
+
+.fee-badge.fee-unknown {
+  background: #eee;
+  color: #666;
+}
+
+@media (max-width: 600px) {
+  #detail {
+    top: auto;
+    left: 0;
+    right: 0;
+    width: auto;
+    max-height: 60vh;
+    border-radius: 12px 12px 0 0;
+  }
+
+  #controls {
+    max-width: none;
+  }
 }
