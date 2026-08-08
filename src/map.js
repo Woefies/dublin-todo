@@ -1,22 +1,5 @@
 import maplibregl from 'maplibre-gl';
 
-// ponytail: coords approximate (~building-level), refine when POIs move to
-// public/data/pois.geojson in Phase 1.
-const POIS = {
-  type: 'FeatureCollection',
-  features: [
-    ['trinity-college', 'Trinity College & Book of Kells', -6.2546, 53.3438],
-    ['guinness-storehouse', 'Guinness Storehouse', -6.2867, 53.3419],
-    ['st-stephens-green', "St Stephen's Green", -6.259, 53.3382],
-    ['kilmainham-gaol', 'Kilmainham Gaol', -6.3097, 53.3419],
-    ['temple-bar', 'Temple Bar', -6.2647, 53.345],
-  ].map(([id, name, lon, lat]) => ({
-    type: 'Feature',
-    geometry: { type: 'Point', coordinates: [lon, lat] },
-    properties: { id, name },
-  })),
-};
-
 export function initMap(container) {
   const map = new maplibregl.Map({
     container,
@@ -25,8 +8,13 @@ export function initMap(container) {
     zoom: 13,
   });
 
-  map.on('load', () => {
-    map.addSource('pois', { type: 'geojson', data: POIS });
+  map.on('load', async () => {
+    // BASE_URL keeps the fetch correct on the /dublin-todo/ project-site path.
+    // Never hard-code /data/... — it 404s on a project site.
+    const res = await fetch(`${import.meta.env.BASE_URL}data/pois.geojson`);
+    const data = await res.json();
+
+    map.addSource('pois', { type: 'geojson', data });
     map.addLayer({
       id: 'pois',
       type: 'circle',
