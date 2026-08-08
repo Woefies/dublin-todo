@@ -7,15 +7,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IM+Fell+English:ital@0;1&display=swap"
       rel="stylesheet"
     />
+    <!-- Set the theme before first paint so a stored/preferred theme never
+         flashes the default (static host, no server to stamp the attribute). -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('dublin-todo-theme');
+          if (t !== 'romance' && t !== 'historic')
+            t = matchMedia('(prefers-color-scheme: dark)').matches ? 'historic' : 'romance';
+          document.documentElement.dataset.theme = t;
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="map"></div>
     <div id="controls">
       <header id="brand">
-       
+        <button id="theme-toggle" type="button"></button>
         <h1 class="brand-word"><span class="brand-drop">D</span>ublin</h1>
         <p class="brand-sub">things to do · established 988</p>
       </header>

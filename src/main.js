@@ -6,6 +6,7 @@ import { searchPOIs } from './search.js';
 import { parseHash, buildHash } from './urlstate.js';
 import { enrich } from './enrich.js';
 import { addCategoryIcons, primaryCategory, pinImageId } from './icons.js';
+import { palette, setTheme, nextTheme } from './theme.js';
 
 // Layers that represent clickable POIs — filter + interaction apply to these.
 const POI_LAYERS = ['pois'];
@@ -19,6 +20,31 @@ const detailBody = document.getElementById('detail-body');
 const detailClose = document.getElementById('detail-close');
 const searchInput = document.getElementById('search-input');
 const searchResults = document.getElementById('search-results');
+const themeToggle = document.getElementById('theme-toggle');
+
+const THEME_LABELS = { romance: 'Romance', historic: 'Historic' };
+
+function refreshToggle() {
+  const target = nextTheme();
+  themeToggle.textContent = `⇄ ${THEME_LABELS[target]}`;
+  themeToggle.setAttribute('aria-label', `Switch to ${THEME_LABELS[target]} theme`);
+}
+
+// Repaint everything MapLibre owns for the active theme. No-op until the POI
+// layers exist — the load handler builds them with the already-active theme.
+async function applyMapTheme() {
+  if (!map.getLayer('pois')) return;
+  retuneBasemap(map);
+  await addCategoryIcons(map); // updates pin images in place
+  map.setPaintProperty('poi-selected', 'circle-color', palette().marker.selected);
+}
+
+themeToggle.addEventListener('click', async () => {
+  setTheme(nextTheme());
+  refreshToggle();
+  await applyMapTheme();
+});
+refreshToggle();
 
 let data = null; // set once the GeoJSON loads; selectPOI no-ops until then
 let categoryLabels = new Map();
@@ -154,6 +180,7 @@ function renderSearchResults(results, query) {
 // our own POI layers. Best-effort per layer — a style-schema change upstream
 // shouldn't break the whole map.
 function retuneBasemap(map) {
+  const { map: c } = palette();
   const ownLayers = new Set(['pois', 'poi-selected']);
   // Basemap POI layers to keep (kept visible, icons intact, text recolored) —
   // public-transport stops (bus/rail/tram/Luas) stay useful alongside our pins.
@@ -169,20 +196,20 @@ function retuneBasemap(map) {
         continue;
       }
       if (layer.type === 'background') {
-        map.setPaintProperty(layer.id, 'background-color', '#E7F1F7');
+        map.setPaintProperty(layer.id, 'background-color', c.bg);
       } else if (layer.id.includes('water')) {
         map.setPaintProperty(
           layer.id,
           layer.type === 'fill' ? 'fill-color' : 'line-color',
-          '#8FC2DD',
+          c.water,
         );
       } else if (layer.type === 'fill') {
-        map.setPaintProperty(layer.id, 'fill-color', '#E7F1F7');
+        map.setPaintProperty(layer.id, 'fill-color', c.fill);
       } else if (layer.type === 'line') {
-        map.setPaintProperty(layer.id, 'line-color', '#FFFFFF');
+        map.setPaintProperty(layer.id, 'line-color', c.line);
       } else if (layer.type === 'symbol') {
-        map.setPaintProperty(layer.id, 'text-color', '#33474F');
-        map.setPaintProperty(layer.id, 'text-halo-color', '#F4FAFD');
+        map.setPaintProperty(layer.id, 'text-color', c.text);
+        map.setPaintProperty(layer.id, 'text-halo-color', c.halo);
         // Hide the basemap's own POI sprite icons (brown Maki glyphs with white
         // halos) so only our pins carry iconography — except kept layers like
         // transit stops, whose icons we want to show.
@@ -218,7 +245,7 @@ map.on('load', async () => {
     filter: ['==', ['get', 'id'], ''],
     paint: {
       'circle-radius': ['interpolate', ['linear'], ['zoom'], 11, 21, 16, 24],
-      'circle-color': '#f0589f',
+      'circle-color': palette().marker.selected,
     },
   });
 

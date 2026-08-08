@@ -1,49 +1,26 @@
-/* Romance — light pastel, chrome-pink + acid-lime on sky blue. */
+/* ============================================================================
+   TOKEN ARCHITECTURE (see CLAUDE.md "Design system")
+
+   Three layers:
+   1. Shared non-color primitives — fonts, radius, motion, type scale. Theme-
+      agnostic, defined once on :root.
+   2. Color primitives — raw palette values, PER THEME. The ONLY place literal
+      colors may appear. Named by hue-scale (role-agnostic).
+   3. Semantic tokens — role-named, theme-agnostic names bound to this theme's
+      primitives. Components reference ONLY these.
+
+   Romance is the default theme (on :root). Every other theme lives in a
+   [data-theme="…"] block and MUST redefine the complete semantic set — no theme
+   relies on inheriting another's values. Adding a token = add it to every theme.
+   ============================================================================ */
+
+/* ---- Layer 1: shared non-color primitives (fonts + grain are per-theme) ---- */
 :root {
-  /* surfaces (light, blue-tinted ladder) */
-  --surface-0: #e7f1f7;
-  --surface-1: #f4fafd;
-  --surface-2: #ffffff;
-  --surface-sky: #8fc2dd;
-
-  --border-soft: #c4dae6;
-  --border-ui: #3e7799;
-
-  /* text */
-  --text-strong: #17252e;
-  --text-muted: #33474f;
-  --text-faint: #5a6b72;
-  --text-on-accent: #17252e;
-
-  /* accents */
-  --primary: #f0589f;
-  --primary-strong: #d63f86;
-  --primary-ink: #a83a73;
-  --secondary: #b4dd3a;
-  --secondary-ink: #52700e;
-  --bloom-core: #ff7fbf;
-  --bloom-edge: #c0397a;
-  --spec: #ffffff;
-
-  /* semantic (always pair with icon/label, never hue alone) */
-  --info: #2e7ba8;
-  --success: #52700e;
-  --error: #b02e5b;
-  --warning: #b5661f;
-
-  /* fonts */
-  --font-display: 'Hanken Grotesk', system-ui, sans-serif;
-  --font-ui: 'Inter', system-ui, sans-serif;
-  --font-mono: 'Space Mono', ui-monospace, monospace;
-
-  /* radius / space / border / shadow / motion */
   --r-sm: 8px;
   --r-md: 14px;
   --r-lg: 22px;
   --r-pill: 999px;
-  --shadow-1: 0 2px 8px rgba(23, 37, 46, 0.1);
-  --shadow-2: 0 8px 30px rgba(23, 37, 46, 0.16);
-  --shadow-bloom: 0 10px 40px rgba(240, 88, 159, 0.35);
+
   --dur-fast: 180ms;
   --dur: 180ms;
   --ease: cubic-bezier(0.3, 0.7, 0, 1);
@@ -60,6 +37,168 @@
   --fs-brand: 40px;
 }
 
+/* ============================ ROMANCE (default) ============================ */
+:root {
+  /* fonts (per-theme) */
+  --font-display: 'Hanken Grotesk', system-ui, sans-serif;
+  --font-ui: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, monospace;
+
+  /* ---- Layer 2: color primitives (only literals live here) ---- */
+  --rose-400: #ff7fbf;
+  --rose-500: #f0589f;
+  --rose-600: #d63f86;
+  --rose-700: #c0397a;
+  --rose-800: #a83a73;
+  --lime-400: #b4dd3a;
+  --lime-800: #4c690c;
+  --slate-900: #17252e;
+  --slate-700: #33474f;
+  --slate-500: #5a6b72;
+  --sky-500: #3e7799;
+  --sky-600: #2b7099;
+  --sky-200: #c4dae6;
+  --sky-300: #8fc2dd;
+  --sky-100: #e7f1f7;
+  --sky-50: #f4fafd;
+  --white: #ffffff;
+  --crimson-600: #b02e5b;
+  --amber-700: #b5661f;
+  /* raw tints + shadow colors (still primitives) */
+  --tint-success: rgba(82, 112, 14, 0.15);
+  --tint-error: rgba(176, 46, 91, 0.14);
+  --shadow-ambient: rgba(23, 37, 46, 0.1);
+  --shadow-cast: rgba(23, 37, 46, 0.16);
+
+  /* ---- Layer 3: semantic tokens (components use ONLY these) ---- */
+  --surface: var(--sky-100);
+  --surface-raised: var(--sky-50);
+  --surface-sunken: var(--white);
+  --surface-map-water: var(--sky-300);
+
+  --border: var(--sky-200);
+  --border-strong: var(--sky-500);
+
+  --text: var(--slate-900);
+  --text-muted: var(--slate-700);
+  --text-faint: var(--slate-500);
+  --text-on-accent: var(--slate-900);
+
+  --accent: var(--rose-500);
+  --accent-strong: var(--rose-600);
+  --accent-ink: var(--rose-800);
+  --accent-2: var(--lime-400);
+  --accent-2-strong: var(--lime-800);
+  --accent-2-ink: var(--lime-800);
+  --focus-ring: var(--accent-strong);
+
+  /* semantic states (always paired with icon/label, never hue alone) */
+  --info: var(--sky-600);
+  --success: var(--lime-800);
+  --success-bg: var(--tint-success);
+  --error: var(--crimson-600);
+  --error-bg: var(--tint-error);
+  --warning: var(--amber-700);
+
+  /* signature effect trio (bloom here; paper/gild in other themes) */
+  --bloom-core: var(--rose-400);
+  --bloom-edge: var(--rose-700);
+  --spec: var(--white);
+
+  /* shadows — numeric parts fixed, color is per-theme */
+  --shadow-1: 0 2px 8px var(--shadow-ambient);
+  --shadow-2: 0 8px 30px var(--shadow-cast);
+
+  /* texture — luminous, near-invisible film blended into bright pastel */
+  --grain-opacity: 0.04;
+  --grain-blend: overlay;
+}
+
+/* =============================== HISTORIC =================================
+   Georgian Dublin. Portland-stone grounds, fanlight-iron ink, oxblood door-red
+   primary, brunswick door-green secondary, brass door-furniture as the signature
+   (pins are brass plaques — see theme.js marker palette). Low chroma, matte, no
+   glow: the texture is paper grain + ink weight, not bloom.
+
+   Faces (both OFL, loaded via Google Fonts in index.html):
+   - IM Fell English  — display/wordmark. Revival of the 17th–18thc Fell types
+     (Oxford University Press); letterpress-era, period-true for Georgian print.
+   - EB Garamond      — body/UI + labels. Old-style/transitional serif, a genuine
+     Garamond revival. OFL.
+   ======================================================================== */
+[data-theme='historic'] {
+  /* fonts (per-theme) */
+  --font-display: 'IM Fell English', Georgia, serif;
+  --font-ui: 'EB Garamond', Georgia, serif;
+  --font-mono: 'IM Fell English', Georgia, serif;
+
+  /* ---- Layer 2: color primitives (only literals live here) ---- */
+  --stone-050: #f6f0e2; /* bright rag paper — input wells */
+  --stone-100: #efe7d5; /* raised plaster/stone — panels */
+  --stone-200: #e6dcc6; /* base ground — page + map land */
+  --stone-300: #d8cbaf; /* map road lines */
+  --stone-400: #c3b393; /* stone edge / soft border */
+  --iron-900: #21201b; /* fanlight iron — text-on-accent, glyph */
+  --ink-900: #2a2620; /* oak-gall ink — body text */
+  --ink-700: #514937; /* muted ink */
+  --ink-500: #6a6149; /* faint ink */
+  --oxblood-600: #963c2c; /* door oxblood — primary accent */
+  --oxblood-700: #7a2f22; /* deeper oxblood — strong/focus */
+  --oxblood-800: #632519; /* oxblood as ink-on-stone — links */
+  --brunswick-600: #2f5340; /* door green — secondary accent */
+  --brunswick-700: #223f30; /* deeper green — strong */
+  --brass-500: #a6813f; /* brass door-furniture — signature */
+  --prussian-700: #234b63; /* deep plate ink-blue — info label */
+  --slateblue-300: #a7b7bc; /* faded plate-map water */
+  --amber-800: #925f16; /* warning ink */
+  /* raw tints + shadow colors */
+  --tint-success: rgba(47, 83, 64, 0.16);
+  --tint-error: rgba(150, 60, 44, 0.15);
+  --shadow-ambient: rgba(33, 32, 27, 0.16);
+  --shadow-cast: rgba(33, 32, 27, 0.22);
+
+  /* ---- Layer 3: semantic tokens (components use ONLY these) ---- */
+  --surface: var(--stone-200);
+  --surface-raised: var(--stone-100);
+  --surface-sunken: var(--stone-050);
+  --surface-map-water: var(--slateblue-300);
+
+  --border: var(--stone-400);
+  --border-strong: var(--ink-700);
+
+  --text: var(--ink-900);
+  --text-muted: var(--ink-700);
+  --text-faint: var(--ink-500);
+  --text-on-accent: var(--stone-050); /* accents are DARK here — light text */
+
+  --accent: var(--oxblood-600);
+  --accent-strong: var(--oxblood-700);
+  --accent-ink: var(--oxblood-800);
+  --accent-2: var(--brunswick-600);
+  --accent-2-strong: var(--brunswick-700);
+  --accent-2-ink: var(--brunswick-700);
+  --focus-ring: var(--oxblood-700);
+
+  --info: var(--prussian-700);
+  --success: var(--brunswick-700);
+  --success-bg: var(--tint-success);
+  --error: var(--oxblood-700);
+  --error-bg: var(--tint-error);
+  --warning: var(--amber-800);
+
+  /* signature: brass/gilt, not glow. (Kept complete; bloom is unrendered.) */
+  --bloom-core: var(--brass-500);
+  --bloom-edge: var(--oxblood-700);
+  --spec: var(--stone-050);
+
+  --shadow-1: 0 1px 2px var(--shadow-ambient);
+  --shadow-2: 0 6px 22px var(--shadow-cast);
+
+  /* texture — heavier, ink-on-paper multiply, no luminous blend */
+  --grain-opacity: 0.09;
+  --grain-blend: multiply;
+}
+
 html,
 body {
   margin: 0;
@@ -74,8 +213,8 @@ body::after {
   inset: 0;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.04;
-  mix-blend-mode: overlay;
+  opacity: var(--grain-opacity);
+  mix-blend-mode: var(--grain-blend);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -97,11 +236,10 @@ body::after {
   max-width: 460px;
   padding: 16px;
   /* Solid fallback first, blur layered on top where supported. */
-  background: var(--surface-1);
-  background: rgba(244, 250, 253, 1);
+  background: var(--surface-raised);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid var(--border-soft);
+  border: 1px solid var(--border);
   border-radius: var(--r-lg);
   box-shadow: var(--shadow-2);
 }
@@ -119,11 +257,11 @@ body::after {
   font-size: var(--fs-brand);
   line-height: 0.9;
   letter-spacing: -0.02em;
-  color: var(--text-strong);
+  color: var(--text);
 }
 
 .brand-drop {
-  color: var(--primary);
+  color: var(--accent);
 }
 
 .brand-sub {
@@ -133,7 +271,57 @@ body::after {
   text-transform: uppercase;
   color: var(--text-faint);
   padding-top: 8px;
-  border-top: 1px solid var(--border-soft);
+  border-top: 1px solid var(--border);
+}
+
+/* --- Theme toggle --- */
+#theme-toggle {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-pill);
+  padding: 5px 12px;
+  cursor: pointer;
+  transition:
+    background var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease);
+}
+
+#theme-toggle:hover {
+  background: var(--accent);
+  color: var(--text-on-accent);
+  border-color: var(--accent);
+}
+
+#theme-toggle:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Colors cross-fade on theme switch; instant for reduced-motion (below). */
+body,
+#controls,
+#detail,
+#search-input,
+#search-results,
+.search-result,
+.chip,
+.fee-badge,
+#theme-toggle {
+  transition:
+    background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
 }
 
 /* --- Search --- */
@@ -141,11 +329,11 @@ body::after {
   font-family: var(--font-ui);
   padding: 10px 13px;
   font-size: var(--fs-lg);
-  color: var(--text-strong);
-  background: var(--surface-2);
-  border: 1px solid var(--border-ui);
+  color: var(--text);
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-strong);
   border-radius: var(--r-md);
-  caret-color: var(--primary);
+  caret-color: var(--accent);
 }
 
 #search-input::placeholder {
@@ -153,7 +341,7 @@ body::after {
 }
 
 #search-input:focus-visible {
-  outline: 2px solid var(--primary-strong);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
@@ -161,8 +349,8 @@ body::after {
   list-style: none;
   margin: 0;
   padding: 4px;
-  background: var(--surface-2);
-  border: 1px solid var(--border-soft);
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
   border-radius: var(--r-md);
   max-height: 220px;
   overflow-y: auto;
@@ -182,19 +370,19 @@ body::after {
   background: none;
   font-family: var(--font-ui);
   font-size: var(--fs-base);
-  color: var(--text-strong);
+  color: var(--text);
   cursor: pointer;
 }
 
 .search-result:hover,
 .search-result:focus-visible {
-  background: var(--surface-0);
-  color: var(--primary-ink);
+  background: var(--surface);
+  color: var(--accent-ink);
   outline: none;
 }
 
 .search-result:focus-visible {
-  outline: 2px solid var(--primary-strong);
+  outline: 2px solid var(--focus-ring);
   outline-offset: -2px;
 }
 
@@ -217,7 +405,7 @@ body::after {
   align-items: center;
   gap: 6px;
   font-family: var(--font-ui);
-  border: 1px solid var(--border-ui);
+  border: 1px solid var(--border-strong);
   border-radius: var(--r-pill);
   padding: 6px 12px;
   font-size: var(--fs-md);
@@ -242,22 +430,27 @@ body::after {
 }
 
 .chip:hover {
-  background: var(--primary);
+  background: var(--accent);
+  color: var(--text-on-accent);
 }
 
-/* Active = lime fill, ink text — never white text on pink. */
+/* Active = secondary fill, on-accent text (lime+ink in Romance, green+stone in
+   Historic — both ≥10:1). Hover on an active chip keeps the light-enough fill
+   and adds an inset ring for feedback, so text-on-accent never lands on a dark
+   fill it wasn't sized for. */
 .chip[aria-pressed='true'] {
-  background: var(--secondary);
-  border-color: var(--border-ui);
+  background: var(--accent-2);
+  border-color: var(--border-strong);
   color: var(--text-on-accent);
 }
 .chip[aria-pressed='true']:hover {
-  background: var(--secondary-ink);
+  background: var(--accent-2);
   color: var(--text-on-accent);
+  box-shadow: inset 0 0 0 2px var(--accent-2-strong);
 }
 
 .chip:focus-visible {
-  outline: 2px solid var(--primary-strong);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
@@ -269,13 +462,13 @@ body::after {
   bottom: 0;
   width: 340px;
   max-width: 100%;
-  background: var(--surface-1);
-  border-top: 3px solid var(--primary);
+  background: var(--surface-raised);
+  border-top: 3px solid var(--accent);
   box-shadow: var(--shadow-2);
   z-index: 2;
   padding: 22px 20px;
   overflow-y: auto;
-  color: var(--text-strong);
+  color: var(--text);
   animation: slide-in var(--dur) var(--ease);
 }
 
@@ -304,11 +497,11 @@ body::after {
 }
 
 #detail-close:hover {
-  color: var(--primary-ink);
+  color: var(--accent-ink);
 }
 
 #detail-close:focus-visible {
-  outline: 2px solid var(--primary-strong);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
@@ -318,7 +511,7 @@ body::after {
   margin: 0 32px 6px 0;
   font-size: var(--fs-2xl);
   line-height: 1.05;
-  color: var(--text-strong);
+  color: var(--text);
 }
 
 .detail-categories {
@@ -327,7 +520,7 @@ body::after {
   font-size: var(--fs-xs);
   margin: 0 0 12px;
   padding-bottom: 12px;
-  border-bottom: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border);
 }
 
 #detail p {
@@ -342,25 +535,25 @@ body::after {
 }
 
 #detail a {
-  color: var(--primary-ink);
+  color: var(--accent-ink);
 }
 
 #detail a:focus-visible {
-  outline: 2px solid var(--primary-strong);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
 .detail-enrich {
   margin-top: 14px;
   padding-top: 12px;
-  border-top: 1px solid var(--border-soft);
+  border-top: 1px solid var(--border);
   font-size: var(--fs-base);
 }
 
 .detail-enrich img {
   max-width: 100%;
   border-radius: var(--r-sm);
-  border: 1px solid var(--border-soft);
+  border: 1px solid var(--border);
   margin-bottom: 10px;
 }
 
@@ -371,7 +564,7 @@ body::after {
 }
 
 .detail-credit a {
-  color: var(--primary-ink);
+  color: var(--accent-ink);
 }
 
 /* --- Fee badge (always paired with its text label, never hue alone) --- */
@@ -384,17 +577,17 @@ body::after {
 }
 
 .fee-badge.fee-free {
-  background: rgba(82, 112, 14, 0.15);
+  background: var(--success-bg);
   color: var(--success);
 }
 
 .fee-badge.fee-paid {
-  background: rgba(176, 46, 91, 0.14);
+  background: var(--error-bg);
   color: var(--error);
 }
 
 .fee-badge.fee-unknown {
-  background: var(--surface-0);
+  background: var(--surface);
   color: var(--text-faint);
 }
 
@@ -416,7 +609,7 @@ body::after {
     width: auto;
     max-height: 62vh;
     border-radius: 16px 16px 0 0;
-    border-top: 3px solid var(--primary);
+    border-top: 3px solid var(--accent);
     animation: sheet-up var(--dur) var(--ease);
   }
 
@@ -429,10 +622,10 @@ body::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #detail,
-  .chip,
-  .bloom {
-    animation: none;
-    transition: none;
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
   }
 }

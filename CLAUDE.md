@@ -27,12 +27,50 @@ vite.config.js             base: '/dublin-todo/'  ← project-site base path
 .github/workflows/deploy.yml  build + deploy to Pages
 ```
 
+## Theming (two themes: Romance + Historic)
+
+The site ships two themes. **Romance** (default) — light pastel, chrome-pink +
+acid-lime on sky blue. **Historic** — Georgian Dublin: Portland-stone grounds,
+fanlight-iron ink, oxblood door-red primary, brunswick door-green secondary,
+brass door-plaque pins. Switch via `data-theme` on `<html>` (toggle in the
+brand header); default follows `prefers-color-scheme` (dark→Historic,
+light→Romance) then persists to `localStorage`. An inline script in
+`index.html` `<head>` stamps the attribute before first paint (no flash on this
+static host). Map basemap is retuned per theme (same OpenFreeMap Liberty tiles,
+recolored).
+
+**Token architecture — three layers in `src/style.css`:**
+1. **Shared non-color primitives** on bare `:root` — radius, motion, type scale.
+2. **Color primitives** — raw palette per theme, hue-scale names (`--rose-500`,
+   `--stone-200`). Romance on `:root`; each other theme in a `[data-theme='…']`
+   block. **The only place literal colors may appear.**
+3. **Semantic tokens** — role names bound to this theme's primitives
+   (`--surface`, `--surface-raised/-sunken`, `--surface-map-water`, `--border`,
+   `--border-strong`, `--text`, `--text-muted/-faint`, `--text-on-accent`,
+   `--accent`, `--accent-strong/-ink`, `--accent-2` + variants, `--focus-ring`,
+   `--info/--success/--error/--warning` + `-bg`, `--bloom-*`/`--spec`,
+   `--shadow-1/2`, `--grain-opacity/-blend`, and per-theme `--font-*`).
+
+**Rules (enforce these):**
+- **Components reference ONLY semantic tokens** — never a primitive, never a
+  literal, never a per-component color override. A component must not know which
+  theme is active.
+- **No literal color outside layer 2** (CSS primitive blocks) **or `theme.js`**
+  (the JS palette MapLibre paint needs — it can't read CSS vars).
+- **Adding a token = add it to EVERY theme block.** No theme may inherit
+  another's values; each `[data-theme]` block defines the complete semantic set.
+- If a value fails contrast in one theme, fix **that theme's primitive** — never
+  loosen the shared semantic role.
+
+Map/marker colors (basemap recolor + pins + selected halo) live in `src/theme.js`
+per theme, kept in sync with each theme's semantic tokens by hand.
+
 ## Design system ("Romance")
 
 Light pastel chrome on a sky-blue map: chrome-pink primary, acid-lime
 secondary, blue-tinted white surfaces. All colors and fonts are CSS custom
-properties on `:root` in `src/style.css` — use the tokens, never raw hex
-(MapLibre paint is the one exception, below). Surfaces: `--surface-0/1/2`,
+properties in `src/style.css` — use the semantic tokens, never raw hex
+(MapLibre paint via `theme.js` is the one exception, below). Surfaces: `--surface-0/1/2`,
 `--surface-sky`, `--border-soft`, `--border-ui`. Text: `--text-strong`,
 `--text-muted`, `--text-faint`, `--text-on-accent`. Accents: `--primary`
 `#f0589f`, `--secondary` (lime) `#b4dd3a`, plus `-strong`/`-ink` variants and a

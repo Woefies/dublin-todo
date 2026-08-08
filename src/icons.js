@@ -6,6 +6,8 @@
 // Material Symbols (Outlined) glyph paths, viewBox "0 -960 960 960", filled.
 // Source: fonts.gstatic.com material symbols. historic=castle, museum=museum,
 // parks=park, food=restaurant, pubs=sports_bar, shopping=shopping_bag.
+import { palette } from './theme.js';
+
 const VIEWBOX = '0 -960 960 960';
 const ICONS = {
   historic:
@@ -52,17 +54,18 @@ export function categoryIconSvg(id, size = 15) {
 // as one unit (pins stay whole when overlapping; basemap can't bleed through the
 // glyph's open areas). Glyph is placed by mapping the Material viewBox centre
 // (480, -480) onto the pin centre (30, 30).
-function svgDoc(d) {
+function svgDoc(d, disc, glyph) {
   return (
     '<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">' +
-    '<circle cx="32" cy="32" r="29" fill="#b4dd3a" stroke="#17252E" stroke-width="3"/>' +
-    `<g transform="translate(32,32) scale(0.042) translate(-480,480)" fill="#17252E">` +
+    `<circle cx="32" cy="32" r="29" fill="${disc}" stroke="${glyph}" stroke-width="3"/>` +
+    `<g transform="translate(32,32) scale(0.042) translate(-480,480)" fill="${glyph}">` +
     `<path d="${d}"/></g></svg>`
   );
 }
 
 // Register every category icon as a map image. Resolves once all are added.
 export function addCategoryIcons(map) {
+  const { marker } = palette();
   return Promise.all(
     Object.entries(ICONS).map(
       ([id, inner]) =>
@@ -71,11 +74,16 @@ export function addCategoryIcons(map) {
           const img = new Image(80, 80);
           img.onload = () => {
             const imgId = pinImageId(id);
-            if (!map.hasImage(imgId)) map.addImage(imgId, img, { pixelRatio: 2 });
+            // Re-callable on theme switch: update the existing image in place so
+            // pins pick up the new theme's disc/glyph colors.
+            if (map.hasImage(imgId)) map.updateImage(imgId, img);
+            else map.addImage(imgId, img, { pixelRatio: 2 });
             resolve();
           };
           img.onerror = reject;
-          img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgDoc(inner));
+          img.src =
+            'data:image/svg+xml;charset=utf-8,' +
+            encodeURIComponent(svgDoc(inner, marker.disc, marker.glyph));
         }),
     ),
   );
