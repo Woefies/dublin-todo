@@ -1085,7 +1085,7 @@
         "id": "teachers-club",
         "name": "Teachers Club",
         "categories": [
-          "museum",
+          "music",
           "pubs"
         ],
         "url": "https://www.spottedbylocals.com/dublin/teachers-club/",
@@ -1105,7 +1105,7 @@
         "id": "the-cobblestone",
         "name": "The Cobblestone",
         "categories": [
-          "museum",
+          "music",
           "pubs"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-cobblestone/",
@@ -1125,7 +1125,6 @@
         "id": "hacienda",
         "name": "Hacienda",
         "categories": [
-          "museum",
           "pubs"
         ],
         "url": "https://www.spottedbylocals.com/dublin/hacienda/",
@@ -1145,7 +1144,7 @@
         "id": "wigwam",
         "name": "Wigwam",
         "categories": [
-          "museum",
+          "music",
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/wigwam/",
@@ -1222,7 +1221,7 @@
         "id": "croppies-acre-memorial-park",
         "name": "Croppies Acre Memorial Park",
         "categories": [
-          "museum",
+          "landmarks",
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/croppies-acre-memorial-park/",
@@ -1242,7 +1241,7 @@
         "id": "smock-alley-theatre",
         "name": "Smock Alley Theatre",
         "categories": [
-          "museum"
+          "arts"
         ],
         "url": "https://www.spottedbylocals.com/dublin/smock-alley-theatre/",
         "image": null
@@ -1261,7 +1260,7 @@
         "id": "whelan-s",
         "name": "Whelan's",
         "categories": [
-          "museum",
+          "music",
           "pubs"
         ],
         "url": "https://www.spottedbylocals.com/dublin/whelans/",
@@ -1281,7 +1280,7 @@
         "id": "jam-art-factory",
         "name": "Jam Art Factory",
         "categories": [
-          "museum",
+          "arts",
           "shopping"
         ],
         "url": "https://www.spottedbylocals.com/dublin/jam-art-factory/",
@@ -1340,7 +1339,7 @@
         "id": "st-audoen-s-park",
         "name": "St. Audoen's Park",
         "categories": [
-          "museum",
+          "historic",
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/st-audoens-park/",
@@ -1379,7 +1378,6 @@
         "id": "george-s-street-arcade",
         "name": "George's Street Arcade",
         "categories": [
-          "museum",
           "shopping",
           "food"
         ],
@@ -1400,8 +1398,8 @@
         "id": "love-lane",
         "name": "Love Lane",
         "categories": [
-          "museum",
-          "parks"
+          "arts",
+          "landmarks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/love-lane/",
         "image": null
@@ -1439,7 +1437,7 @@
         "id": "international-bar",
         "name": "International Bar",
         "categories": [
-          "museum",
+          "music",
           "pubs"
         ],
         "url": "https://www.spottedbylocals.com/dublin/international-bar/",
@@ -1459,7 +1457,6 @@
         "id": "panti-bar",
         "name": "Panti Bar",
         "categories": [
-          "museum",
           "pubs"
         ],
         "url": "https://www.spottedbylocals.com/dublin/panti-bar/",
@@ -1556,7 +1553,6 @@
         "id": "meath-street",
         "name": "Meath Street",
         "categories": [
-          "museum",
           "shopping"
         ],
         "url": "https://www.spottedbylocals.com/dublin/meath-street/",
@@ -1614,7 +1610,8 @@
         "id": "marsh-s-library",
         "name": "Marsh's Library",
         "categories": [
-          "museum"
+          "museum",
+          "historic"
         ],
         "url": "https://www.spottedbylocals.com/dublin/marshs-library/",
         "image": null
@@ -1691,8 +1688,7 @@
         "id": "whitefriar-street-church",
         "name": "Whitefriar Street Church",
         "categories": [
-          "museum",
-          "parks"
+          "historic"
         ],
         "url": "https://www.spottedbylocals.com/dublin/whitefriar-street-church/",
         "image": null
@@ -1750,7 +1746,7 @@
         "id": "irish-design-shop",
         "name": "Irish Design Shop",
         "categories": [
-          "museum",
+          "arts",
           "shopping"
         ],
         "url": "https://www.spottedbylocals.com/dublin/irish-design-shop/",
@@ -1770,7 +1766,7 @@
         "id": "samuel-beckett-bridge",
         "name": "Samuel Beckett Bridge",
         "categories": [
-          "museum"
+          "landmarks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/samuel-beckett-bridge/",
         "image": null
@@ -1789,7 +1785,8 @@
         "id": "poolbeg-lighthouse",
         "name": "Poolbeg Lighthouse",
         "categories": [
-          "parks"
+          "landmarks",
+          "nature"
         ],
         "url": "https://www.spottedbylocals.com/dublin/poolbeg-lighthouse/",
         "image": null
@@ -1808,7 +1805,7 @@
         "id": "diving-bell",
         "name": "Diving Bell",
         "categories": [
-          "museum"
+          "landmarks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/diving-bell/",
         "image": null
@@ -1846,7 +1843,6 @@
         "id": "the-ginger-man",
         "name": "The Ginger Man",
         "categories": [
-          "museum",
           "pubs"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-ginger-man/",
@@ -1866,8 +1862,8 @@
         "id": "the-confession-box",
         "name": "The Confession Box",
         "categories": [
-          "museum",
-          "pubs"
+          "pubs",
+          "historic"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-confession-box/",
         "image": null
@@ -1924,7 +1920,6 @@
         "id": "needful-things",
         "name": "Needful Things",
         "categories": [
-          "museum",
           "shopping"
         ],
         "url": "https://www.spottedbylocals.com/dublin/needful-things/",
@@ -1983,7 +1978,7 @@
         "id": "apples-and-atoms",
         "name": "Apples and Atoms",
         "categories": [
-          "museum"
+          "landmarks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/apples-and-atoms/",
         "image": null
@@ -2002,6 +1997,7 @@
         "id": "river-dodder",
         "name": "River Dodder",
         "categories": [
+          "nature",
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/river-dodder/",
@@ -2021,6 +2017,7 @@
         "id": "the-grand-canal",
         "name": "The Grand Canal",
         "categories": [
+          "nature",
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-grand-canal/",
@@ -2059,9 +2056,7 @@
         "id": "the-tram-caf",
         "name": "The Tram Café",
         "categories": [
-          "museum",
-          "food",
-          "pubs"
+          "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-tram-cafe/",
         "image": null
@@ -2120,7 +2115,7 @@
         "id": "irish-film-institute",
         "name": "Irish Film Institute",
         "categories": [
-          "museum",
+          "arts",
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/irish-film-institute/",
@@ -2159,7 +2154,7 @@
         "id": "memorial-to-human-rights-defenders",
         "name": "Memorial to Human Rights Defenders",
         "categories": [
-          "museum"
+          "landmarks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/memorial-to-human-rights-defenders/",
         "image": null
@@ -2197,7 +2192,6 @@
         "id": "mish-mash",
         "name": "Mish Mash",
         "categories": [
-          "museum",
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/mish-mash/",
@@ -2217,8 +2211,8 @@
         "id": "the-icon-walk",
         "name": "The Icon Walk",
         "categories": [
-          "museum",
-          "parks"
+          "arts",
+          "landmarks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-icon-walk/",
         "image": null
@@ -2237,8 +2231,7 @@
         "id": "sandymount-beach",
         "name": "Sandymount Beach",
         "categories": [
-          "museum",
-          "parks"
+          "nature"
         ],
         "url": "https://www.spottedbylocals.com/dublin/sandymount-beach/",
         "image": null
@@ -2257,7 +2250,6 @@
         "id": "merrion-square-park",
         "name": "Merrion Square Park",
         "categories": [
-          "museum",
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/merrion-square-park/",
@@ -2277,9 +2269,8 @@
         "id": "moore-street",
         "name": "Moore Street",
         "categories": [
-          "museum",
-          "parks",
-          "shopping"
+          "shopping",
+          "historic"
         ],
         "url": "https://www.spottedbylocals.com/dublin/moore-street/",
         "image": null
@@ -2298,7 +2289,7 @@
         "id": "rosie-hackett-bridge",
         "name": "Rosie Hackett Bridge",
         "categories": [
-          "parks"
+          "landmarks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/rosie-hackett-bridge/",
         "image": null
@@ -2317,7 +2308,7 @@
         "id": "that-one-corner-in-temple-bar",
         "name": "That One Corner in Temple Bar",
         "categories": [
-          "museum"
+          "landmarks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/that-one-corner-in-temple-bar/",
         "image": null
@@ -2336,7 +2327,7 @@
         "id": "meath-street-grotto",
         "name": "Meath Street Grotto",
         "categories": [
-          "parks"
+          "landmarks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/meath-street-grotto/",
         "image": null
@@ -2374,7 +2365,8 @@
         "id": "wall-of-fame",
         "name": "Wall of Fame",
         "categories": [
-          "museum"
+          "arts",
+          "landmarks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/wall-of-fame/",
         "image": null
@@ -2393,7 +2385,7 @@
         "id": "howth-walks",
         "name": "Howth Walks",
         "categories": [
-          "parks"
+          "nature"
         ],
         "url": "https://www.spottedbylocals.com/dublin/howth-walks/",
         "image": null
@@ -2412,7 +2404,7 @@
         "id": "shelley-banks-beach",
         "name": "Shelley Banks Beach",
         "categories": [
-          "parks"
+          "nature"
         ],
         "url": "https://www.spottedbylocals.com/dublin/shelley-banks-beach/",
         "image": null
@@ -2470,7 +2462,6 @@
         "id": "dublin-flea-market",
         "name": "Dublin Flea Market",
         "categories": [
-          "museum",
           "shopping",
           "food"
         ],
@@ -2530,7 +2521,7 @@
         "id": "artisan-brew-academy",
         "name": "Artisan Brew Academy",
         "categories": [
-          "museum"
+          "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/artisan-brew-academy/",
         "image": null
@@ -2549,7 +2540,8 @@
         "id": "freebird-records",
         "name": "Freebird Records",
         "categories": [
-          "shopping"
+          "shopping",
+          "arts"
         ],
         "url": "https://www.spottedbylocals.com/dublin/freebird-records/",
         "image": null
@@ -2606,7 +2598,7 @@
         "id": "the-peace-tree",
         "name": "The Peace Tree",
         "categories": [
-          "museum",
+          "landmarks",
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-peace-tree/",
@@ -2626,8 +2618,8 @@
         "id": "the-national-botanical-gardens",
         "name": "The National Botanical Gardens",
         "categories": [
-          "museum",
-          "parks"
+          "parks",
+          "nature"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-national-botanical-gardens/",
         "image": null
@@ -2646,7 +2638,7 @@
         "id": "the-famine-memorial",
         "name": "The Famine Memorial",
         "categories": [
-          "museum"
+          "landmarks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-famine-memorial/",
         "image": null
@@ -2665,7 +2657,7 @@
         "id": "dublin-bay-walks",
         "name": "Dublin Bay Walks",
         "categories": [
-          "parks"
+          "nature"
         ],
         "url": "https://www.spottedbylocals.com/dublin/dublin-bay-walks/",
         "image": null
@@ -2704,8 +2696,7 @@
         "id": "music-under-the-bridges",
         "name": "Music Under The Bridges",
         "categories": [
-          "pubs",
-          "parks"
+          "music"
         ],
         "url": "https://www.spottedbylocals.com/dublin/music-under-the-bridges/",
         "image": null
@@ -2724,7 +2715,7 @@
         "id": "farmleigh-house",
         "name": "Farmleigh House",
         "categories": [
-          "museum",
+          "historic",
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/farmleigh-house/",
@@ -2744,6 +2735,7 @@
         "id": "killiney-hill-park",
         "name": "Killiney Hill Park",
         "categories": [
+          "nature",
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/killiney-hill-park/",
@@ -2763,7 +2755,6 @@
         "id": "kalabasa-market",
         "name": "Kalabasa Market",
         "categories": [
-          "pubs",
           "shopping",
           "food"
         ],
@@ -2784,7 +2775,7 @@
         "id": "pipers-corner",
         "name": "Pipers Corner",
         "categories": [
-          "museum",
+          "music",
           "pubs"
         ],
         "url": "https://www.spottedbylocals.com/dublin/pipers-corner/",
@@ -2804,7 +2795,6 @@
         "id": "medikate-garden",
         "name": "MediKate Garden",
         "categories": [
-          "museum",
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/medikate-garden/",
@@ -2824,7 +2814,7 @@
         "id": "fibber-magees",
         "name": "Fibber Magees",
         "categories": [
-          "museum",
+          "music",
           "pubs"
         ],
         "url": "https://www.spottedbylocals.com/dublin/fibber-magees/",

@@ -10,7 +10,7 @@ const feats = [
 
 const cats = orderedCategories(feats);
 // canonical order, unknowns aside; counts correct
-assert.deepEqual(cats.map((c) => c.id), ['historic', 'food', 'pubs']);
+assert.deepEqual(cats.map((c) => c.id), ['historic', 'pubs', 'food']);
 assert.equal(cats.find((c) => c.id === 'historic').count, 2);
 
 // empty set hides everything

@@ -4,14 +4,21 @@
 
 import { categoryIconSvg } from './icons.js';
 
-const CATEGORY_ORDER = ['historic', 'museum', 'parks', 'food', 'pubs', 'shopping'];
+const CATEGORY_ORDER = [
+  'historic', 'museum', 'arts', 'landmarks', 'music',
+  'pubs', 'food', 'shopping', 'parks', 'nature',
+];
 const LABELS = {
   historic: 'Historic',
   museum: 'Museums',
-  parks: 'Parks',
-  food: 'Food',
+  arts: 'Arts',
+  landmarks: 'Landmarks',
+  music: 'Music',
   pubs: 'Pubs',
+  food: 'Food',
   shopping: 'Shopping',
+  parks: 'Parks',
+  nature: 'Nature',
 };
 
 // [{ id, label, count }] in canonical order; unknown categories appended sorted.

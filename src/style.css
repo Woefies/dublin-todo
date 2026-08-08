@@ -141,7 +141,7 @@
   --iron-900: #21201b; /* fanlight iron — text-on-accent, glyph */
   --ink-900: #2a2620; /* oak-gall ink — body text */
   --ink-700: #514937; /* muted ink */
-  --ink-500: #6a6149; /* faint ink */
+  --ink-500: #736a54; /* faint ink */
   --oxblood-600: #963c2c; /* door oxblood — primary accent */
   --oxblood-700: #7a2f22; /* deeper oxblood — strong/focus */
   --oxblood-800: #632519; /* oxblood as ink-on-stone — links */
@@ -416,7 +416,8 @@ body,
   transition:
     transform var(--dur-fast) var(--ease),
     background var(--dur-fast) var(--ease),
-    color var(--dur-fast) var(--ease);
+    color var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease);
 }
 
 .chip svg {

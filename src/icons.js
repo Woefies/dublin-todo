@@ -5,7 +5,8 @@
 
 // Material Symbols (Outlined) glyph paths, viewBox "0 -960 960 960", filled.
 // Source: fonts.gstatic.com material symbols. historic=castle, museum=museum,
-// parks=park, food=restaurant, pubs=sports_bar, shopping=shopping_bag.
+// parks=park, food=restaurant, pubs=sports_bar, shopping=shopping_bag,
+// music=music_note, arts=palette, landmarks=tour, nature=landscape.
 import { palette } from './theme.js';
 
 const VIEWBOX = '0 -960 960 960';
@@ -20,12 +21,22 @@ const ICONS = {
   pubs: 'M320-200h280v-400h-80q-28 0-46 14t-43 41q-20 22-46.5 45.5T320-465v265Zm-80 80v-346q-52-14-86-56t-34-98q0-53 30.5-94t78.5-57q23-48 68.5-78T400-879q35 0 65.5 12t55.5 32q10-2 19-3.5t20-1.5q66 0 113 47t47 113q0 22-5.5 42T698-600h62q33 0 56.5 23.5T840-520v240q0 33-23.5 56.5T760-200h-80v80H240Zm-40-500q0 33 23.5 56.5T280-540q32 0 54.5-21t46.5-47q25-27 56.5-49.5T520-680h120q0-33-23.5-56.5T560-760q-25 0-42 6.5l-17 6.5-31-26q-11-9-28.5-17.5T400-799q-32 0-58.5 17T301-736l-14 30-32 11q-25 8-40 28.5T200-620Zm480 340h80v-240h-80v240Zm-360 80h280-280Z',
   shopping:
     'M240-80q-33 0-56.5-23.5T160-160v-480q0-33 23.5-56.5T240-720h80q0-66 47-113t113-47q66 0 113 47t47 113h80q33 0 56.5 23.5T800-640v480q0 33-23.5 56.5T720-80H240Zm0-80h480v-480h-80v80q0 17-11.5 28.5T600-520q-17 0-28.5-11.5T560-560v-80H400v80q0 17-11.5 28.5T360-520q-17 0-28.5-11.5T320-560v-80h-80v480Zm160-560h160q0-33-23.5-56.5T480-800q-33 0-56.5 23.5T400-720ZM240-160v-480 480Z',
+  music:
+    'M286.5-163.5Q243-207 243-270t43.5-106.5Q330-420 393-420q28 0 50.5 8t39.5 22v-450h234v135H543v435q0 63-43.5 106.5T393-120q-63 0-106.5-43.5Z',
+  arts: 'M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-84 32-157t87.5-127q55.5-54 130-85T489-880q79 0 150 26.5T763.5-780q53.5 47 85 111.5T880-527q0 108-63 170.5T650-294h-75q-18 0-31 14t-13 31q0 20 14.5 38t14.5 43q0 26-24.5 57T480-80ZM282-469q15-15 15-35t-15-35q-15-15-35-15t-35 15q-15 15-15 35t15 35q15 15 35 15t35-15Zm126-170q15-15 15-35t-15-35q-15-15-35-15t-35 15q-15 15-15 35t15 35q15 15 35 15t35-15Zm214 0q15-15 15-35t-15-35q-15-15-35-15t-35 15q-15 15-15 35t15 35q15 15 35 15t35-15Zm131 170q15-15 15-35t-15-35q-15-15-35-15t-35 15q-15 15-15 35t15 35q15 15 35 15t35-15Z',
+  landmarks:
+    'M200-80v-800h60v84h580l-81 193 81 193H260v330h-60Zm352-472.21q21-21.21 21-51T551.79-654q-21.21-21-51-21T450-653.79q-21 21.21-21 51T450.21-552q21.21 21 51 21T552-552.21Z',
+  nature: 'm40-240 240-320 195 260h75L397-503l163-217 360 480H40Z',
 };
 
 // Priority when a POI has multiple categories. 'historic' is last, so it only
 // wins when a POI has no other category (most Dublin POIs are historic anyway —
-// the more specific category is the useful glyph).
-const PRIORITY = ['museum', 'parks', 'pubs', 'food', 'shopping', 'historic'];
+// the more specific category is the useful glyph). New specific categories come
+// first so e.g. a music-pub shows the music glyph, a beach shows nature.
+const PRIORITY = [
+  'music', 'arts', 'landmarks', 'nature',
+  'museum', 'parks', 'pubs', 'food', 'shopping', 'historic',
+];
 
 export const CATEGORY_ICON_IDS = Object.keys(ICONS);
 

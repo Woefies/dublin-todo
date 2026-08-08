@@ -9,6 +9,12 @@ const path = fileURLToPath(new URL('../public/data/pois.geojson', import.meta.ur
 // north (Balbriggan/Malahide) to south county (Killiney/Dún Laoghaire) and Howth.
 const BBOX = [-6.55, 53.15, -6.0, 53.65];
 const FEES = new Set(['free', 'paid', 'unknown']);
+// Keep in sync with CATEGORY_ORDER in src/filters.js. A typo'd category would
+// silently spawn a stray chip, so fail loudly instead.
+const CATEGORIES = new Set([
+  'historic', 'museum', 'arts', 'landmarks', 'music',
+  'pubs', 'food', 'shopping', 'parks', 'nature',
+]);
 
 const fc = JSON.parse(readFileSync(path, 'utf8'));
 const errors = [];
@@ -29,6 +35,9 @@ for (const [i, f] of (fc.features ?? []).entries()) {
   if (!p.name) errors.push(`${where}: missing name`);
   if (!Array.isArray(p.categories) || p.categories.length === 0)
     errors.push(`${where}: categories must be a non-empty array`);
+  else
+    for (const c of p.categories)
+      if (!CATEGORIES.has(c)) errors.push(`${where}: unknown category "${c}"`);
   if (p.fee != null && !FEES.has(p.fee))
     errors.push(`${where}: fee "${p.fee}" not one of free|paid|unknown`);
 
