@@ -63,7 +63,6 @@ function writeHash() {
   const center = map.getCenter();
   const hash = buildHash({
     activeIds: active,
-    allIds: allCategoryIds,
     sel: selectedId,
     zoom: map.getZoom(),
     center: [center.lat, center.lng],
@@ -314,9 +313,10 @@ map.on('load', async () => {
   allCategoryIds = categories.map((c) => c.id);
 
   const initialHash = parseHash(location.hash);
-  active = initialHash.cat
-    ? new Set(initialHash.cat.filter((id) => allCategoryIds.includes(id)))
-    : new Set(allCategoryIds);
+  // Empty active = "All" (everything shows); a cat in the hash narrows to it.
+  active = new Set(
+    (initialHash.cat ?? []).filter((id) => allCategoryIds.includes(id)),
+  );
 
   if (initialHash.c || initialHash.z !== undefined) {
     map.jumpTo({
@@ -326,11 +326,12 @@ map.on('load', async () => {
   }
 
   // Category filter drives the source data (not a layer setFilter) so clustering
-  // re-aggregates only the active POIs. A POI shows if it has ANY active category.
+  // re-aggregates only the shown POIs. Empty active = "All"; otherwise a POI
+  // shows if it has ANY active category.
   const apply = () => {
     const features =
       active.size === 0
-        ? []
+        ? data.features
         : data.features.filter((f) =>
             f.properties.categories.some((c) => active.has(c)),
           );

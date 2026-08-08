@@ -31,15 +31,14 @@ export function parseHash(hashString) {
   return result;
 }
 
-// { activeIds, allIds, sel, zoom, center } -> hash string (no leading '#').
-// Omits cat when activeIds covers allIds; omits sel when falsy.
-export function buildHash({ activeIds, allIds, sel, zoom, center }) {
+// { activeIds, sel, zoom, center } -> hash string (no leading '#').
+// Omits cat when activeIds is empty (empty = "All", everything shown); omits
+// sel when falsy.
+export function buildHash({ activeIds, sel, zoom, center }) {
   const parts = [];
 
   const active = [...activeIds];
-  const all = [...allIds];
-  const isAllActive = all.length === active.length && all.every((id) => activeIds.has(id));
-  if (!isAllActive) parts.push(`cat=${active.map(encodeURIComponent).join(',')}`);
+  if (active.length) parts.push(`cat=${active.map(encodeURIComponent).join(',')}`);
 
   if (sel) parts.push(`sel=${encodeURIComponent(sel)}`);
 

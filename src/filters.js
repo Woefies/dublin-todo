@@ -32,25 +32,40 @@ export function orderedCategories(features) {
   return [...known, ...extra].map((id) => ({ id, label: LABELS[id] ?? id, count: counts.get(id) }));
 }
 
-// OR-match: a POI shows if it has ANY active category. Empty set hides all.
-export function categoryFilter(active) {
-  if (active.size === 0) return ['boolean', false];
-  return ['any', ...[...active].map((c) => ['in', c, ['get', 'categories']])];
-}
-
+// Chips are a narrowing filter: empty `active` = "All" (everything shows), and
+// selecting categories restricts to an OR-match of the selected ones. The "All"
+// chip clears the set; toggling a category adds/removes it and auto-updates All.
 export function renderChips(container, categories, active, onChange) {
   container.innerHTML = '';
+  const chips = [];
+  const sync = () => {
+    allBtn.setAttribute('aria-pressed', String(active.size === 0));
+    for (const { id, btn } of chips) btn.setAttribute('aria-pressed', String(active.has(id)));
+  };
+
+  const allBtn = document.createElement('button');
+  allBtn.className = 'chip';
+  allBtn.innerHTML = '<span>All</span>';
+  allBtn.addEventListener('click', () => {
+    if (active.size === 0) return; // already showing all
+    active.clear();
+    sync();
+    onChange();
+  });
+  container.appendChild(allBtn);
+
   for (const { id, label, count } of categories) {
     const btn = document.createElement('button');
     btn.className = 'chip';
     btn.innerHTML = `${categoryIconSvg(id)}<span>${label}</span><span class="chip-count">${count}</span>`;
-    btn.setAttribute('aria-pressed', String(active.has(id)));
     btn.addEventListener('click', () => {
       if (active.has(id)) active.delete(id);
       else active.add(id);
-      btn.setAttribute('aria-pressed', String(active.has(id)));
+      sync();
       onChange();
     });
+    chips.push({ id, btn });
     container.appendChild(btn);
   }
+  sync();
 }
