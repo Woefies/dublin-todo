@@ -50,8 +50,8 @@ vite.config.js             base: '/dublin-todo/'  ← project-site base path
 Phase 0 ✅ pipeline slice · Phase 1 ✅ externalised data + model + check ·
 Phase 2 ✅ category filter chips + OR-match filter (clustering deferred until
 dense) · Phase 3 ✅ detail panel + search + deep-link hash state (cat/sel/z/c) +
-geolocation (MapLibre GeolocateControl) + a11y · Phase 4 optional
-Wikipedia/Wikidata enrichment.
+geolocation (MapLibre GeolocateControl) + a11y · Phase 4 ✅ lazy Wikipedia
+enrichment on select (intro + thumbnail, memoised, CC BY-SA link-back).
 
 ---
 

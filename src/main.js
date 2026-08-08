@@ -4,6 +4,7 @@ import { createMap } from './map.js';
 import { orderedCategories, categoryFilter, renderChips } from './filters.js';
 import { searchPOIs } from './search.js';
 import { parseHash, buildHash } from './urlstate.js';
+import { enrich } from './enrich.js';
 
 const FEE_LABELS = { free: 'Free', paid: 'Paid', unknown: 'Fee unknown' };
 
@@ -55,11 +56,33 @@ function openDetail(feature) {
     ${p.address ? `<p class="detail-address">${escapeHtml(p.address)}</p>` : ''}
     <p class="fee-badge fee-${p.fee ?? 'unknown'}">${fee}</p>
     ${p.url ? `<p><a href="${escapeHtml(p.url)}" target="_blank" rel="noopener">Visit website</a></p>` : ''}
+    <div class="detail-enrich" aria-live="polite"></div>
   `;
 
   lastFocused = document.activeElement;
   detail.hidden = false;
   detailClose.focus();
+
+  fillEnrichment(feature);
+}
+
+// Lazily add a Wikipedia extract + image to the open panel. Race-guarded: if the
+// user selects another POI (or closes) before the fetch resolves, discard it.
+async function fillEnrichment(feature) {
+  const box = detailBody.querySelector('.detail-enrich');
+  box.textContent = 'Loading…';
+  const info = await enrich(feature);
+
+  if (selectedId !== feature.properties.id || detail.hidden) return;
+  if (!info) {
+    box.textContent = '';
+    return;
+  }
+  box.innerHTML = `
+    ${info.thumbnail ? `<img src="${escapeHtml(info.thumbnail)}" alt="" />` : ''}
+    <p>${escapeHtml(info.extract)}</p>
+    <p class="detail-credit"><a href="${escapeHtml(info.url)}" target="_blank" rel="noopener">Read more on Wikipedia</a> · CC BY-SA</p>
+  `;
 }
 
 function closeDetail() {

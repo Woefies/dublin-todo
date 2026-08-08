@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "npm run check && vite build",
     "preview": "vite preview",
-    "check": "node scripts/check-pois.mjs && node scripts/check-filters.mjs && node scripts/check-search.mjs && node scripts/check-urlstate.mjs"
+    "check": "node scripts/check-pois.mjs && node scripts/check-filters.mjs && node scripts/check-search.mjs && node scripts/check-urlstate.mjs && node scripts/check-enrich.mjs"
   },
   "dependencies": {
     "maplibre-gl": "^5.0.0"
