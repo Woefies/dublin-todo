@@ -2,8 +2,11 @@
 import assert from 'node:assert/strict';
 import { primaryCategory, CATEGORY_ICON_IDS, categoryIconSvg } from '../src/icons.js';
 
-// Priority: historic beats pubs when a POI is both (e.g. Temple Bar).
-assert.equal(primaryCategory(['pubs', 'historic']), 'historic');
+// historic is lowest priority: a more specific category wins (e.g. Temple Bar).
+assert.equal(primaryCategory(['pubs', 'historic']), 'pubs');
+assert.equal(primaryCategory(['historic', 'museum']), 'museum');
+// historic only wins when it's the sole category.
+assert.equal(primaryCategory(['historic']), 'historic');
 // Single category returns itself.
 assert.equal(primaryCategory(['food']), 'food');
 // Unknown category falls back to the first listed.

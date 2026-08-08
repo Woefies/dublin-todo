@@ -14,8 +14,10 @@ const ICONS = {
   shopping: '<path d="M6 8h12l-1 13H7z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>',
 };
 
-// Priority order when a POI has multiple categories (most distinctive first).
-const PRIORITY = ['historic', 'museum', 'parks', 'pubs', 'food', 'shopping'];
+// Priority when a POI has multiple categories. 'historic' is last, so it only
+// wins when a POI has no other category (most Dublin POIs are historic anyway —
+// the more specific category is the useful glyph).
+const PRIORITY = ['museum', 'parks', 'pubs', 'food', 'shopping', 'historic'];
 
 export const CATEGORY_ICON_IDS = Object.keys(ICONS);
 
