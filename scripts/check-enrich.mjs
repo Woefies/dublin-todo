@@ -1,6 +1,12 @@
 // Self-check for the pure enrichment helpers in src/enrich.js. Run via npm run check.
 import assert from 'node:assert/strict';
-import { buildQueryUrl, parseWikiResponse } from '../src/enrich.js';
+import {
+  buildQueryUrl,
+  buildTitleUrl,
+  buildWikidataUrl,
+  parseSitelinkTitle,
+  parseWikiResponse,
+} from '../src/enrich.js';
 
 // URL: CORS origin, single result, disambiguating " Dublin", plaintext intro.
 const url = buildQueryUrl('Trinity College');
@@ -29,5 +35,16 @@ assert.equal(ok.url, 'https://en.wikipedia.org/wiki/Trinity_College_Dublin');
 // Misses → null (no pages, and a page with no extract).
 assert.equal(parseWikiResponse({}), null);
 assert.equal(parseWikiResponse({ query: { pages: { '1': { title: 'x' } } } }), null);
+
+// Title + Wikidata URLs, and sitelink extraction (exact-article path via QID).
+assert.match(buildTitleUrl('The Cobblestone'), /titles=The\+Cobblestone/);
+assert.match(buildTitleUrl('x'), /redirects=1/);
+assert.match(buildWikidataUrl('Q42'), /^https:\/\/www\.wikidata\.org\/w\/api\.php\?/);
+assert.match(buildWikidataUrl('Q42'), /ids=Q42/);
+assert.equal(
+  parseSitelinkTitle({ entities: { Q42: { sitelinks: { enwiki: { title: 'Foo' } } } } }, 'Q42'),
+  'Foo',
+);
+assert.equal(parseSitelinkTitle({ entities: { Q42: { sitelinks: {} } } }, 'Q42'), null);
 
 console.log('✓ enrich ok');

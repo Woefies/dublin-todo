@@ -7,6 +7,16 @@
 const API = 'https://en.wikipedia.org/w/api.php';
 const cache = new Map();
 
+const WIKIDATA_API = 'https://www.wikidata.org/w/api.php';
+// Extract/thumbnail props shared by the title and search queries.
+const EXTRACT_PROPS = {
+  prop: 'extracts|pageimages',
+  exintro: '1',
+  explaintext: '1',
+  piprop: 'thumbnail',
+  pithumbsize: '320',
+};
+
 // Pure: build the API URL. origin=* enables CORS; " Dublin" disambiguates.
 export function buildQueryUrl(name) {
   const params = new URLSearchParams({
@@ -16,13 +26,40 @@ export function buildQueryUrl(name) {
     generator: 'search',
     gsrsearch: `${name} Dublin`,
     gsrlimit: '1',
-    prop: 'extracts|pageimages',
-    exintro: '1',
-    explaintext: '1',
-    piprop: 'thumbnail',
-    pithumbsize: '320',
+    ...EXTRACT_PROPS,
   });
   return `${API}?${params}`;
+}
+
+// Pure: extract by exact article title (used once a Wikidata QID resolves to one).
+export function buildTitleUrl(title) {
+  const params = new URLSearchParams({
+    action: 'query',
+    format: 'json',
+    origin: '*',
+    titles: title,
+    redirects: '1',
+    ...EXTRACT_PROPS,
+  });
+  return `${API}?${params}`;
+}
+
+// Pure: Wikidata call to resolve a QID to its English Wikipedia article title.
+export function buildWikidataUrl(qid) {
+  const params = new URLSearchParams({
+    action: 'wbgetentities',
+    format: 'json',
+    origin: '*',
+    ids: qid,
+    props: 'sitelinks',
+    sitefilter: 'enwiki',
+  });
+  return `${WIKIDATA_API}?${params}`;
+}
+
+// Pure: pull the enwiki article title out of a wbgetentities response, or null.
+export function parseSitelinkTitle(json, qid) {
+  return json?.entities?.[qid]?.sitelinks?.enwiki?.title ?? null;
 }
 
 // Pure: pull the single page out of a query response, or null if none/no text.
@@ -45,11 +82,27 @@ export async function enrich(feature) {
   const id = feature.properties.id;
   if (cache.has(id)) return cache.get(id);
 
+  const p = feature.properties;
   let result = null;
   try {
-    const name = feature.properties.wikipedia ?? feature.properties.name;
-    const res = await fetch(buildQueryUrl(name));
-    if (res.ok) result = parseWikiResponse(await res.json());
+    // Verified QID → fetch that exact article (no guessing). Otherwise fall back
+    // to a name search, but reject a hit whose intro isn't about a Dublin/Ireland
+    // place — that's what pulled up "Blackbird" the film for the pub.
+    let title = null;
+    if (p.wikidata) {
+      const wd = await fetch(buildWikidataUrl(p.wikidata));
+      if (wd.ok) title = parseSitelinkTitle(await wd.json(), p.wikidata);
+    }
+    if (title) {
+      const res = await fetch(buildTitleUrl(title));
+      if (res.ok) result = parseWikiResponse(await res.json());
+    } else {
+      const res = await fetch(buildQueryUrl(p.wikipedia ?? p.name));
+      if (res.ok) {
+        const hit = parseWikiResponse(await res.json());
+        result = hit && /dublin|ireland/i.test(hit.extract) ? hit : null;
+      }
+    }
   } catch {
     result = null;
   }
