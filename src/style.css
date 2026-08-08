@@ -654,7 +654,15 @@ body,
   .brand-sub {
     display: none;
   }
+  #theme-toggle {
+    top: 0;
+    right: 0;
+  }
 
+  #search-input {
+    font-size: var(--fs-md);
+  }
+  
   #filters {
     flex-wrap: nowrap;
     overflow-x: auto;
