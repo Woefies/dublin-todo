@@ -5,6 +5,10 @@ import { orderedCategories, categoryFilter, renderChips } from './filters.js';
 import { searchPOIs } from './search.js';
 import { parseHash, buildHash } from './urlstate.js';
 import { enrich } from './enrich.js';
+import { addCategoryIcons, primaryCategory } from './icons.js';
+
+// Layers that represent POIs — filter + interaction apply to both.
+const POI_LAYERS = ['pois', 'poi-icons'];
 
 const FEE_LABELS = { free: 'Free', paid: 'Paid', unknown: 'Fee unknown' };
 
@@ -135,17 +139,32 @@ function renderSearchResults(results) {
 map.on('load', async () => {
   data = await fetch(`${import.meta.env.BASE_URL}data/pois.geojson`).then((r) => r.json());
 
+  await addCategoryIcons(map);
+  // Tag each POI with one category for its pin glyph (chips still use the full array).
+  for (const f of data.features) f.properties.icon = primaryCategory(f.properties.categories);
+
   map.addSource('pois', { type: 'geojson', data });
   map.addLayer({
     id: 'pois',
     type: 'circle',
     source: 'pois',
     paint: {
-      // Book-of-Kells gold pins with an ink outline; grow gently with zoom.
-      'circle-radius': ['interpolate', ['linear'], ['zoom'], 11, 5, 16, 8],
+      // Book-of-Kells gold disc with an ink outline; grows gently with zoom.
+      'circle-radius': ['interpolate', ['linear'], ['zoom'], 11, 9, 16, 12],
       'circle-color': '#c8a24a',
       'circle-stroke-width': 2,
       'circle-stroke-color': '#0e1611',
+    },
+  });
+  map.addLayer({
+    id: 'poi-icons',
+    type: 'symbol',
+    source: 'pois',
+    layout: {
+      'icon-image': ['get', 'icon'],
+      'icon-size': 0.78,
+      'icon-allow-overlap': true,
+      'icon-ignore-placement': true,
     },
   });
 
@@ -166,23 +185,26 @@ map.on('load', async () => {
   }
 
   const apply = () => {
-    map.setFilter('pois', categoryFilter(active));
+    const f = categoryFilter(active);
+    for (const layer of POI_LAYERS) map.setFilter(layer, f);
     writeHash();
   };
 
   renderChips(document.getElementById('filters'), categories, active, apply);
   apply();
 
-  map.on('click', 'pois', (e) => {
-    const feature = e.features[0];
-    if (feature) selectPOI(feature.properties.id);
-  });
-  map.on('mouseenter', 'pois', () => {
-    map.getCanvas().style.cursor = 'pointer';
-  });
-  map.on('mouseleave', 'pois', () => {
-    map.getCanvas().style.cursor = '';
-  });
+  for (const layer of POI_LAYERS) {
+    map.on('click', layer, (e) => {
+      const feature = e.features[0];
+      if (feature) selectPOI(feature.properties.id);
+    });
+    map.on('mouseenter', layer, () => {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+    map.on('mouseleave', layer, () => {
+      map.getCanvas().style.cursor = '';
+    });
+  }
   map.on('moveend', writeHash);
 
   searchInput.addEventListener('input', () => {
