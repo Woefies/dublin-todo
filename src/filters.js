@@ -2,6 +2,8 @@
 // expression, and render toggle chips. Pure functions here are node-testable
 // (no DOM at import time); see scripts/check-filters.mjs.
 
+import { categoryIconSvg } from './icons.js';
+
 const CATEGORY_ORDER = ['historic', 'museum', 'parks', 'food', 'pubs', 'shopping'];
 const LABELS = {
   historic: 'Historic',
@@ -34,7 +36,7 @@ export function renderChips(container, categories, active, onChange) {
   for (const { id, label, count } of categories) {
     const btn = document.createElement('button');
     btn.className = 'chip';
-    btn.textContent = `${label} (${count})`;
+    btn.innerHTML = `${categoryIconSvg(id)}<span>${label}</span><span class="chip-count">${count}</span>`;
     btn.setAttribute('aria-pressed', String(active.has(id)));
     btn.addEventListener('click', () => {
       if (active.has(id)) active.delete(id);

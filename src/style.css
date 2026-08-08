@@ -149,10 +149,13 @@ body {
 }
 
 .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-family: var(--font-ui);
   border: 1px solid var(--brass);
   border-radius: 999px;
-  padding: 6px 13px;
+  padding: 6px 12px;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -160,6 +163,16 @@ body {
   background: transparent;
   color: var(--vellum-dim);
   transition: transform 0.12s ease, background 0.12s ease, color 0.12s ease;
+}
+
+.chip svg {
+  flex: 0 0 auto;
+}
+
+.chip-count {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  opacity: 0.7;
 }
 
 .chip:hover {
