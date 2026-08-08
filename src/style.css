@@ -461,7 +461,7 @@ body,
   top: 0;
   right: 0;
   bottom: 0;
-  width: 340px;
+  width: 400px;
   max-width: 100%;
   background: var(--surface-raised);
   border-top: 3px solid var(--accent);
@@ -553,6 +553,7 @@ body,
 
 .detail-enrich img {
   max-width: 100%;
+  width: 100%;
   border-radius: var(--r-sm);
   border: 1px solid var(--border);
   margin-bottom: 10px;
