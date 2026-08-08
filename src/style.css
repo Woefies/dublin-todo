@@ -288,7 +288,7 @@ body::after {
   color: var(--text-muted);
   background: var(--surface-sunken);
   border: 1px solid var(--border-strong);
-  border-radius: var(--r-pill);
+  border-radius: var(--r-sm);
   padding: 5px 12px;
   cursor: pointer;
   transition:
@@ -406,7 +406,7 @@ body,
   gap: 6px;
   font-family: var(--font-ui);
   border: 1px solid var(--border-strong);
-  border-radius: var(--r-pill);
+  border-radius: var(--r-sm);
   padding: 6px 12px;
   font-size: var(--fs-md);
   font-weight: 600;
@@ -515,8 +515,8 @@ body,
   color: var(--text);
 }
 
-.detail-categories {
-  color: var(--text-faint);
+#detail .detail-categories {
+  color: var(--accent);
   font-family: var(--font-ui);
   font-size: var(--fs-xs);
   margin: 0 0 12px;
@@ -540,6 +540,47 @@ body,
 }
 
 #detail a:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Visit-website call to action: a filled accent button (ink text — never white
+   on pink, per the contrast rule). id+element+class beats the plain #detail a. */
+#detail a.detail-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+  padding: 11px 20px;
+  background: var(--accent);
+  color: var(--text-on-accent);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: var(--fs-base);
+  text-decoration: none;
+  border-radius: var(--r-sm);
+  box-shadow: var(--shadow-1);
+  transition:
+    background var(--dur-fast) var(--ease),
+    transform var(--dur-fast) var(--ease);
+}
+
+#detail a.detail-cta .cta-arrow {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+#detail a.detail-cta:hover {
+  background: var(--accent-2);
+}
+
+#detail a.detail-cta:hover .cta-arrow {
+  transform: translateX(3px);
+}
+
+#detail a.detail-cta:focus-visible {
   outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
@@ -570,25 +611,25 @@ body,
 }
 
 /* --- Fee badge (always paired with its text label, never hue alone) --- */
-.fee-badge {
+#detail .fee-badge {
   display: inline-block;
   padding: 3px 11px;
-  border-radius: var(--r-pill);
+  border-radius: var(--r-sm);
   font-size: var(--fs-sm);
   font-weight: 600;
 }
 
-.fee-badge.fee-free {
-  background: var(--success-bg);
+#detail .fee-badge.fee-free {
+  background: var(--accent-2);
   color: var(--success);
 }
 
-.fee-badge.fee-paid {
-  background: var(--error-bg);
-  color: var(--error);
+#detail .fee-badge.fee-paid {
+  background: var(--accent);
+  color: var(--text-on-accent);
 }
 
-.fee-badge.fee-unknown {
+#detail .fee-badge.fee-unknown {
   background: var(--surface);
   color: var(--text-faint);
 }
@@ -597,11 +638,37 @@ body,
 @media (max-width: 600px) {
   #controls {
     max-width: none;
-    right: 14px;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 12px;
+    gap: 8px;
   }
 
   .brand-word {
     font-size: var(--fs-brand-sm);
+  }
+
+  /* Trim panel height: drop the subtitle and scroll the chips in one row
+     instead of letting them wrap into several tall lines. */
+  .brand-sub {
+    display: none;
+  }
+
+  #filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  #filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .chip {
+    flex: 0 0 auto;
   }
 
   #detail {

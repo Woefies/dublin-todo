@@ -13,6 +13,11 @@ const POI_LAYERS = ['pois'];
 
 const FEE_LABELS = { free: 'Free', paid: 'Paid', unknown: 'Fee unknown' };
 
+// Material Symbol arrow_right_alt, currentColor so it inherits the CTA text ink.
+const ARROW_ICON =
+  '<svg class="cta-arrow" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">' +
+  '<path d="m560-242-43-42 168-168H160v-60h525L516-681l43-42 241 241-240 240Z"/></svg>';
+
 const map = createMap('map');
 
 const detail = document.getElementById('detail');
@@ -88,7 +93,7 @@ function openDetail(feature) {
     ${p.summary ? `<p>${escapeHtml(p.summary)}</p>` : ''}
     ${p.address ? `<p class="detail-address">${escapeHtml(p.address)}</p>` : ''}
     <p class="fee-badge fee-${p.fee ?? 'unknown'}">${fee}</p>
-    ${p.url ? `<p><a href="${escapeHtml(p.url)}" target="_blank" rel="noopener">Visit website</a></p>` : ''}
+    ${p.url ? `<p><a class="detail-cta" href="${escapeHtml(p.url)}" target="_blank" rel="noopener">Visit website${ARROW_ICON}</a></p>` : ''}
     <div class="detail-enrich" aria-live="polite"></div>
   `;
 

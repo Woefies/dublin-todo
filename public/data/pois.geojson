@@ -44,7 +44,7 @@
         "address": "St James's Gate, Dublin 8",
         "fee": "paid",
         "url": "https://www.guinness-storehouse.com/",
-        "wikidata": null,
+        "wikidata": "Q261012",
         "image": null
       }
     },
@@ -67,7 +67,7 @@
         "address": "St Stephen's Green, Dublin 2",
         "fee": "free",
         "url": null,
-        "wikidata": null,
+        "wikidata": "Q1432605",
         "image": null
       }
     },
@@ -91,7 +91,7 @@
         "address": "Inchicore Rd, Dublin 8",
         "fee": "paid",
         "url": "https://kilmainhamgaolmuseum.ie/",
-        "wikidata": null,
+        "wikidata": "Q1049842",
         "image": null
       }
     },
@@ -184,7 +184,7 @@
         "address": "St Patrick's Close, Dublin 8",
         "fee": "paid",
         "url": "https://www.stpatrickscathedral.ie/",
-        "wikidata": null,
+        "wikidata": "Q846365",
         "image": null
       }
     },
@@ -207,7 +207,7 @@
         "address": "Bachelors Walk, Dublin 1",
         "fee": "free",
         "url": null,
-        "wikidata": null,
+        "wikidata": "Q1034624",
         "image": null
       }
     },
@@ -230,7 +230,7 @@
         "address": "O'Connell St, Dublin 1",
         "fee": "free",
         "url": null,
-        "wikidata": null,
+        "wikidata": "Q1134365",
         "image": null
       }
     },
@@ -277,7 +277,7 @@
         "address": "Custom House Quay, Dublin 1",
         "fee": "free",
         "url": null,
-        "wikidata": null,
+        "wikidata": "Q2300561",
         "image": null
       }
     },
@@ -300,7 +300,7 @@
         "address": "Inns Quay, Dublin 7",
         "fee": "free",
         "url": null,
-        "wikidata": null,
+        "wikidata": "Q1439960",
         "image": null
       }
     },
@@ -369,7 +369,7 @@
         "address": "Merrion Sq W, Dublin 2",
         "fee": "free",
         "url": "https://www.nationalgallery.ie/",
-        "wikidata": null,
+        "wikidata": "Q2018379",
         "image": null
       }
     },
@@ -392,7 +392,7 @@
         "address": "Merrion St, Dublin 2",
         "fee": "free",
         "url": "https://www.museum.ie/",
-        "wikidata": null,
+        "wikidata": "Q6033599",
         "image": null
       }
     },
@@ -439,7 +439,7 @@
         "address": "CHQ, Custom House Quay, Dublin 1",
         "fee": "paid",
         "url": "https://epicchq.com/",
-        "wikidata": null,
+        "wikidata": "Q29831711",
         "image": null
       }
     },
@@ -462,7 +462,7 @@
         "address": "Dublin Castle, Dublin 2",
         "fee": "free",
         "url": "https://chesterbeatty.ie/",
-        "wikidata": null,
+        "wikidata": "Q391976",
         "image": null
       }
     },
@@ -485,7 +485,7 @@
         "address": "15 St Stephen's Green, Dublin 2",
         "fee": "paid",
         "url": "https://www.littlemuseum.ie/",
-        "wikidata": null,
+        "wikidata": "Q7747675",
         "image": null
       }
     },
@@ -532,7 +532,7 @@
         "address": "Charlemont House, Parnell Sq N, Dublin 1",
         "fee": "free",
         "url": "https://www.hughlane.ie/",
-        "wikidata": null,
+        "wikidata": "Q496040",
         "image": null
       }
     },
@@ -556,7 +556,7 @@
         "address": "St Michael's Hill, Dublin 8",
         "fee": "paid",
         "url": "https://www.dublinia.ie/",
-        "wikidata": null,
+        "wikidata": "Q5311029",
         "image": null
       }
     },
@@ -579,7 +579,7 @@
         "address": "Twilfit House, Jervis St, Dublin 1",
         "fee": "paid",
         "url": "https://www.leprechaunmuseum.ie/",
-        "wikidata": null,
+        "wikidata": "Q2811931",
         "image": null
       }
     },
@@ -625,7 +625,7 @@
         "address": "Clonmel St, Dublin 2",
         "fee": "free",
         "url": null,
-        "wikidata": null,
+        "wikidata": "Q12060818",
         "image": null
       }
     },
@@ -648,7 +648,7 @@
         "address": "Phoenix Park, Dublin 8",
         "fee": "free",
         "url": null,
-        "wikidata": null,
+        "wikidata": "Q377937",
         "image": null
       }
     },
@@ -672,7 +672,7 @@
         "address": "Parnell Sq E, Dublin 1",
         "fee": "free",
         "url": null,
-        "wikidata": null,
+        "wikidata": "Q375501",
         "image": null
       }
     },
@@ -837,7 +837,7 @@
         "address": "20 Lower Bridge St, Dublin 8",
         "fee": "unknown",
         "url": null,
-        "wikidata": null,
+        "wikidata": "Q17006015",
         "image": null
       }
     },
@@ -884,7 +884,7 @@
         "address": "1 Dame Ct, Dublin 2",
         "fee": "unknown",
         "url": null,
-        "wikidata": null,
+        "wikidata": "Q16900633",
         "image": null
       }
     },
@@ -908,7 +908,7 @@
         "address": "8 Poolbeg St, Dublin 2",
         "fee": "unknown",
         "url": null,
-        "wikidata": null,
+        "wikidata": "Q6934236",
         "image": null
       }
     },
@@ -954,7 +954,7 @@
         "address": "Grafton St, Dublin 2",
         "fee": "free",
         "url": null,
-        "wikidata": null,
+        "wikidata": "Q135501",
         "image": null
       }
     },
@@ -978,7 +978,7 @@
         "address": "South Great George's St, Dublin 2",
         "fee": "free",
         "url": null,
-        "wikidata": null,
+        "wikidata": "Q5535867",
         "image": null
       }
     },
@@ -1002,7 +1002,7 @@
         "address": "59 South William St, Dublin 2",
         "fee": "free",
         "url": null,
-        "wikidata": null,
+        "wikidata": "Q30327821",
         "image": null
       }
     },
@@ -1048,7 +1048,7 @@
         "address": "Henry St, Dublin 1",
         "fee": "free",
         "url": null,
-        "wikidata": null,
+        "wikidata": "Q5728802",
         "image": null
       }
     },
@@ -1069,7 +1069,8 @@
         ],
         "address": "57 clanbrassil St lower portobello, Dublin 8",
         "url": "https://thelibertinedublin.ie/",
-        "image": null
+        "image": null,
+        "fee": "free"
       }
     },
     {
@@ -1089,7 +1090,9 @@
           "pubs"
         ],
         "url": "https://www.spottedbylocals.com/dublin/teachers-club/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "35 Parnell Square West, Dublin"
       }
     },
     {
@@ -1109,7 +1112,10 @@
           "pubs"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-cobblestone/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "77 North King Street, Dublin, D07 TP22",
+        "wikidata": "Q131191440"
       }
     },
     {
@@ -1128,7 +1134,9 @@
           "pubs"
         ],
         "url": "https://www.spottedbylocals.com/dublin/hacienda/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Wynnsward Drive, Dundrum"
       }
     },
     {
@@ -1148,7 +1156,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/wigwam/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "54 Middle Abbey Street, Dublin, D01 W573"
       }
     },
     {
@@ -1167,7 +1177,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/bullet/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "27 Mary Street Little, Dublin, D07 HN12"
       }
     },
     {
@@ -1186,7 +1198,9 @@
           "shopping"
         ],
         "url": "https://www.spottedbylocals.com/dublin/dublin-vintage-factory/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Wellington Quay, Dublin, D02 EP63"
       }
     },
     {
@@ -1205,7 +1219,9 @@
           "pubs"
         ],
         "url": "https://www.spottedbylocals.com/dublin/patriots-inn/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "760 South Circular Road, Dublin, D08 HV0A"
       }
     },
     {
@@ -1225,7 +1241,9 @@
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/croppies-acre-memorial-park/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Benburb Street, Dublin"
       }
     },
     {
@@ -1244,7 +1262,10 @@
           "arts"
         ],
         "url": "https://www.spottedbylocals.com/dublin/smock-alley-theatre/",
-        "image": null
+        "image": null,
+        "fee": "unknown",
+        "address": "6-7 Exchange Street Lower, Dublin, D08 T2V0",
+        "wikidata": "Q7545740"
       }
     },
     {
@@ -1264,7 +1285,10 @@
           "pubs"
         ],
         "url": "https://www.spottedbylocals.com/dublin/whelans/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "25 Wexford Street, Dublin, D02 H527",
+        "wikidata": "Q7992381"
       }
     },
     {
@@ -1284,7 +1308,9 @@
           "shopping"
         ],
         "url": "https://www.spottedbylocals.com/dublin/jam-art-factory/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "14 Crown Alley, Dublin, D02 CX67"
       }
     },
     {
@@ -1303,7 +1329,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/doughboys/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "Charlotte Way, Dublin, D02 NP22"
       }
     },
     {
@@ -1323,7 +1351,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-market-bar/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "14a Fade Street, Dublin, D02 HH33"
       }
     },
     {
@@ -1343,7 +1373,9 @@
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/st-audoens-park/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Cook Street, Dublin"
       }
     },
     {
@@ -1362,7 +1394,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/riggers-d8/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "145 Emmet Road, Dublin, D08 VK72"
       }
     },
     {
@@ -1382,7 +1416,10 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/georges-street-arcade/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "South Great George's Street, Dublin, D02 EC94",
+        "wikidata": "Q5535867"
       }
     },
     {
@@ -1402,7 +1439,9 @@
           "landmarks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/love-lane/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Love Lane, Dublin"
       }
     },
     {
@@ -1421,7 +1460,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/terra-madre/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "Bachelors Walk, Dublin, D01 KA66"
       }
     },
     {
@@ -1441,7 +1482,9 @@
           "pubs"
         ],
         "url": "https://www.spottedbylocals.com/dublin/international-bar/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "23 Wicklow Street, Dublin, D02 VH59"
       }
     },
     {
@@ -1460,7 +1503,9 @@
           "pubs"
         ],
         "url": "https://www.spottedbylocals.com/dublin/panti-bar/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "7-8 Capel Street, Dublin, D01 RT73"
       }
     },
     {
@@ -1480,7 +1525,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/rascals-brewing-company/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "Unit 5 Tyrconnell Road, Dublin, D08 HF68"
       }
     },
     {
@@ -1499,7 +1546,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/green-bench-cafe/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "18 Montague Street, Dublin, D02 W963"
       }
     },
     {
@@ -1518,7 +1567,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/sano-pizza/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "Exchange Street Upper, Dublin, D08 AV24"
       }
     },
     {
@@ -1537,7 +1588,9 @@
           "shopping"
         ],
         "url": "https://www.spottedbylocals.com/dublin/liberty-market/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Meath Street, Dublin, D08 P4V2"
       }
     },
     {
@@ -1556,7 +1609,9 @@
           "shopping"
         ],
         "url": "https://www.spottedbylocals.com/dublin/meath-street/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "61-63 Meath Street, Dublin, D08 P4V2"
       }
     },
     {
@@ -1575,7 +1630,9 @@
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/bushy-park/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Rathdown Avenue, Dublin"
       }
     },
     {
@@ -1594,7 +1651,10 @@
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/blessington-street-basin/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Primrose Street, Dublin",
+        "wikidata": "Q883906"
       }
     },
     {
@@ -1614,7 +1674,10 @@
           "historic"
         ],
         "url": "https://www.spottedbylocals.com/dublin/marshs-library/",
-        "image": null
+        "image": null,
+        "fee": "unknown",
+        "address": "St. Patrick's Close, Dublin, D08 H6X3",
+        "wikidata": "Q1238147"
       }
     },
     {
@@ -1633,7 +1696,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/luncheonette/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "100 Thomas Street, Dublin, D08 V0R1"
       }
     },
     {
@@ -1653,7 +1718,9 @@
           "shopping"
         ],
         "url": "https://www.spottedbylocals.com/dublin/lolly-and-cooks/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "Forbes Street, Dublin, D02 E295"
       }
     },
     {
@@ -1672,7 +1739,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-pepper-pot-cafe/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "Coppinger Row, Dublin, D02 YX77"
       }
     },
     {
@@ -1691,7 +1760,9 @@
           "historic"
         ],
         "url": "https://www.spottedbylocals.com/dublin/whitefriar-street-church/",
-        "image": null
+        "image": null,
+        "fee": "unknown",
+        "address": "Aungier Street, Dublin, D02 RW67"
       }
     },
     {
@@ -1710,7 +1781,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/neon/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "17 Camden Street Lower, Dublin, D02 EC96"
       }
     },
     {
@@ -1730,7 +1803,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-bridge-1859/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "13 Ballsbridge Terrace, Dublin, D04 C7K6"
       }
     },
     {
@@ -1750,7 +1825,9 @@
           "shopping"
         ],
         "url": "https://www.spottedbylocals.com/dublin/irish-design-shop/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "41 Drury Street, Dublin, D02 RX95"
       }
     },
     {
@@ -1769,7 +1846,10 @@
           "landmarks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/samuel-beckett-bridge/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Sir John Rogerson's Quay, Dublin, D02 E448",
+        "wikidata": "Q1193916"
       }
     },
     {
@@ -1789,7 +1869,10 @@
           "nature"
         ],
         "url": "https://www.spottedbylocals.com/dublin/poolbeg-lighthouse/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Great South Wall, Dublin",
+        "wikidata": "Q7228600"
       }
     },
     {
@@ -1808,7 +1891,9 @@
           "landmarks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/diving-bell/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Sir John Rogerson's Quay, Dublin, D02 KV60"
       }
     },
     {
@@ -1827,7 +1912,10 @@
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/herbert-park/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Home Villas, Dublin",
+        "wikidata": "Q4342218"
       }
     },
     {
@@ -1846,7 +1934,10 @@
           "pubs"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-ginger-man/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "39-40 Fenian Street, Dublin, D02 KD51",
+        "wikidata": "Q65330193"
       }
     },
     {
@@ -1866,7 +1957,9 @@
           "historic"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-confession-box/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "88 Marlborough Street, Dublin, D01 X267"
       }
     },
     {
@@ -1885,7 +1978,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/griolladh/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "Saint John's Road West, Dublin, D08 E2CV"
       }
     },
     {
@@ -1904,7 +1999,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/govindas/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "83 Middle Abbey Street, Dublin, D01 W573"
       }
     },
     {
@@ -1923,7 +2020,9 @@
           "shopping"
         ],
         "url": "https://www.spottedbylocals.com/dublin/needful-things/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "3 Aungier Street, Dublin, D02 WN47"
       }
     },
     {
@@ -1943,7 +2042,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/red-stables-market/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "Mount Prospect Avenue, Dublin"
       }
     },
     {
@@ -1962,7 +2063,9 @@
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/griffith-avenue/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Griffith Avenue, Dublin"
       }
     },
     {
@@ -1981,7 +2084,10 @@
           "landmarks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/apples-and-atoms/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "College Green, Dublin, D02 VR66",
+        "wikidata": "Q106595811"
       }
     },
     {
@@ -2001,7 +2107,10 @@
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/river-dodder/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Firhouse Road, Templeogue",
+        "wikidata": "Q2055328"
       }
     },
     {
@@ -2009,8 +2118,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -6.287861,
-          53.3419192
+          -6.248870187040289,
+          53.33311405757114
         ]
       },
       "properties": {
@@ -2021,7 +2130,9 @@
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-grand-canal/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "40 Mespil Road, Dublin, D04 E7N2"
       }
     },
     {
@@ -2040,7 +2151,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-ramen-bar/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "William Street South, Dublin, D02 PX38"
       }
     },
     {
@@ -2059,7 +2172,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-tram-cafe/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "Walsh Road, Dublin"
       }
     },
     {
@@ -2079,7 +2194,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-black-sheep/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "61-63 Capel Street, Dublin, D01 N6E8"
       }
     },
     {
@@ -2099,7 +2216,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/blackbird/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "82-84 Rathmines Road Lower, Dublin, D06 Y5Y8"
       }
     },
     {
@@ -2119,7 +2238,10 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/irish-film-institute/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "6 Eustace Street, Dublin, D02 PD85",
+        "wikidata": "Q6070747"
       }
     },
     {
@@ -2138,7 +2260,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/admiral/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "Admiral Brown Street, Dublin, D02 X525"
       }
     },
     {
@@ -2157,7 +2281,10 @@
           "landmarks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/memorial-to-human-rights-defenders/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "St. Stephen's Green, Dublin",
+        "wikidata": "Q129406744"
       }
     },
     {
@@ -2176,7 +2303,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/dash-burger/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "159 Capel Street, Dublin, D01 RT73"
       }
     },
     {
@@ -2195,7 +2324,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/mish-mash/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "Capel Street, Dublin, D01 CX97"
       }
     },
     {
@@ -2215,7 +2346,9 @@
           "landmarks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-icon-walk/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "14-18 Aston Quay, Dublin, D02 N2Y4"
       }
     },
     {
@@ -2234,7 +2367,9 @@
           "nature"
         ],
         "url": "https://www.spottedbylocals.com/dublin/sandymount-beach/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Strand Road, Dublin"
       }
     },
     {
@@ -2253,7 +2388,9 @@
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/merrion-square-park/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Merrion Square North, Dublin"
       }
     },
     {
@@ -2273,7 +2410,10 @@
           "historic"
         ],
         "url": "https://www.spottedbylocals.com/dublin/moore-street/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "13 Moore Street, Dublin",
+        "wikidata": "Q6908239"
       }
     },
     {
@@ -2292,7 +2432,10 @@
           "landmarks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/rosie-hackett-bridge/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Rosie Hackett Bridge, Dublin, D01 V6F4",
+        "wikidata": "Q6771685"
       }
     },
     {
@@ -2311,7 +2454,9 @@
           "landmarks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/that-one-corner-in-temple-bar/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "1 Temple Bar, Dublin, D02 N725"
       }
     },
     {
@@ -2330,7 +2475,9 @@
           "landmarks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/meath-street-grotto/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Meath Street, Dublin, D08 A2C7"
       }
     },
     {
@@ -2349,7 +2496,10 @@
           "shopping"
         ],
         "url": "https://www.spottedbylocals.com/dublin/chapters-bookstore/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Parnell Street, Dublin, D01 H308",
+        "wikidata": "Q99473068"
       }
     },
     {
@@ -2369,7 +2519,9 @@
           "landmarks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/wall-of-fame/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Curved Street, Dublin, D02 YP77"
       }
     },
     {
@@ -2388,7 +2540,9 @@
           "nature"
         ],
         "url": "https://www.spottedbylocals.com/dublin/howth-walks/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Howth Cliff Path, Howth"
       }
     },
     {
@@ -2407,7 +2561,9 @@
           "nature"
         ],
         "url": "https://www.spottedbylocals.com/dublin/shelley-banks-beach/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Pigeon House Road, Dublin"
       }
     },
     {
@@ -2427,7 +2583,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/john-fallons/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "Dean Street, Dublin, D08 NP52"
       }
     },
     {
@@ -2446,7 +2604,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/dublin-barista-school/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "18 Anne Street South, Dublin, D02 VF29"
       }
     },
     {
@@ -2466,7 +2626,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/dublin-flea-market/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "101-103 James's Street, Dublin, D08 X20N"
       }
     },
     {
@@ -2486,7 +2648,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-dog-house-blues-tea-rooms/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "Howth Road, Howth, D13 EY10"
       }
     },
     {
@@ -2505,7 +2669,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/beanhive-coffee/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "26 Dawson Street, Dublin, D02 TK33"
       }
     },
     {
@@ -2524,7 +2690,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/artisan-brew-academy/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "118 Thomas Street, Dublin, D08 CK82"
       }
     },
     {
@@ -2544,7 +2712,9 @@
           "arts"
         ],
         "url": "https://www.spottedbylocals.com/dublin/freebird-records/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "16 Wicklow Street, Dublin, D02 FK27"
       }
     },
     {
@@ -2563,7 +2733,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-hot-donut/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "37 O'Connell Street Upper, Dublin, D01 F9C1"
       }
     },
     {
@@ -2582,7 +2754,10 @@
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/marlay-park/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Grange Road, Ballyboden",
+        "wikidata": "Q6771610"
       }
     },
     {
@@ -2602,7 +2777,9 @@
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-peace-tree/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Watermill Road, Dublin"
       }
     },
     {
@@ -2622,7 +2799,9 @@
           "nature"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-national-botanical-gardens/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "River Gardens, Dublin"
       }
     },
     {
@@ -2641,7 +2820,9 @@
           "landmarks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-famine-memorial/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Custom House Quay, Dublin 1, Ireland"
       }
     },
     {
@@ -2660,7 +2841,9 @@
           "nature"
         ],
         "url": "https://www.spottedbylocals.com/dublin/dublin-bay-walks/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "South Bank Road, Dublin"
       }
     },
     {
@@ -2680,7 +2863,9 @@
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/visitor-centre-of-phoenix-park/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Nunciature Road, Dublin"
       }
     },
     {
@@ -2699,7 +2884,9 @@
           "music"
         ],
         "url": "https://www.spottedbylocals.com/dublin/music-under-the-bridges/",
-        "image": null
+        "image": null,
+        "fee": "unknown",
+        "address": "Liffey Boardwalk, Dublin, D01 NW14"
       }
     },
     {
@@ -2719,7 +2906,9 @@
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/farmleigh-house/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "White's Road, Castleknock"
       }
     },
     {
@@ -2739,7 +2928,9 @@
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/killiney-hill-park/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Vico Road, Killiney"
       }
     },
     {
@@ -2759,7 +2950,9 @@
           "food"
         ],
         "url": "https://www.spottedbylocals.com/dublin/kalabasa-market/",
-        "image": null
+        "image": null,
+        "fee": "paid",
+        "address": "91-93 Middle Abbey Street, Dublin, D01 W573"
       }
     },
     {
@@ -2779,7 +2972,9 @@
           "pubs"
         ],
         "url": "https://www.spottedbylocals.com/dublin/pipers-corner/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "105-106 Marlborough Street, Dublin, D01 FD28"
       }
     },
     {
@@ -2798,7 +2993,9 @@
           "parks"
         ],
         "url": "https://www.spottedbylocals.com/dublin/medikate-garden/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "Back of the Pipes, Dublin"
       }
     },
     {
@@ -2818,7 +3015,9 @@
           "pubs"
         ],
         "url": "https://www.spottedbylocals.com/dublin/fibber-magees/",
-        "image": null
+        "image": null,
+        "fee": "free",
+        "address": "80-81 Parnell Street, Dublin, D01 CK74"
       }
     }
   ]
