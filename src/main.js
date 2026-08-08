@@ -5,10 +5,10 @@ import { orderedCategories, categoryFilter, renderChips } from './filters.js';
 import { searchPOIs } from './search.js';
 import { parseHash, buildHash } from './urlstate.js';
 import { enrich } from './enrich.js';
-import { addCategoryIcons, primaryCategory } from './icons.js';
+import { addCategoryIcons, primaryCategory, pinImageId } from './icons.js';
 
-// Layers that represent POIs — filter + interaction apply to both.
-const POI_LAYERS = ['pois', 'poi-icons'];
+// Layers that represent clickable POIs — filter + interaction apply to these.
+const POI_LAYERS = ['pois'];
 
 const FEE_LABELS = { free: 'Free', paid: 'Paid', unknown: 'Fee unknown' };
 
@@ -154,10 +154,16 @@ function renderSearchResults(results, query) {
 // our own POI layers. Best-effort per layer — a style-schema change upstream
 // shouldn't break the whole map.
 function retuneBasemap(map) {
-  const ownLayers = new Set(['pois', 'poi-icons', 'poi-selected']);
+  const ownLayers = new Set(['pois', 'poi-selected']);
   for (const layer of map.getStyle().layers) {
     if (ownLayers.has(layer.id)) continue;
     try {
+      // Hide the basemap's own POI layers entirely (brown Maki icons + white
+      // badges + their labels) — our pins are the only POIs shown.
+      if (layer.id.includes('poi')) {
+        map.setLayoutProperty(layer.id, 'visibility', 'none');
+        continue;
+      }
       if (layer.type === 'background') {
         map.setPaintProperty(layer.id, 'background-color', '#E7F1F7');
       } else if (layer.id.includes('water')) {
@@ -173,6 +179,9 @@ function retuneBasemap(map) {
       } else if (layer.type === 'symbol') {
         map.setPaintProperty(layer.id, 'text-color', '#33474F');
         map.setPaintProperty(layer.id, 'text-halo-color', '#F4FAFD');
+        // Hide the basemap's own POI sprite icons (brown Maki glyphs with white
+        // halos) so only our pins carry iconography.
+        map.setPaintProperty(layer.id, 'icon-opacity', 0);
       }
     } catch {
       // Some layers don't support the property being set (e.g. no fill-color
@@ -189,45 +198,36 @@ map.on('load', async () => {
 
   await addCategoryIcons(map);
   // Tag each POI with one category for its pin glyph (chips still use the full array).
-  for (const f of data.features) f.properties.icon = primaryCategory(f.properties.categories);
+  for (const f of data.features)
+    f.properties.icon = pinImageId(primaryCategory(f.properties.categories));
 
   map.addSource('pois', { type: 'geojson', data });
-  map.addLayer({
-    id: 'pois',
-    type: 'circle',
-    source: 'pois',
-    paint: {
-      // Chrome-pink disc with an ink outline; grows gently with zoom.
-      'circle-radius': ['interpolate', ['linear'], ['zoom'], 11, 9, 16, 12],
-      'circle-color': '#F0589F',
-      'circle-stroke-width': 2,
-      'circle-stroke-color': '#17252E',
-    },
-  });
-  map.addLayer({
-    id: 'poi-icons',
-    type: 'symbol',
-    source: 'pois',
-    layout: {
-      'icon-image': ['get', 'icon'],
-      'icon-size': 0.78,
-      'icon-allow-overlap': true,
-      'icon-ignore-placement': true,
-    },
-  });
-  // Selected-marker highlight: a lime-ringed, larger duplicate of the poi disc,
-  // filtered to the selected id via selectPOI()/closeDetail(). No top-level
-  // feature id in this source, so filter on the id property (not feature-state).
+
+  // Selected-marker halo: a lime disc drawn UNDER the pins, so a lime rim shows
+  // around the selected pin. Filtered to the selected id (no top-level feature
+  // id in this source, so filter on the id property, not feature-state).
   map.addLayer({
     id: 'poi-selected',
     type: 'circle',
     source: 'pois',
     filter: ['==', ['get', 'id'], ''],
     paint: {
-      'circle-radius': ['interpolate', ['linear'], ['zoom'], 11, 13, 16, 17],
-      'circle-color': '#F0589F',
-      'circle-stroke-width': 3,
-      'circle-stroke-color': '#B4DD3A',
+      'circle-radius': ['interpolate', ['linear'], ['zoom'], 11, 21, 16, 24],
+      'circle-color': '#f0589f',
+    },
+  });
+
+  // Pins: one composited image each (pink disc + ink Material glyph), so pins
+  // stay whole when they overlap and the basemap never bleeds through the glyph.
+  map.addLayer({
+    id: 'pois',
+    type: 'symbol',
+    source: 'pois',
+    layout: {
+      'icon-image': ['get', 'icon'],
+      'icon-size': 1,
+      'icon-allow-overlap': true,
+      'icon-ignore-placement': true,
     },
   });
 

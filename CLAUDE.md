@@ -54,10 +54,12 @@ assets are ever required).
 
 Map markers (`src/main.js`, `src/icons.js`) are hard-coded hex in the layer
 paint since MapLibre paint can't read CSS vars — keep in sync with the tokens:
-`pois` layer is `--primary` `#f0589f` fill / `#17252e` stroke; icon glyph
-strokes are `#17252e`. A dedicated `poi-selected` circle layer (above
-`poi-icons`, same source) highlights the active POI with a larger radius and a
-`--secondary` lime stroke ring; its filter is set/cleared by
+Pins are single composited images (pink `#f0589f` disc + ink `#17252e` glyph
+baked together in `src/icons.js` `svgDoc`), drawn by one symbol layer `pois` —
+composited so overlapping pins stay whole and the basemap can't bleed through
+the glyph. Category glyphs are Material Symbols (Outlined) paths; chips reuse
+the glyph alone via `categoryIconSvg` (`currentColor`). A `poi-selected` lime circle layer drawn UNDER `pois` (same source) shows a lime
+halo rim around the active pin; its filter is set/cleared by
 `selectPOI()`/`closeDetail()` via the `id` property (the source has no
 top-level feature id, so this is a property filter, not feature-state). On
 load, `retuneBasemap()` walks `map.getStyle().layers` and recolors the

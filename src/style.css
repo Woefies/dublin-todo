@@ -44,9 +44,20 @@
   --shadow-1: 0 2px 8px rgba(23, 37, 46, 0.1);
   --shadow-2: 0 8px 30px rgba(23, 37, 46, 0.16);
   --shadow-bloom: 0 10px 40px rgba(240, 88, 159, 0.35);
-  --dur-fast: 120ms;
+  --dur-fast: 180ms;
   --dur: 180ms;
   --ease: cubic-bezier(0.3, 0.7, 0, 1);
+
+  /* type scale (one token per size — no reuse of raw px) */
+  --fs-xs: 14px;
+  --fs-sm: 15px;
+  --fs-md: 15px;
+  --fs-base: 16px;
+  --fs-lg: 18px;
+  --fs-xl: 22px;
+  --fs-2xl: 26px;
+  --fs-brand-sm: 32px;
+  --fs-brand: 40px;
 }
 
 html,
@@ -83,7 +94,7 @@ body::after {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-width: 360px;
+  max-width: 460px;
   padding: 16px;
   /* Solid fallback first, blur layered on top where supported. */
   background: var(--surface-1);
@@ -105,10 +116,9 @@ body::after {
   margin: 0;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 40px;
+  font-size: var(--fs-brand);
   line-height: 0.9;
   letter-spacing: -0.02em;
-  text-transform: lowercase;
   color: var(--text-strong);
 }
 
@@ -118,9 +128,8 @@ body::after {
 
 .brand-sub {
   margin: 6px 0 0;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.18em;
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
   text-transform: uppercase;
   color: var(--text-faint);
   padding-top: 8px;
@@ -131,7 +140,7 @@ body::after {
 #search-input {
   font-family: var(--font-ui);
   padding: 10px 13px;
-  font-size: 14px;
+  font-size: var(--fs-lg);
   color: var(--text-strong);
   background: var(--surface-2);
   border: 1px solid var(--border-ui);
@@ -172,7 +181,7 @@ body::after {
   border-radius: var(--r-sm);
   background: none;
   font-family: var(--font-ui);
-  font-size: 13px;
+  font-size: var(--fs-base);
   color: var(--text-strong);
   cursor: pointer;
 }
@@ -192,7 +201,7 @@ body::after {
 .search-empty {
   padding: 9px 11px;
   font-family: var(--font-ui);
-  font-size: 13px;
+  font-size: var(--fs-base);
   color: var(--text-faint);
 }
 
@@ -211,9 +220,8 @@ body::after {
   border: 1px solid var(--border-ui);
   border-radius: var(--r-pill);
   padding: 6px 12px;
-  font-size: 12px;
+  font-size: var(--fs-md);
   font-weight: 600;
-  letter-spacing: 0.02em;
   cursor: pointer;
   background: transparent;
   color: var(--text-muted);
@@ -228,19 +236,23 @@ body::after {
 }
 
 .chip-count {
-  font-family: var(--font-mono);
-  font-size: 10px;
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
   opacity: 0.7;
 }
 
 .chip:hover {
-  transform: translateY(-1px);
+  background: var(--primary);
 }
 
 /* Active = lime fill, ink text — never white text on pink. */
 .chip[aria-pressed='true'] {
   background: var(--secondary);
   border-color: var(--border-ui);
+  color: var(--text-on-accent);
+}
+.chip[aria-pressed='true']:hover {
+  background: var(--secondary-ink);
   color: var(--text-on-accent);
 }
 
@@ -284,7 +296,7 @@ body::after {
   right: 10px;
   border: none;
   background: none;
-  font-size: 22px;
+  font-size: var(--fs-xl);
   line-height: 1;
   cursor: pointer;
   color: var(--text-faint);
@@ -304,31 +316,30 @@ body::after {
   font-family: var(--font-display);
   font-weight: 800;
   margin: 0 32px 6px 0;
-  font-size: 26px;
+  font-size: var(--fs-2xl);
   line-height: 1.05;
   color: var(--text-strong);
 }
 
 .detail-categories {
   color: var(--text-faint);
-  font-family: var(--font-mono);
-  font-size: 10px;
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
   text-transform: uppercase;
-  letter-spacing: 0.16em;
   margin: 0 0 12px;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--border-soft);
 }
 
 #detail p {
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: var(--fs-lg);
+  line-height: 1.2;
   color: var(--text-muted);
 }
 
 .detail-address {
   color: var(--text-faint);
-  font-size: 13px;
+  font-size: var(--fs-base);
 }
 
 #detail a {
@@ -344,7 +355,7 @@ body::after {
   margin-top: 14px;
   padding-top: 12px;
   border-top: 1px solid var(--border-soft);
-  font-size: 13px;
+  font-size: var(--fs-base);
 }
 
 .detail-enrich img {
@@ -355,9 +366,8 @@ body::after {
 }
 
 .detail-credit {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.06em;
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
   color: var(--text-faint);
 }
 
@@ -370,9 +380,8 @@ body::after {
   display: inline-block;
   padding: 3px 11px;
   border-radius: var(--r-pill);
-  font-size: 11px;
+  font-size: var(--fs-sm);
   font-weight: 600;
-  letter-spacing: 0.02em;
 }
 
 .fee-badge.fee-free {
@@ -398,7 +407,7 @@ body::after {
   }
 
   .brand-word {
-    font-size: 32px;
+    font-size: var(--fs-brand-sm);
   }
 
   #detail {
