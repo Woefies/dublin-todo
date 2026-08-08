@@ -48,9 +48,9 @@ vite.config.js             base: '/dublin-todo/'  ← project-site base path
 ## Roadmap (see plan file for detail)
 
 Phase 0 ✅ pipeline slice · Phase 1 ✅ externalised data + model + check ·
-Phase 2 categories + filter chips + clustering · Phase 3 detail panel, search,
-deep-link URL state, geolocation, a11y · Phase 4 optional Wikipedia/Wikidata
-enrichment.
+Phase 2 ✅ category filter chips + OR-match filter (clustering deferred until
+dense) · Phase 3 detail panel, search, deep-link URL state, geolocation, a11y ·
+Phase 4 optional Wikipedia/Wikidata enrichment.
 
 ---
 
