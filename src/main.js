@@ -155,12 +155,16 @@ function renderSearchResults(results, query) {
 // shouldn't break the whole map.
 function retuneBasemap(map) {
   const ownLayers = new Set(['pois', 'poi-selected']);
+  // Basemap POI layers to keep (kept visible, icons intact, text recolored) —
+  // public-transport stops (bus/rail/tram/Luas) stay useful alongside our pins.
+  const keepPoi = new Set(['poi_transit']);
   for (const layer of map.getStyle().layers) {
     if (ownLayers.has(layer.id)) continue;
     try {
       // Hide the basemap's own POI layers entirely (brown Maki icons + white
-      // badges + their labels) — our pins are the only POIs shown.
-      if (layer.id.includes('poi')) {
+      // badges + their labels) — our pins are the only POIs shown, except the
+      // kept transit layer which falls through to the symbol-styling branch.
+      if (layer.id.includes('poi') && !keepPoi.has(layer.id)) {
         map.setLayoutProperty(layer.id, 'visibility', 'none');
         continue;
       }
@@ -180,8 +184,9 @@ function retuneBasemap(map) {
         map.setPaintProperty(layer.id, 'text-color', '#33474F');
         map.setPaintProperty(layer.id, 'text-halo-color', '#F4FAFD');
         // Hide the basemap's own POI sprite icons (brown Maki glyphs with white
-        // halos) so only our pins carry iconography.
-        map.setPaintProperty(layer.id, 'icon-opacity', 0);
+        // halos) so only our pins carry iconography — except kept layers like
+        // transit stops, whose icons we want to show.
+        if (!keepPoi.has(layer.id)) map.setPaintProperty(layer.id, 'icon-opacity', 0);
       }
     } catch {
       // Some layers don't support the property being set (e.g. no fill-color

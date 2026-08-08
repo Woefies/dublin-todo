@@ -1,56 +1,2835 @@
 {
   "type": "FeatureCollection",
   "features": [
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2546, 53.3438] }, "properties": { "id": "trinity-college", "name": "Trinity College & Book of Kells", "categories": ["historic", "museum"], "summary": "16th-century university; the Book of Kells and the Long Room library.", "address": "College Green, Dublin 2", "fee": "paid", "url": "https://www.tcd.ie/visitors/book-of-kells/", "wikidata": "Q189912", "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2867, 53.3419] }, "properties": { "id": "guinness-storehouse", "name": "Guinness Storehouse", "categories": ["museum"], "summary": "Seven-storey brewery experience with a rooftop Gravity Bar.", "address": "St James's Gate, Dublin 8", "fee": "paid", "url": "https://www.guinness-storehouse.com/", "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.259, 53.3382] }, "properties": { "id": "st-stephens-green", "name": "St Stephen's Green", "categories": ["parks"], "summary": "Victorian public park with lakes, bandstand and flower beds.", "address": "St Stephen's Green, Dublin 2", "fee": "free", "url": null, "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.3097, 53.3419] }, "properties": { "id": "kilmainham-gaol", "name": "Kilmainham Gaol", "categories": ["historic", "museum"], "summary": "Former prison central to Irish independence history; guided tours.", "address": "Inchicore Rd, Dublin 8", "fee": "paid", "url": "https://kilmainhamgaolmuseum.ie/", "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2637, 53.3454] }, "properties": { "id": "temple-bar", "name": "Temple Bar district", "categories": ["historic", "pubs"], "summary": "Cobbled riverside quarter of pubs, galleries and nightlife.", "address": "Temple Bar, Dublin 2", "fee": "free", "url": null, "wikidata": null, "image": null } },
-
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2674, 53.3429] }, "properties": { "id": "dublin-castle", "name": "Dublin Castle", "categories": ["historic"], "summary": "700-year-old castle and State Apartments in the city core.", "address": "Dame St, Dublin 2", "fee": "paid", "url": "https://www.dublincastle.ie/", "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2712, 53.3434] }, "properties": { "id": "christ-church-cathedral", "name": "Christ Church Cathedral", "categories": ["historic"], "summary": "Medieval cathedral with a vast crypt; founded c.1030.", "address": "Christchurch Pl, Dublin 8", "fee": "paid", "url": "https://christchurchcathedral.ie/", "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2716, 53.3395] }, "properties": { "id": "st-patricks-cathedral", "name": "St Patrick's Cathedral", "categories": ["historic"], "summary": "Ireland's largest cathedral; associated with Jonathan Swift.", "address": "St Patrick's Close, Dublin 8", "fee": "paid", "url": "https://www.stpatrickscathedral.ie/", "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2634, 53.3465] }, "properties": { "id": "ha-penny-bridge", "name": "Ha'penny Bridge", "categories": ["historic"], "summary": "Cast-iron 1816 pedestrian bridge over the Liffey.", "address": "Bachelors Walk, Dublin 1", "fee": "free", "url": null, "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2603, 53.3497] }, "properties": { "id": "spire-of-dublin", "name": "Spire of Dublin", "categories": ["historic"], "summary": "120m stainless-steel monument on O'Connell Street.", "address": "O'Connell St, Dublin 1", "fee": "free", "url": null, "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2603, 53.3492] }, "properties": { "id": "gpo", "name": "GPO Witness History", "categories": ["historic", "museum"], "summary": "General Post Office; 1916 Rising HQ, now with an exhibition.", "address": "O'Connell St, Dublin 1", "fee": "paid", "url": "https://www.gpowitnesshistory.ie/", "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2531, 53.3486] }, "properties": { "id": "custom-house", "name": "The Custom House", "categories": ["historic"], "summary": "Neoclassical 18th-century riverside landmark by James Gandon.", "address": "Custom House Quay, Dublin 1", "fee": "free", "url": null, "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2735, 53.3459] }, "properties": { "id": "four-courts", "name": "Four Courts", "categories": ["historic"], "summary": "Gandon-designed courts building with a landmark dome.", "address": "Inns Quay, Dublin 7", "fee": "free", "url": null, "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2632, 53.3439] }, "properties": { "id": "molly-malone-statue", "name": "Molly Malone Statue", "categories": ["historic"], "summary": "Bronze statue of the fabled fishmonger of the city song.", "address": "Suffolk St, Dublin 2", "fee": "free", "url": null, "wikidata": null, "image": null } },
-
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2547, 53.3403] }, "properties": { "id": "national-museum-archaeology", "name": "National Museum – Archaeology", "categories": ["museum"], "summary": "Bog bodies, the Ardagh Chalice and Iron Age gold.", "address": "Kildare St, Dublin 2", "fee": "free", "url": "https://www.museum.ie/", "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2524, 53.3411] }, "properties": { "id": "national-gallery", "name": "National Gallery of Ireland", "categories": ["museum"], "summary": "Irish and European art incl. Caravaggio and Vermeer.", "address": "Merrion Sq W, Dublin 2", "fee": "free", "url": "https://www.nationalgallery.ie/", "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2537, 53.3401] }, "properties": { "id": "natural-history-museum", "name": "Natural History Museum", "categories": ["museum"], "summary": "Victorian 'Dead Zoo' of taxidermy and skeletons.", "address": "Merrion St, Dublin 2", "fee": "free", "url": "https://www.museum.ie/", "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2876, 53.3477] }, "properties": { "id": "collins-barracks", "name": "National Museum – Decorative Arts (Collins Barracks)", "categories": ["museum", "historic"], "summary": "Design, military history and silver in a former barracks.", "address": "Benburb St, Dublin 7", "fee": "free", "url": "https://www.museum.ie/", "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2497, 53.3479] }, "properties": { "id": "epic-museum", "name": "EPIC The Irish Emigration Museum", "categories": ["museum"], "summary": "Interactive museum of the Irish diaspora at CHQ.", "address": "CHQ, Custom House Quay, Dublin 1", "fee": "paid", "url": "https://epicchq.com/", "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2679, 53.3423] }, "properties": { "id": "chester-beatty", "name": "Chester Beatty", "categories": ["museum"], "summary": "World-class collection of manuscripts and sacred texts.", "address": "Dublin Castle, Dublin 2", "fee": "free", "url": "https://chesterbeatty.ie/", "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2588, 53.339] }, "properties": { "id": "little-museum-of-dublin", "name": "The Little Museum of Dublin", "categories": ["museum"], "summary": "20th-century Dublin told through donated objects.", "address": "15 St Stephen's Green, Dublin 2", "fee": "paid", "url": "https://www.littlemuseum.ie/", "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2989, 53.3432] }, "properties": { "id": "imma", "name": "Irish Museum of Modern Art (IMMA)", "categories": ["museum", "parks"], "summary": "Modern art in the 17th-century Royal Hospital and grounds.", "address": "Royal Hospital, Kilmainham, Dublin 8", "fee": "free", "url": "https://imma.ie/", "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2637, 53.3536] }, "properties": { "id": "hugh-lane-gallery", "name": "Hugh Lane Gallery", "categories": ["museum"], "summary": "City gallery incl. Francis Bacon's reconstructed studio.", "address": "Charlemont House, Parnell Sq N, Dublin 1", "fee": "free", "url": "https://www.hughlane.ie/", "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2718, 53.3432] }, "properties": { "id": "dublinia", "name": "Dublinia", "categories": ["museum", "historic"], "summary": "Viking and medieval Dublin experience beside the cathedral.", "address": "St Michael's Hill, Dublin 8", "fee": "paid", "url": "https://www.dublinia.ie/", "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2668, 53.3479] }, "properties": { "id": "leprechaun-museum", "name": "National Leprechaun Museum", "categories": ["museum"], "summary": "Storytelling museum of Irish myth and folklore.", "address": "Twilfit House, Jervis St, Dublin 1", "fee": "paid", "url": "https://www.leprechaunmuseum.ie/", "wikidata": null, "image": null } },
-
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2489, 53.3395] }, "properties": { "id": "merrion-square", "name": "Merrion Square Park", "categories": ["parks"], "summary": "Georgian garden square with the Oscar Wilde statue.", "address": "Merrion Sq, Dublin 2", "fee": "free", "url": null, "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2603, 53.336] }, "properties": { "id": "iveagh-gardens", "name": "Iveagh Gardens", "categories": ["parks"], "summary": "Secluded 'secret garden' with fountains and a maze.", "address": "Clonmel St, Dublin 2", "fee": "free", "url": null, "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.3297, 53.3559] }, "properties": { "id": "phoenix-park", "name": "Phoenix Park", "categories": ["parks"], "summary": "One of Europe's largest walled city parks; wild deer.", "address": "Phoenix Park, Dublin 8", "fee": "free", "url": null, "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2635, 53.3535] }, "properties": { "id": "garden-of-remembrance", "name": "Garden of Remembrance", "categories": ["parks", "historic"], "summary": "Memorial garden to those who died for Irish freedom.", "address": "Parnell Sq E, Dublin 1", "fee": "free", "url": null, "wikidata": null, "image": null } },
-
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2686, 53.3441] }, "properties": { "id": "queen-of-tarts", "name": "Queen of Tarts", "categories": ["food"], "summary": "Beloved cafe for cakes, tarts and hearty breakfasts.", "address": "Cork Hill, Dame St, Dublin 2", "fee": "unknown", "url": null, "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2585, 53.3428] }, "properties": { "id": "avoca-suffolk-st", "name": "Avoca Cafe", "categories": ["food", "shopping"], "summary": "Cafe atop a well-known Irish food and craft store.", "address": "11-13 Suffolk St, Dublin 2", "fee": "unknown", "url": null, "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2637, 53.3468] }, "properties": { "id": "the-woollen-mills", "name": "The Woollen Mills", "categories": ["food"], "summary": "Riverside eatery in a historic building by the Ha'penny.", "address": "42 Lower Ormond Quay, Dublin 1", "fee": "unknown", "url": null, "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2599, 53.341] }, "properties": { "id": "bewleys-grafton-st", "name": "Bewley's Grafton Street", "categories": ["food", "historic"], "summary": "Landmark 1927 cafe with Harry Clarke stained glass.", "address": "78-79 Grafton St, Dublin 2", "fee": "unknown", "url": null, "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.262, 53.3487] }, "properties": { "id": "brother-hubbard", "name": "Brother Hubbard", "categories": ["food"], "summary": "Middle-Eastern-leaning brunch and coffee spot.", "address": "153 Capel St, Dublin 1", "fee": "unknown", "url": null, "wikidata": null, "image": null } },
-
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2661, 53.341] }, "properties": { "id": "the-long-hall", "name": "The Long Hall", "categories": ["pubs", "historic"], "summary": "Ornate Victorian bar with mirrors and chandeliers.", "address": "51 South Great George's St, Dublin 2", "fee": "unknown", "url": null, "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2773, 53.3448] }, "properties": { "id": "the-brazen-head", "name": "The Brazen Head", "categories": ["pubs", "historic"], "summary": "Reputedly Ireland's oldest pub, dating from 1198.", "address": "20 Lower Bridge St, Dublin 8", "fee": "unknown", "url": null, "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2588, 53.3405] }, "properties": { "id": "kehoes", "name": "Kehoe's", "categories": ["pubs"], "summary": "Snug traditional pub just off Grafton Street.", "address": "9 South Anne St, Dublin 2", "fee": "unknown", "url": null, "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2643, 53.3436] }, "properties": { "id": "the-stags-head", "name": "The Stag's Head", "categories": ["pubs", "historic"], "summary": "Victorian pub with mahogany, marble and stained glass.", "address": "1 Dame Ct, Dublin 2", "fee": "unknown", "url": null, "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2565, 53.3465] }, "properties": { "id": "mulligans", "name": "Mulligan's", "categories": ["pubs", "historic"], "summary": "Storied 1782 pub famed for its pint of stout.", "address": "8 Poolbeg St, Dublin 2", "fee": "unknown", "url": null, "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2626, 53.3413] }, "properties": { "id": "grogans", "name": "Grogan's Castle Lounge", "categories": ["pubs"], "summary": "Artsy institution known for toasties and pints.", "address": "15 South William St, Dublin 2", "fee": "unknown", "url": null, "wikidata": null, "image": null } },
-
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2597, 53.3418] }, "properties": { "id": "grafton-street", "name": "Grafton Street", "categories": ["shopping"], "summary": "Pedestrian shopping street with buskers and flower sellers.", "address": "Grafton St, Dublin 2", "fee": "free", "url": null, "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2645, 53.3421] }, "properties": { "id": "georges-street-arcade", "name": "George's Street Arcade", "categories": ["shopping", "historic"], "summary": "Victorian covered market of vintage and independent stalls.", "address": "South Great George's St, Dublin 2", "fee": "free", "url": null, "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2618, 53.3421] }, "properties": { "id": "powerscourt-centre", "name": "Powerscourt Townhouse Centre", "categories": ["shopping", "historic"], "summary": "Georgian townhouse turned boutique shopping centre.", "address": "59 South William St, Dublin 2", "fee": "free", "url": null, "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2588, 53.3502] }, "properties": { "id": "moore-street-market", "name": "Moore Street Market", "categories": ["shopping"], "summary": "Historic open-air street market of traders and stalls.", "address": "Moore St, Dublin 1", "fee": "free", "url": null, "wikidata": null, "image": null } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-6.2617, 53.3496] }, "properties": { "id": "henry-street", "name": "Henry Street", "categories": ["shopping"], "summary": "Busy high-street shopping thoroughfare off O'Connell St.", "address": "Henry St, Dublin 1", "fee": "free", "url": null, "wikidata": null, "image": null } }
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2546,
+          53.3438
+        ]
+      },
+      "properties": {
+        "id": "trinity-college",
+        "name": "Trinity College & Book of Kells",
+        "categories": [
+          "historic",
+          "museum"
+        ],
+        "summary": "16th-century university; the Book of Kells and the Long Room library.",
+        "address": "College Green, Dublin 2",
+        "fee": "paid",
+        "url": "https://www.tcd.ie/visitors/book-of-kells/",
+        "wikidata": "Q189912",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2867,
+          53.3419
+        ]
+      },
+      "properties": {
+        "id": "guinness-storehouse",
+        "name": "Guinness Storehouse",
+        "categories": [
+          "museum"
+        ],
+        "summary": "Seven-storey brewery experience with a rooftop Gravity Bar.",
+        "address": "St James's Gate, Dublin 8",
+        "fee": "paid",
+        "url": "https://www.guinness-storehouse.com/",
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.259,
+          53.3382
+        ]
+      },
+      "properties": {
+        "id": "st-stephens-green",
+        "name": "St Stephen's Green",
+        "categories": [
+          "parks"
+        ],
+        "summary": "Victorian public park with lakes, bandstand and flower beds.",
+        "address": "St Stephen's Green, Dublin 2",
+        "fee": "free",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3097,
+          53.3419
+        ]
+      },
+      "properties": {
+        "id": "kilmainham-gaol",
+        "name": "Kilmainham Gaol",
+        "categories": [
+          "historic",
+          "museum"
+        ],
+        "summary": "Former prison central to Irish independence history; guided tours.",
+        "address": "Inchicore Rd, Dublin 8",
+        "fee": "paid",
+        "url": "https://kilmainhamgaolmuseum.ie/",
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2637,
+          53.3454
+        ]
+      },
+      "properties": {
+        "id": "temple-bar",
+        "name": "Temple Bar district",
+        "categories": [
+          "historic",
+          "pubs"
+        ],
+        "summary": "Cobbled riverside quarter of pubs, galleries and nightlife.",
+        "address": "Temple Bar, Dublin 2",
+        "fee": "free",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2674,
+          53.3429
+        ]
+      },
+      "properties": {
+        "id": "dublin-castle",
+        "name": "Dublin Castle",
+        "categories": [
+          "historic"
+        ],
+        "summary": "700-year-old castle and State Apartments in the city core.",
+        "address": "Dame St, Dublin 2",
+        "fee": "paid",
+        "url": "https://www.dublincastle.ie/",
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2712,
+          53.3434
+        ]
+      },
+      "properties": {
+        "id": "christ-church-cathedral",
+        "name": "Christ Church Cathedral",
+        "categories": [
+          "historic"
+        ],
+        "summary": "Medieval cathedral with a vast crypt; founded c.1030.",
+        "address": "Christchurch Pl, Dublin 8",
+        "fee": "paid",
+        "url": "https://christchurchcathedral.ie/",
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2716,
+          53.3395
+        ]
+      },
+      "properties": {
+        "id": "st-patricks-cathedral",
+        "name": "St Patrick's Cathedral",
+        "categories": [
+          "historic"
+        ],
+        "summary": "Ireland's largest cathedral; associated with Jonathan Swift.",
+        "address": "St Patrick's Close, Dublin 8",
+        "fee": "paid",
+        "url": "https://www.stpatrickscathedral.ie/",
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2634,
+          53.3465
+        ]
+      },
+      "properties": {
+        "id": "ha-penny-bridge",
+        "name": "Ha'penny Bridge",
+        "categories": [
+          "historic"
+        ],
+        "summary": "Cast-iron 1816 pedestrian bridge over the Liffey.",
+        "address": "Bachelors Walk, Dublin 1",
+        "fee": "free",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2603,
+          53.3497
+        ]
+      },
+      "properties": {
+        "id": "spire-of-dublin",
+        "name": "Spire of Dublin",
+        "categories": [
+          "historic"
+        ],
+        "summary": "120m stainless-steel monument on O'Connell Street.",
+        "address": "O'Connell St, Dublin 1",
+        "fee": "free",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2603,
+          53.3492
+        ]
+      },
+      "properties": {
+        "id": "gpo",
+        "name": "GPO Witness History",
+        "categories": [
+          "historic",
+          "museum"
+        ],
+        "summary": "General Post Office; 1916 Rising HQ, now with an exhibition.",
+        "address": "O'Connell St, Dublin 1",
+        "fee": "paid",
+        "url": "https://www.gpowitnesshistory.ie/",
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2531,
+          53.3486
+        ]
+      },
+      "properties": {
+        "id": "custom-house",
+        "name": "The Custom House",
+        "categories": [
+          "historic"
+        ],
+        "summary": "Neoclassical 18th-century riverside landmark by James Gandon.",
+        "address": "Custom House Quay, Dublin 1",
+        "fee": "free",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2735,
+          53.3459
+        ]
+      },
+      "properties": {
+        "id": "four-courts",
+        "name": "Four Courts",
+        "categories": [
+          "historic"
+        ],
+        "summary": "Gandon-designed courts building with a landmark dome.",
+        "address": "Inns Quay, Dublin 7",
+        "fee": "free",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2632,
+          53.3439
+        ]
+      },
+      "properties": {
+        "id": "molly-malone-statue",
+        "name": "Molly Malone Statue",
+        "categories": [
+          "historic"
+        ],
+        "summary": "Bronze statue of the fabled fishmonger of the city song.",
+        "address": "Suffolk St, Dublin 2",
+        "fee": "free",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2547,
+          53.3403
+        ]
+      },
+      "properties": {
+        "id": "national-museum-archaeology",
+        "name": "National Museum – Archaeology",
+        "categories": [
+          "museum"
+        ],
+        "summary": "Bog bodies, the Ardagh Chalice and Iron Age gold.",
+        "address": "Kildare St, Dublin 2",
+        "fee": "free",
+        "url": "https://www.museum.ie/",
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2524,
+          53.3411
+        ]
+      },
+      "properties": {
+        "id": "national-gallery",
+        "name": "National Gallery of Ireland",
+        "categories": [
+          "museum"
+        ],
+        "summary": "Irish and European art incl. Caravaggio and Vermeer.",
+        "address": "Merrion Sq W, Dublin 2",
+        "fee": "free",
+        "url": "https://www.nationalgallery.ie/",
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2537,
+          53.3401
+        ]
+      },
+      "properties": {
+        "id": "natural-history-museum",
+        "name": "Natural History Museum",
+        "categories": [
+          "museum"
+        ],
+        "summary": "Victorian 'Dead Zoo' of taxidermy and skeletons.",
+        "address": "Merrion St, Dublin 2",
+        "fee": "free",
+        "url": "https://www.museum.ie/",
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2876,
+          53.3477
+        ]
+      },
+      "properties": {
+        "id": "collins-barracks",
+        "name": "National Museum – Decorative Arts (Collins Barracks)",
+        "categories": [
+          "museum",
+          "historic"
+        ],
+        "summary": "Design, military history and silver in a former barracks.",
+        "address": "Benburb St, Dublin 7",
+        "fee": "free",
+        "url": "https://www.museum.ie/",
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2497,
+          53.3479
+        ]
+      },
+      "properties": {
+        "id": "epic-museum",
+        "name": "EPIC The Irish Emigration Museum",
+        "categories": [
+          "museum"
+        ],
+        "summary": "Interactive museum of the Irish diaspora at CHQ.",
+        "address": "CHQ, Custom House Quay, Dublin 1",
+        "fee": "paid",
+        "url": "https://epicchq.com/",
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2679,
+          53.3423
+        ]
+      },
+      "properties": {
+        "id": "chester-beatty",
+        "name": "Chester Beatty",
+        "categories": [
+          "museum"
+        ],
+        "summary": "World-class collection of manuscripts and sacred texts.",
+        "address": "Dublin Castle, Dublin 2",
+        "fee": "free",
+        "url": "https://chesterbeatty.ie/",
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2588,
+          53.339
+        ]
+      },
+      "properties": {
+        "id": "little-museum-of-dublin",
+        "name": "The Little Museum of Dublin",
+        "categories": [
+          "museum"
+        ],
+        "summary": "20th-century Dublin told through donated objects.",
+        "address": "15 St Stephen's Green, Dublin 2",
+        "fee": "paid",
+        "url": "https://www.littlemuseum.ie/",
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2989,
+          53.3432
+        ]
+      },
+      "properties": {
+        "id": "imma",
+        "name": "Irish Museum of Modern Art (IMMA)",
+        "categories": [
+          "museum",
+          "parks"
+        ],
+        "summary": "Modern art in the 17th-century Royal Hospital and grounds.",
+        "address": "Royal Hospital, Kilmainham, Dublin 8",
+        "fee": "free",
+        "url": "https://imma.ie/",
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2637,
+          53.3536
+        ]
+      },
+      "properties": {
+        "id": "hugh-lane-gallery",
+        "name": "Hugh Lane Gallery",
+        "categories": [
+          "museum"
+        ],
+        "summary": "City gallery incl. Francis Bacon's reconstructed studio.",
+        "address": "Charlemont House, Parnell Sq N, Dublin 1",
+        "fee": "free",
+        "url": "https://www.hughlane.ie/",
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2718,
+          53.3432
+        ]
+      },
+      "properties": {
+        "id": "dublinia",
+        "name": "Dublinia",
+        "categories": [
+          "museum",
+          "historic"
+        ],
+        "summary": "Viking and medieval Dublin experience beside the cathedral.",
+        "address": "St Michael's Hill, Dublin 8",
+        "fee": "paid",
+        "url": "https://www.dublinia.ie/",
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2668,
+          53.3479
+        ]
+      },
+      "properties": {
+        "id": "leprechaun-museum",
+        "name": "National Leprechaun Museum",
+        "categories": [
+          "museum"
+        ],
+        "summary": "Storytelling museum of Irish myth and folklore.",
+        "address": "Twilfit House, Jervis St, Dublin 1",
+        "fee": "paid",
+        "url": "https://www.leprechaunmuseum.ie/",
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2489,
+          53.3395
+        ]
+      },
+      "properties": {
+        "id": "merrion-square",
+        "name": "Merrion Square Park",
+        "categories": [
+          "parks"
+        ],
+        "summary": "Georgian garden square with the Oscar Wilde statue.",
+        "address": "Merrion Sq, Dublin 2",
+        "fee": "free",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2603,
+          53.336
+        ]
+      },
+      "properties": {
+        "id": "iveagh-gardens",
+        "name": "Iveagh Gardens",
+        "categories": [
+          "parks"
+        ],
+        "summary": "Secluded 'secret garden' with fountains and a maze.",
+        "address": "Clonmel St, Dublin 2",
+        "fee": "free",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3297,
+          53.3559
+        ]
+      },
+      "properties": {
+        "id": "phoenix-park",
+        "name": "Phoenix Park",
+        "categories": [
+          "parks"
+        ],
+        "summary": "One of Europe's largest walled city parks; wild deer.",
+        "address": "Phoenix Park, Dublin 8",
+        "fee": "free",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2635,
+          53.3535
+        ]
+      },
+      "properties": {
+        "id": "garden-of-remembrance",
+        "name": "Garden of Remembrance",
+        "categories": [
+          "parks",
+          "historic"
+        ],
+        "summary": "Memorial garden to those who died for Irish freedom.",
+        "address": "Parnell Sq E, Dublin 1",
+        "fee": "free",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2686,
+          53.3441
+        ]
+      },
+      "properties": {
+        "id": "queen-of-tarts",
+        "name": "Queen of Tarts",
+        "categories": [
+          "food"
+        ],
+        "summary": "Beloved cafe for cakes, tarts and hearty breakfasts.",
+        "address": "Cork Hill, Dame St, Dublin 2",
+        "fee": "unknown",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2585,
+          53.3428
+        ]
+      },
+      "properties": {
+        "id": "avoca-suffolk-st",
+        "name": "Avoca Cafe",
+        "categories": [
+          "food",
+          "shopping"
+        ],
+        "summary": "Cafe atop a well-known Irish food and craft store.",
+        "address": "11-13 Suffolk St, Dublin 2",
+        "fee": "unknown",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2637,
+          53.3468
+        ]
+      },
+      "properties": {
+        "id": "the-woollen-mills",
+        "name": "The Woollen Mills",
+        "categories": [
+          "food"
+        ],
+        "summary": "Riverside eatery in a historic building by the Ha'penny.",
+        "address": "42 Lower Ormond Quay, Dublin 1",
+        "fee": "unknown",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2599,
+          53.341
+        ]
+      },
+      "properties": {
+        "id": "bewleys-grafton-st",
+        "name": "Bewley's Grafton Street",
+        "categories": [
+          "food",
+          "historic"
+        ],
+        "summary": "Landmark 1927 cafe with Harry Clarke stained glass.",
+        "address": "78-79 Grafton St, Dublin 2",
+        "fee": "unknown",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.262,
+          53.3487
+        ]
+      },
+      "properties": {
+        "id": "brother-hubbard",
+        "name": "Brother Hubbard",
+        "categories": [
+          "food"
+        ],
+        "summary": "Middle-Eastern-leaning brunch and coffee spot.",
+        "address": "153 Capel St, Dublin 1",
+        "fee": "unknown",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2661,
+          53.341
+        ]
+      },
+      "properties": {
+        "id": "the-long-hall",
+        "name": "The Long Hall",
+        "categories": [
+          "pubs",
+          "historic"
+        ],
+        "summary": "Ornate Victorian bar with mirrors and chandeliers.",
+        "address": "51 South Great George's St, Dublin 2",
+        "fee": "unknown",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2773,
+          53.3448
+        ]
+      },
+      "properties": {
+        "id": "the-brazen-head",
+        "name": "The Brazen Head",
+        "categories": [
+          "pubs",
+          "historic"
+        ],
+        "summary": "Reputedly Ireland's oldest pub, dating from 1198.",
+        "address": "20 Lower Bridge St, Dublin 8",
+        "fee": "unknown",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2588,
+          53.3405
+        ]
+      },
+      "properties": {
+        "id": "kehoes",
+        "name": "Kehoe's",
+        "categories": [
+          "pubs"
+        ],
+        "summary": "Snug traditional pub just off Grafton Street.",
+        "address": "9 South Anne St, Dublin 2",
+        "fee": "unknown",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2643,
+          53.3436
+        ]
+      },
+      "properties": {
+        "id": "the-stags-head",
+        "name": "The Stag's Head",
+        "categories": [
+          "pubs",
+          "historic"
+        ],
+        "summary": "Victorian pub with mahogany, marble and stained glass.",
+        "address": "1 Dame Ct, Dublin 2",
+        "fee": "unknown",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2565,
+          53.3465
+        ]
+      },
+      "properties": {
+        "id": "mulligans",
+        "name": "Mulligan's",
+        "categories": [
+          "pubs",
+          "historic"
+        ],
+        "summary": "Storied 1782 pub famed for its pint of stout.",
+        "address": "8 Poolbeg St, Dublin 2",
+        "fee": "unknown",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2626,
+          53.3413
+        ]
+      },
+      "properties": {
+        "id": "grogans",
+        "name": "Grogan's Castle Lounge",
+        "categories": [
+          "pubs"
+        ],
+        "summary": "Artsy institution known for toasties and pints.",
+        "address": "15 South William St, Dublin 2",
+        "fee": "unknown",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2597,
+          53.3418
+        ]
+      },
+      "properties": {
+        "id": "grafton-street",
+        "name": "Grafton Street",
+        "categories": [
+          "shopping"
+        ],
+        "summary": "Pedestrian shopping street with buskers and flower sellers.",
+        "address": "Grafton St, Dublin 2",
+        "fee": "free",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2645,
+          53.3421
+        ]
+      },
+      "properties": {
+        "id": "georges-street-arcade",
+        "name": "George's Street Arcade",
+        "categories": [
+          "shopping",
+          "historic"
+        ],
+        "summary": "Victorian covered market of vintage and independent stalls.",
+        "address": "South Great George's St, Dublin 2",
+        "fee": "free",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2618,
+          53.3421
+        ]
+      },
+      "properties": {
+        "id": "powerscourt-centre",
+        "name": "Powerscourt Townhouse Centre",
+        "categories": [
+          "shopping",
+          "historic"
+        ],
+        "summary": "Georgian townhouse turned boutique shopping centre.",
+        "address": "59 South William St, Dublin 2",
+        "fee": "free",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2588,
+          53.3502
+        ]
+      },
+      "properties": {
+        "id": "moore-street-market",
+        "name": "Moore Street Market",
+        "categories": [
+          "shopping"
+        ],
+        "summary": "Historic open-air street market of traders and stalls.",
+        "address": "Moore St, Dublin 1",
+        "fee": "free",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2617,
+          53.3496
+        ]
+      },
+      "properties": {
+        "id": "henry-street",
+        "name": "Henry Street",
+        "categories": [
+          "shopping"
+        ],
+        "summary": "Busy high-street shopping thoroughfare off O'Connell St.",
+        "address": "Henry St, Dublin 1",
+        "fee": "free",
+        "url": null,
+        "wikidata": null,
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.275399404490262,
+          53.33237862378626
+        ]
+      },
+      "properties": {
+        "id": "the-libertine-lounge-lodgings",
+        "name": "The Libertine Lounge & Lodgings",
+        "categories": [
+          "pubs"
+        ],
+        "address": "57 clanbrassil St lower portobello, Dublin 8",
+        "url": "https://thelibertinedublin.ie/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2653181,
+          53.3531703
+        ]
+      },
+      "properties": {
+        "id": "teachers-club",
+        "name": "Teachers Club",
+        "categories": [
+          "museum",
+          "pubs"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/teachers-club/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2778203,
+          53.3498476
+        ]
+      },
+      "properties": {
+        "id": "the-cobblestone",
+        "name": "The Cobblestone",
+        "categories": [
+          "museum",
+          "pubs"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/the-cobblestone/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2364193,
+          53.3076911
+        ]
+      },
+      "properties": {
+        "id": "hacienda",
+        "name": "Hacienda",
+        "categories": [
+          "museum",
+          "pubs"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/hacienda/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2621526,
+          53.3480043
+        ]
+      },
+      "properties": {
+        "id": "wigwam",
+        "name": "Wigwam",
+        "categories": [
+          "museum",
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/wigwam/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2692726,
+          53.3482737
+        ]
+      },
+      "properties": {
+        "id": "bullet",
+        "name": "Bullet",
+        "categories": [
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/bullet/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2642205,
+          53.3457552
+        ]
+      },
+      "properties": {
+        "id": "dublin-vintage-factory",
+        "name": "Dublin Vintage Factory",
+        "categories": [
+          "shopping"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/dublin-vintage-factory/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.307563,
+          53.3416717
+        ]
+      },
+      "properties": {
+        "id": "patriot-s-inn",
+        "name": "Patriot's Inn",
+        "categories": [
+          "pubs"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/patriots-inn/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2872138,
+          53.3475435
+        ]
+      },
+      "properties": {
+        "id": "croppies-acre-memorial-park",
+        "name": "Croppies Acre Memorial Park",
+        "categories": [
+          "museum",
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/croppies-acre-memorial-park/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2690972,
+          53.3448175
+        ]
+      },
+      "properties": {
+        "id": "smock-alley-theatre",
+        "name": "Smock Alley Theatre",
+        "categories": [
+          "museum"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/smock-alley-theatre/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2658748,
+          53.3365949
+        ]
+      },
+      "properties": {
+        "id": "whelan-s",
+        "name": "Whelan's",
+        "categories": [
+          "museum",
+          "pubs"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/whelans/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2629024,
+          53.3451196
+        ]
+      },
+      "properties": {
+        "id": "jam-art-factory",
+        "name": "Jam Art Factory",
+        "categories": [
+          "museum",
+          "shopping"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/jam-art-factory/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.264323,
+          53.3337887
+        ]
+      },
+      "properties": {
+        "id": "doughboys",
+        "name": "Doughboys",
+        "categories": [
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/doughboys/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2640639,
+          53.3420622
+        ]
+      },
+      "properties": {
+        "id": "the-market-bar",
+        "name": "The Market Bar",
+        "categories": [
+          "pubs",
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/the-market-bar/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2750245,
+          53.3438255
+        ]
+      },
+      "properties": {
+        "id": "st-audoen-s-park",
+        "name": "St. Audoen's Park",
+        "categories": [
+          "museum",
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/st-audoens-park/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3171038,
+          53.3401331
+        ]
+      },
+      "properties": {
+        "id": "riggers-d8",
+        "name": "Riggers D8",
+        "categories": [
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/riggers-d8/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2641919,
+          53.3425764
+        ]
+      },
+      "properties": {
+        "id": "george-s-street-arcade",
+        "name": "George's Street Arcade",
+        "categories": [
+          "museum",
+          "shopping",
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/georges-street-arcade/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2410966,
+          53.3384111
+        ]
+      },
+      "properties": {
+        "id": "love-lane",
+        "name": "Love Lane",
+        "categories": [
+          "museum",
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/love-lane/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2619715,
+          53.3470381
+        ]
+      },
+      "properties": {
+        "id": "terra-madre",
+        "name": "Terra Madre",
+        "categories": [
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/terra-madre/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2618075,
+          53.3431285
+        ]
+      },
+      "properties": {
+        "id": "international-bar",
+        "name": "International Bar",
+        "categories": [
+          "museum",
+          "pubs"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/international-bar/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2677935,
+          53.3466149
+        ]
+      },
+      "properties": {
+        "id": "panti-bar",
+        "name": "Panti Bar",
+        "categories": [
+          "museum",
+          "pubs"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/panti-bar/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3240133,
+          53.3359993
+        ]
+      },
+      "properties": {
+        "id": "rascals-brewing-company",
+        "name": "Rascals Brewing Company",
+        "categories": [
+          "pubs",
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/rascals-brewing-company/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2640272,
+          53.3364615
+        ]
+      },
+      "properties": {
+        "id": "green-bench-cafe",
+        "name": "Green Bench Cafe",
+        "categories": [
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/green-bench-cafe/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2678432,
+          53.3442866
+        ]
+      },
+      "properties": {
+        "id": "sano-pizza",
+        "name": "Sano Pizza",
+        "categories": [
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/sano-pizza/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2785265,
+          53.3411716
+        ]
+      },
+      "properties": {
+        "id": "liberty-market",
+        "name": "Liberty Market",
+        "categories": [
+          "shopping"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/liberty-market/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2782266,
+          53.3405397
+        ]
+      },
+      "properties": {
+        "id": "meath-street",
+        "name": "Meath Street",
+        "categories": [
+          "museum",
+          "shopping"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/meath-street/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2914461,
+          53.3021198
+        ]
+      },
+      "properties": {
+        "id": "bushy-park",
+        "name": "Bushy Park",
+        "categories": [
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/bushy-park/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2708011,
+          53.3572268
+        ]
+      },
+      "properties": {
+        "id": "blessington-street-basin",
+        "name": "Blessington Street Basin",
+        "categories": [
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/blessington-street-basin/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2705776,
+          53.3392033
+        ]
+      },
+      "properties": {
+        "id": "marsh-s-library",
+        "name": "Marsh's Library",
+        "categories": [
+          "museum"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/marshs-library/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.278132,
+          53.3430472
+        ]
+      },
+      "properties": {
+        "id": "luncheonette",
+        "name": "Luncheonette",
+        "categories": [
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/luncheonette/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2384981,
+          53.3446688
+        ]
+      },
+      "properties": {
+        "id": "lolly-and-cooks",
+        "name": "Lolly and Cooks",
+        "categories": [
+          "food",
+          "shopping"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/lolly-and-cooks/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.261907,
+          53.342377
+        ]
+      },
+      "properties": {
+        "id": "the-pepper-pot-cafe",
+        "name": "The Pepper Pot Cafe",
+        "categories": [
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/the-pepper-pot-cafe/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2666224,
+          53.339874
+        ]
+      },
+      "properties": {
+        "id": "whitefriar-street-church",
+        "name": "Whitefriar Street Church",
+        "categories": [
+          "museum",
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/whitefriar-street-church/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2649966,
+          53.335377
+        ]
+      },
+      "properties": {
+        "id": "neon",
+        "name": "Neon",
+        "categories": [
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/neon/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2320003,
+          53.3292911
+        ]
+      },
+      "properties": {
+        "id": "the-bridge-1859",
+        "name": "The Bridge 1859",
+        "categories": [
+          "pubs",
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/the-bridge-1859/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2629461,
+          53.3426512
+        ]
+      },
+      "properties": {
+        "id": "irish-design-shop",
+        "name": "Irish Design Shop",
+        "categories": [
+          "museum",
+          "shopping"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/irish-design-shop/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.241317,
+          53.3469469
+        ]
+      },
+      "properties": {
+        "id": "samuel-beckett-bridge",
+        "name": "Samuel Beckett Bridge",
+        "categories": [
+          "museum"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/samuel-beckett-bridge/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1513684,
+          53.3421059
+        ]
+      },
+      "properties": {
+        "id": "poolbeg-lighthouse",
+        "name": "Poolbeg Lighthouse",
+        "categories": [
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/poolbeg-lighthouse/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2384571,
+          53.3460892
+        ]
+      },
+      "properties": {
+        "id": "diving-bell",
+        "name": "Diving Bell",
+        "categories": [
+          "museum"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/diving-bell/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2344151,
+          53.3257245
+        ]
+      },
+      "properties": {
+        "id": "herbert-park",
+        "name": "Herbert Park",
+        "categories": [
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/herbert-park/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2495172,
+          53.3418989
+        ]
+      },
+      "properties": {
+        "id": "the-ginger-man",
+        "name": "The Ginger Man",
+        "categories": [
+          "museum",
+          "pubs"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/the-ginger-man/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2584407,
+          53.3503397
+        ]
+      },
+      "properties": {
+        "id": "the-confession-box",
+        "name": "The Confession Box",
+        "categories": [
+          "museum",
+          "pubs"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/the-confession-box/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2925786,
+          53.3463753
+        ]
+      },
+      "properties": {
+        "id": "griolladh",
+        "name": "Griolladh",
+        "categories": [
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/griolladh/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2607993,
+          53.3484268
+        ]
+      },
+      "properties": {
+        "id": "govinda-s",
+        "name": "Govinda's",
+        "categories": [
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/govindas/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2653213,
+          53.3412358
+        ]
+      },
+      "properties": {
+        "id": "needful-things",
+        "name": "Needful Things",
+        "categories": [
+          "museum",
+          "shopping"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/needful-things/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.175317,
+          53.3693835
+        ]
+      },
+      "properties": {
+        "id": "red-stables-market",
+        "name": "Red Stables Market",
+        "categories": [
+          "shopping",
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/red-stables-market/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2707448,
+          53.3792074
+        ]
+      },
+      "properties": {
+        "id": "griffith-avenue",
+        "name": "Griffith Avenue",
+        "categories": [
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/griffith-avenue/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2524215,
+          53.3435765
+        ]
+      },
+      "properties": {
+        "id": "apples-and-atoms",
+        "name": "Apples and Atoms",
+        "categories": [
+          "museum"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/apples-and-atoms/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3116232,
+          53.2922552
+        ]
+      },
+      "properties": {
+        "id": "river-dodder",
+        "name": "River Dodder",
+        "categories": [
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/river-dodder/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.287861,
+          53.3419192
+        ]
+      },
+      "properties": {
+        "id": "the-grand-canal",
+        "name": "The Grand Canal",
+        "categories": [
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/the-grand-canal/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2627803,
+          53.3415914
+        ]
+      },
+      "properties": {
+        "id": "the-ramen-bar",
+        "name": "The Ramen Bar",
+        "categories": [
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/the-ramen-bar/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2603697,
+          53.3699228
+        ]
+      },
+      "properties": {
+        "id": "the-tram-caf",
+        "name": "The Tram Café",
+        "categories": [
+          "museum",
+          "food",
+          "pubs"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/the-tram-cafe/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2690937,
+          53.3497624
+        ]
+      },
+      "properties": {
+        "id": "the-black-sheep",
+        "name": "The Black Sheep",
+        "categories": [
+          "pubs",
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/the-black-sheep/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.264612,
+          53.3268571
+        ]
+      },
+      "properties": {
+        "id": "blackbird",
+        "name": "Blackbird",
+        "categories": [
+          "pubs",
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/blackbird/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.265281,
+          53.3446727
+        ]
+      },
+      "properties": {
+        "id": "irish-film-institute",
+        "name": "Irish Film Institute",
+        "categories": [
+          "museum",
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/irish-film-institute/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.239724,
+          53.3448923
+        ]
+      },
+      "properties": {
+        "id": "admiral",
+        "name": "Admiral",
+        "categories": [
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/admiral/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2601558,
+          53.3356743
+        ]
+      },
+      "properties": {
+        "id": "memorial-to-human-rights-defenders",
+        "name": "Memorial to Human Rights Defenders",
+        "categories": [
+          "museum"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/memorial-to-human-rights-defenders/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.268348,
+          53.3468027
+        ]
+      },
+      "properties": {
+        "id": "dash-burger",
+        "name": "Dash Burger",
+        "categories": [
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/dash-burger/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.269282,
+          53.3500404
+        ]
+      },
+      "properties": {
+        "id": "mish-mash",
+        "name": "Mish Mash",
+        "categories": [
+          "museum",
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/mish-mash/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2601433,
+          53.3462849
+        ]
+      },
+      "properties": {
+        "id": "the-icon-walk",
+        "name": "The Icon Walk",
+        "categories": [
+          "museum",
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/the-icon-walk/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.208006,
+          53.3276518
+        ]
+      },
+      "properties": {
+        "id": "sandymount-beach",
+        "name": "Sandymount Beach",
+        "categories": [
+          "museum",
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/sandymount-beach/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2491738,
+          53.3396764
+        ]
+      },
+      "properties": {
+        "id": "merrion-square-park",
+        "name": "Merrion Square Park",
+        "categories": [
+          "museum",
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/merrion-square-park/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2625549,
+          53.3502396
+        ]
+      },
+      "properties": {
+        "id": "moore-street",
+        "name": "Moore Street",
+        "categories": [
+          "museum",
+          "parks",
+          "shopping"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/moore-street/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2573161,
+          53.347624
+        ]
+      },
+      "properties": {
+        "id": "rosie-hackett-bridge",
+        "name": "Rosie Hackett Bridge",
+        "categories": [
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/rosie-hackett-bridge/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2642914520651924,
+          53.34568241985379
+        ]
+      },
+      "properties": {
+        "id": "that-one-corner-in-temple-bar",
+        "name": "That One Corner in Temple Bar",
+        "categories": [
+          "museum"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/that-one-corner-in-temple-bar/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.278856673330574,
+          53.34210753514087
+        ]
+      },
+      "properties": {
+        "id": "meath-street-grotto",
+        "name": "Meath Street Grotto",
+        "categories": [
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/meath-street-grotto/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.263966180141005,
+          53.35153630202467
+        ]
+      },
+      "properties": {
+        "id": "chapters-bookstore",
+        "name": "Chapters Bookstore",
+        "categories": [
+          "shopping"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/chapters-bookstore/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2645886709381635,
+          53.34495743553711
+        ]
+      },
+      "properties": {
+        "id": "wall-of-fame",
+        "name": "Wall of Fame",
+        "categories": [
+          "museum"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/wall-of-fame/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.046801720765104,
+          53.38582187288367
+        ]
+      },
+      "properties": {
+        "id": "howth-walks",
+        "name": "Howth Walks",
+        "categories": [
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/howth-walks/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.182048557563744,
+          53.339131394735276
+        ]
+      },
+      "properties": {
+        "id": "shelley-banks-beach",
+        "name": "Shelley Banks Beach",
+        "categories": [
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/shelley-banks-beach/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.273425419751177,
+          53.33923584864954
+        ]
+      },
+      "properties": {
+        "id": "john-fallons",
+        "name": "John Fallons",
+        "categories": [
+          "pubs",
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/john-fallons/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2586906682696934,
+          53.340962941798175
+        ]
+      },
+      "properties": {
+        "id": "dublin-barista-school",
+        "name": "Dublin Barista School",
+        "categories": [
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/dublin-barista-school/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.286725709676658,
+          53.343918081181506
+        ]
+      },
+      "properties": {
+        "id": "dublin-flea-market",
+        "name": "Dublin Flea Market",
+        "categories": [
+          "museum",
+          "shopping",
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/dublin-flea-market/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.074697389824075,
+          53.38892932122127
+        ]
+      },
+      "properties": {
+        "id": "the-dog-house-blue-s-tea-rooms",
+        "name": "The Dog House & Blue’s Tea Rooms",
+        "categories": [
+          "pubs",
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/the-dog-house-blues-tea-rooms/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2588239686322815,
+          53.339807944379544
+        ]
+      },
+      "properties": {
+        "id": "beanhive-coffee",
+        "name": "Beanhive Coffee",
+        "categories": [
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/beanhive-coffee/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.279955271353595,
+          53.343132535703575
+        ]
+      },
+      "properties": {
+        "id": "artisan-brew-academy",
+        "name": "Artisan Brew Academy",
+        "categories": [
+          "museum"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/artisan-brew-academy/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.261093852572602,
+          53.34316895633516
+        ]
+      },
+      "properties": {
+        "id": "freebird-records",
+        "name": "Freebird Records",
+        "categories": [
+          "shopping"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/freebird-records/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.26008696962808,
+          53.35029334936065
+        ]
+      },
+      "properties": {
+        "id": "the-hot-donut",
+        "name": "The Hot Donut",
+        "categories": [
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/the-hot-donut/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.269981414032209,
+          53.275600516645824
+        ]
+      },
+      "properties": {
+        "id": "marlay-park",
+        "name": "Marlay Park",
+        "categories": [
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/marlay-park/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.165010154676353,
+          53.37442268648483
+        ]
+      },
+      "properties": {
+        "id": "the-peace-tree",
+        "name": "The Peace Tree",
+        "categories": [
+          "museum",
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/the-peace-tree/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.271864086973532,
+          53.37271569601303
+        ]
+      },
+      "properties": {
+        "id": "the-national-botanical-gardens",
+        "name": "The National Botanical Gardens",
+        "categories": [
+          "museum",
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/the-national-botanical-gardens/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.250037908542471,
+          53.34807224154781
+        ]
+      },
+      "properties": {
+        "id": "the-famine-memorial",
+        "name": "The Famine Memorial",
+        "categories": [
+          "museum"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/the-famine-memorial/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2048510585060965,
+          53.33631534887219
+        ]
+      },
+      "properties": {
+        "id": "dublin-bay-walks",
+        "name": "Dublin Bay Walks",
+        "categories": [
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/dublin-bay-walks/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.330783738176125,
+          53.366346528149165
+        ]
+      },
+      "properties": {
+        "id": "visitor-centre-of-phoenix-park",
+        "name": "Visitor Centre of Phoenix Park",
+        "categories": [
+          "museum",
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/visitor-centre-of-phoenix-park/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.261428168244471,
+          53.34689784552406
+        ]
+      },
+      "properties": {
+        "id": "music-under-the-bridges",
+        "name": "Music Under The Bridges",
+        "categories": [
+          "pubs",
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/music-under-the-bridges/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.358544877599843,
+          53.365841902577586
+        ]
+      },
+      "properties": {
+        "id": "farmleigh-house",
+        "name": "Farmleigh House",
+        "categories": [
+          "museum",
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/farmleigh-house/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.111169451240256,
+          53.26696152646049
+        ]
+      },
+      "properties": {
+        "id": "killiney-hill-park",
+        "name": "Killiney Hill Park",
+        "categories": [
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/killiney-hill-park/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.261607669378786,
+          53.348225612326694
+        ]
+      },
+      "properties": {
+        "id": "kalabasa-market",
+        "name": "Kalabasa Market",
+        "categories": [
+          "pubs",
+          "shopping",
+          "food"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/kalabasa-market/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.257850443557249,
+          53.34909117184316
+        ]
+      },
+      "properties": {
+        "id": "pipers-corner",
+        "name": "Pipers Corner",
+        "categories": [
+          "museum",
+          "pubs"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/pipers-corner/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2918789995248785,
+          53.33671402179568
+        ]
+      },
+      "properties": {
+        "id": "medikate-garden",
+        "name": "MediKate Garden",
+        "categories": [
+          "museum",
+          "parks"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/medikate-garden/",
+        "image": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.260475784138325,
+          53.35288798699501
+        ]
+      },
+      "properties": {
+        "id": "fibber-magees",
+        "name": "Fibber Magees",
+        "categories": [
+          "museum",
+          "pubs"
+        ],
+        "url": "https://www.spottedbylocals.com/dublin/fibber-magees/",
+        "image": null
+      }
+    }
   ]
 }

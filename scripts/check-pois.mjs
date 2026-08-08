@@ -5,8 +5,9 @@ import { fileURLToPath } from 'node:url';
 
 const path = fileURLToPath(new URL('../public/data/pois.geojson', import.meta.url));
 
-// Generous Dublin city-region bbox: [minLon, minLat, maxLon, maxLat].
-const BBOX = [-6.45, 53.28, -6.05, 53.42];
+// Greater/County Dublin bbox: [minLon, minLat, maxLon, maxLat] — covers Fingal
+// north (Balbriggan/Malahide) to south county (Killiney/Dún Laoghaire) and Howth.
+const BBOX = [-6.55, 53.15, -6.0, 53.65];
 const FEES = new Set(['free', 'paid', 'unknown']);
 
 const fc = JSON.parse(readFileSync(path, 'utf8'));
