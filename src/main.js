@@ -1,7 +1,7 @@
 import './style.css';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { createMap } from './map.js';
-import { orderedCategories, categoryFilter, renderChips } from './filters.js';
+import { orderedCategories, renderChips } from './filters.js';
 import { searchPOIs } from './search.js';
 import { parseHash, buildHash } from './urlstate.js';
 import { enrich } from './enrich.js';
@@ -36,7 +36,11 @@ async function applyMapTheme() {
   if (!map.getLayer('pois')) return;
   retuneBasemap(map);
   await addCategoryIcons(map); // updates pin images in place
-  map.setPaintProperty('poi-selected', 'circle-color', palette().marker.selected);
+  const { marker } = palette();
+  map.setPaintProperty('poi-selected', 'circle-color', marker.selected);
+  map.setPaintProperty('clusters', 'circle-color', marker.disc);
+  map.setPaintProperty('clusters', 'circle-stroke-color', marker.glyph);
+  map.setPaintProperty('cluster-count', 'text-color', marker.glyph);
 }
 
 themeToggle.addEventListener('click', async () => {
@@ -222,9 +226,6 @@ function retuneBasemap(map) {
   }
 }
 
-// ponytail: no clustering — 45 POIs isn't dense, and clustering pre-aggregates
-// the whole source so it fights the per-category filter. Add cluster:true on the
-// source only if the dataset grows dense enough to need it.
 map.on('load', async () => {
   data = await fetch(`${import.meta.env.BASE_URL}data/pois.geojson`).then((r) => r.json());
 
@@ -233,7 +234,19 @@ map.on('load', async () => {
   for (const f of data.features)
     f.properties.icon = pinImageId(primaryCategory(f.properties.categories));
 
-  map.addSource('pois', { type: 'geojson', data });
+  // cluster:true pre-aggregates the WHOLE source, so the category filter can't
+  // be a layer setFilter (it wouldn't drop pins from clusters — counts would
+  // lie). Instead apply() feeds the source only the active features via setData,
+  // and MapLibre re-clusters what's left. clusterMaxZoom < selectPOI's fly zoom
+  // (15) so a flown-to pin is always unclustered.
+  map.addSource('pois', {
+    type: 'geojson',
+    data,
+    cluster: true,
+    clusterRadius: 50,
+    clusterMaxZoom: 13,
+  });
+  const { marker } = palette();
 
   // Selected-marker halo: a lime disc drawn UNDER the pins, so a lime rim shows
   // around the selected pin. Filtered to the selected id (no top-level feature
@@ -245,16 +258,47 @@ map.on('load', async () => {
     filter: ['==', ['get', 'id'], ''],
     paint: {
       'circle-radius': ['interpolate', ['linear'], ['zoom'], 11, 21, 16, 24],
-      'circle-color': palette().marker.selected,
+      'circle-color': marker.selected,
     },
+  });
+
+  // Cluster bubbles: one disc per cluster, sized by how many POIs it holds, with
+  // the count centred on it. Both filter on point_count (present only on cluster
+  // features). Colors track the theme's pin palette (disc + ink), updated in
+  // applyMapTheme on theme switch.
+  map.addLayer({
+    id: 'clusters',
+    type: 'circle',
+    source: 'pois',
+    filter: ['has', 'point_count'],
+    paint: {
+      'circle-color': marker.disc,
+      'circle-stroke-color': marker.glyph,
+      'circle-stroke-width': 3,
+      'circle-radius': ['step', ['get', 'point_count'], 16, 10, 20, 25, 26],
+    },
+  });
+  map.addLayer({
+    id: 'cluster-count',
+    type: 'symbol',
+    source: 'pois',
+    filter: ['has', 'point_count'],
+    layout: {
+      'text-field': ['get', 'point_count_abbreviated'],
+      'text-font': ['Noto Sans Bold'],
+      'text-size': 13,
+    },
+    paint: { 'text-color': marker.glyph },
   });
 
   // Pins: one composited image each (pink disc + ink Material glyph), so pins
   // stay whole when they overlap and the basemap never bleeds through the glyph.
+  // Filtered to unclustered features so a pin and its cluster never both draw.
   map.addLayer({
     id: 'pois',
     type: 'symbol',
     source: 'pois',
+    filter: ['!', ['has', 'point_count']],
     layout: {
       'icon-image': ['get', 'icon'],
       'icon-size': 1,
@@ -281,9 +325,16 @@ map.on('load', async () => {
     });
   }
 
+  // Category filter drives the source data (not a layer setFilter) so clustering
+  // re-aggregates only the active POIs. A POI shows if it has ANY active category.
   const apply = () => {
-    const f = categoryFilter(active);
-    for (const layer of POI_LAYERS) map.setFilter(layer, f);
+    const features =
+      active.size === 0
+        ? []
+        : data.features.filter((f) =>
+            f.properties.categories.some((c) => active.has(c)),
+          );
+    map.getSource('pois').setData({ type: 'FeatureCollection', features });
     writeHash();
   };
 
@@ -302,6 +353,21 @@ map.on('load', async () => {
       map.getCanvas().style.cursor = '';
     });
   }
+
+  // Click a cluster → zoom to the level where it breaks apart.
+  map.on('click', 'clusters', async (e) => {
+    const [f] = map.queryRenderedFeatures(e.point, { layers: ['clusters'] });
+    if (!f) return;
+    const zoom = await map.getSource('pois').getClusterExpansionZoom(f.properties.cluster_id);
+    map.easeTo({ center: f.geometry.coordinates, zoom });
+  });
+  map.on('mouseenter', 'clusters', () => {
+    map.getCanvas().style.cursor = 'pointer';
+  });
+  map.on('mouseleave', 'clusters', () => {
+    map.getCanvas().style.cursor = '';
+  });
+
   map.on('moveend', writeHash);
 
   searchInput.addEventListener('input', () => {
