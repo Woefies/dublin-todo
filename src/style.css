@@ -1,8 +1,29 @@
+/* Illuminated Dublin — dark obsidian-glass chrome framing a light map, with
+   Book-of-Kells gold, manuscript vellum, and oxblood/insular-green accents. */
+:root {
+  --ink: #0e1611;
+  --ink-2: #16201a;
+  --glass: rgba(14, 22, 17, 0.82);
+  --glass-row: rgba(200, 162, 74, 0.14);
+  --vellum: #efe7d2;
+  --vellum-dim: #b9ae8f;
+  --gold: #c8a24a;
+  --gold-soft: #dcbf74;
+  --oxblood: #7a2d2a;
+  --green: #2f6b4f;
+  --brass: #9a7b3f;
+  --brass-line: rgba(154, 123, 63, 0.35);
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-ui: 'Inter', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
 html,
 body {
   margin: 0;
   height: 100%;
-  font-family: system-ui, sans-serif;
+  font-family: var(--font-ui);
 }
 
 #map {
@@ -10,39 +31,88 @@ body {
   inset: 0;
 }
 
+/* --- Floating control panel: obsidian glass --- */
 #controls {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
+  top: 14px;
+  left: 14px;
+  right: 14px;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  max-width: 420px;
+  gap: 10px;
+  max-width: 360px;
+  padding: 16px;
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--brass-line);
+  border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
 }
 
+/* --- Illuminated wordmark (the signature) --- */
+#brand {
+  margin: 0 0 2px;
+}
+
+.brand-word {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  color: var(--vellum);
+}
+
+.brand-drop {
+  color: var(--gold);
+  font-size: 1.15em;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.brand-sub {
+  margin: 6px 0 0;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--vellum-dim);
+  padding-top: 8px;
+  border-top: 1px solid var(--brass-line);
+}
+
+/* --- Search --- */
 #search-input {
-  padding: 8px 12px;
+  font-family: var(--font-ui);
+  padding: 10px 13px;
   font-size: 14px;
-  border: 1px solid #bbb;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  color: var(--vellum);
+  background: var(--ink-2);
+  border: 1px solid var(--brass-line);
+  border-radius: 8px;
+  caret-color: var(--gold);
+}
+
+#search-input::placeholder {
+  color: var(--vellum-dim);
 }
 
 #search-input:focus-visible {
-  outline: 2px solid #1a73e8;
-  outline-offset: 2px;
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(200, 162, 74, 0.3);
 }
 
 #search-results {
   list-style: none;
   margin: 0;
-  padding: 0;
-  background: #fff;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
-  max-height: 200px;
+  padding: 4px;
+  background: var(--ink-2);
+  border: 1px solid var(--brass-line);
+  border-radius: 8px;
+  max-height: 220px;
   overflow-y: auto;
 }
 
@@ -54,19 +124,24 @@ body {
   display: block;
   width: 100%;
   text-align: left;
-  padding: 8px 12px;
+  padding: 9px 11px;
   border: none;
+  border-radius: 6px;
   background: none;
+  font-family: var(--font-ui);
   font-size: 13px;
+  color: var(--vellum);
   cursor: pointer;
 }
 
 .search-result:hover,
 .search-result:focus-visible {
-  background: #f0f0f0;
+  background: var(--glass-row);
+  color: var(--gold-soft);
   outline: none;
 }
 
+/* --- Category chips --- */
 #filters {
   display: flex;
   flex-wrap: wrap;
@@ -74,41 +149,66 @@ body {
 }
 
 .chip {
-  border: 1px solid #e4572e;
+  font-family: var(--font-ui);
+  border: 1px solid var(--brass);
   border-radius: 999px;
-  padding: 6px 12px;
-  font-size: 13px;
+  padding: 6px 13px;
+  font-size: 12px;
   font-weight: 600;
+  letter-spacing: 0.02em;
   cursor: pointer;
-  background: #e4572e;
-  color: #fff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  background: transparent;
+  color: var(--vellum-dim);
+  transition: transform 0.12s ease, background 0.12s ease, color 0.12s ease;
 }
 
-/* Inactive = outline only. */
-.chip[aria-pressed='false'] {
-  background: #fff;
-  color: #555;
-  border-color: #bbb;
+.chip:hover {
+  transform: translateY(-1px);
+  color: var(--vellum);
+  border-color: var(--gold);
+}
+
+/* Active = illuminated gold. */
+.chip[aria-pressed='true'] {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--ink);
 }
 
 .chip:focus-visible {
-  outline: 2px solid #1a73e8;
+  outline: 2px solid var(--gold-soft);
   outline-offset: 2px;
 }
 
+/* --- Detail panel: vellum manuscript card --- */
 #detail {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
-  width: 320px;
+  width: 340px;
   max-width: 100%;
-  background: #fff;
-  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.25);
+  background: var(--vellum);
+  /* faint parchment tint */
+  background-image: radial-gradient(
+    120% 80% at 100% 0%,
+    rgba(200, 162, 74, 0.12),
+    transparent 60%
+  );
+  border-top: 3px solid var(--gold);
+  box-shadow: -6px 0 30px rgba(0, 0, 0, 0.35);
   z-index: 2;
-  padding: 16px;
+  padding: 22px 20px;
   overflow-y: auto;
+  color: var(--ink);
+  animation: slide-in 0.28s ease;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(16px);
+    opacity: 0;
+  }
 }
 
 #detail[hidden] {
@@ -117,90 +217,141 @@ body {
 
 #detail-close {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 10px;
+  right: 10px;
   border: none;
   background: none;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1;
   cursor: pointer;
+  color: var(--brass);
   padding: 4px 8px;
 }
 
+#detail-close:hover {
+  color: var(--oxblood);
+}
+
 #detail-close:focus-visible {
-  outline: 2px solid #1a73e8;
+  outline: 2px solid var(--gold);
   outline-offset: 2px;
 }
 
 #detail h2 {
-  margin: 0 32px 8px 0;
-  font-size: 18px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0 32px 6px 0;
+  font-size: 27px;
+  line-height: 1.05;
+  color: var(--ink);
 }
 
 .detail-categories {
-  color: #666;
-  font-size: 12px;
+  color: var(--brass);
+  font-family: var(--font-mono);
+  font-size: 10px;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  margin: 0 0 8px;
+  letter-spacing: 0.16em;
+  margin: 0 0 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--brass-line);
+}
+
+#detail p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #2a2a24;
 }
 
 .detail-address {
-  color: #555;
+  color: #57503d;
   font-size: 13px;
 }
 
 .detail-enrich {
-  margin-top: 12px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--brass-line);
   font-size: 13px;
-  color: #333;
 }
 
 .detail-enrich img {
   max-width: 100%;
-  border-radius: 6px;
-  margin-bottom: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--brass);
+  margin-bottom: 10px;
 }
 
 .detail-credit {
-  font-size: 11px;
-  color: #888;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--brass);
 }
 
+.detail-credit a {
+  color: var(--oxblood);
+}
+
+/* --- Fee badge --- */
 .fee-badge {
   display: inline-block;
-  padding: 3px 10px;
+  padding: 3px 11px;
   border-radius: 999px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .fee-badge.fee-free {
-  background: #d7f4dd;
-  color: #1a7431;
+  background: rgba(47, 107, 79, 0.15);
+  color: var(--green);
 }
 
 .fee-badge.fee-paid {
-  background: #fde3d0;
-  color: #a34f0d;
+  background: rgba(122, 45, 42, 0.14);
+  color: var(--oxblood);
 }
 
 .fee-badge.fee-unknown {
-  background: #eee;
-  color: #666;
+  background: rgba(154, 123, 63, 0.15);
+  color: var(--brass);
 }
 
+/* --- Mobile: control panel compact, detail as bottom sheet --- */
 @media (max-width: 600px) {
+  #controls {
+    max-width: none;
+    right: 14px;
+  }
+
+  .brand-word {
+    font-size: 34px;
+  }
+
   #detail {
     top: auto;
     left: 0;
     right: 0;
     width: auto;
-    max-height: 60vh;
-    border-radius: 12px 12px 0 0;
+    max-height: 62vh;
+    border-radius: 16px 16px 0 0;
+    border-top: 3px solid var(--gold);
+    animation: sheet-up 0.28s ease;
   }
 
-  #controls {
-    max-width: none;
+  @keyframes sheet-up {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #detail,
+  .chip {
+    animation: none;
+    transition: none;
   }
 }

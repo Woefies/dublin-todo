@@ -141,10 +141,11 @@ map.on('load', async () => {
     type: 'circle',
     source: 'pois',
     paint: {
-      'circle-radius': 7,
-      'circle-color': '#e4572e',
+      // Book-of-Kells gold pins with an ink outline; grow gently with zoom.
+      'circle-radius': ['interpolate', ['linear'], ['zoom'], 11, 5, 16, 8],
+      'circle-color': '#c8a24a',
       'circle-stroke-width': 2,
-      'circle-stroke-color': '#fff',
+      'circle-stroke-color': '#0e1611',
     },
   });
 

@@ -27,6 +27,19 @@ vite.config.js             base: '/dublin-todo/'  ← project-site base path
 .github/workflows/deploy.yml  build + deploy to Pages
 ```
 
+## Design system ("Illuminated Dublin")
+
+Dark obsidian-glass chrome framing a light map; Book-of-Kells gold accent,
+manuscript vellum detail panel, oxblood/insular-green fee badges. All colors and
+fonts are CSS custom properties on `:root` in `src/style.css` — use the tokens,
+never raw hex. Key tokens: `--ink #0e1611`, `--vellum #efe7d2`, `--gold #c8a24a`,
+`--oxblood`, `--green`, `--brass`. Fonts: `--font-display` Cormorant Garamond
+(headings only, sparingly), `--font-ui` Inter, `--font-mono` IBM Plex Mono
+(counts/credits). Map markers are gold `#c8a24a` (hard-coded in the layer paint
+in `main.js` since MapLibre paint can't read CSS vars — keep in sync with
+`--gold`). Fonts load from Google Fonts CDN via `index.html` (external request;
+swap to `@fontsource` if fully self-hosted assets are ever required).
+
 ## Critical conventions
 
 - **Base path**: this is a project site. Never hard-code `/data/...` or absolute
