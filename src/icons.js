@@ -26,7 +26,7 @@ export function primaryCategory(categories) {
 }
 
 // Inline SVG markup for a chip glyph. stroke=currentColor so it inherits the
-// chip's text color (ink on active gold, dim otherwise). '' for unknown ids.
+// chip's text color (ink on active lime, muted otherwise). '' for unknown ids.
 export function categoryIconSvg(id, size = 15) {
   const inner = ICONS[id];
   if (!inner) return '';
@@ -40,7 +40,7 @@ export function categoryIconSvg(id, size = 15) {
 function svgDoc(inner) {
   return (
     '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"' +
-    ' fill="none" stroke="#0e1611" stroke-width="2.2" stroke-linecap="round"' +
+    ' fill="none" stroke="#17252E" stroke-width="2.2" stroke-linecap="round"' +
     ` stroke-linejoin="round">${inner}</svg>`
   );
 }

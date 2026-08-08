@@ -1,22 +1,52 @@
-/* Illuminated Dublin — dark obsidian-glass chrome framing a light map, with
-   Book-of-Kells gold, manuscript vellum, and oxblood/insular-green accents. */
+/* Romance — light pastel, chrome-pink + acid-lime on sky blue. */
 :root {
-  --ink: #0e1611;
-  --ink-2: #16201a;
-  --glass: rgba(14, 22, 17, 0.82);
-  --glass-row: rgba(200, 162, 74, 0.14);
-  --vellum: #efe7d2;
-  --vellum-dim: #b9ae8f;
-  --gold: #c8a24a;
-  --gold-soft: #dcbf74;
-  --oxblood: #7a2d2a;
-  --green: #2f6b4f;
-  --brass: #9a7b3f;
-  --brass-line: rgba(154, 123, 63, 0.35);
+  /* surfaces (light, blue-tinted ladder) */
+  --surface-0: #e7f1f7;
+  --surface-1: #f4fafd;
+  --surface-2: #ffffff;
+  --surface-sky: #8fc2dd;
 
-  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --border-soft: #c4dae6;
+  --border-ui: #3e7799;
+
+  /* text */
+  --text-strong: #17252e;
+  --text-muted: #33474f;
+  --text-faint: #5a6b72;
+  --text-on-accent: #17252e;
+
+  /* accents */
+  --primary: #f0589f;
+  --primary-strong: #d63f86;
+  --primary-ink: #a83a73;
+  --secondary: #b4dd3a;
+  --secondary-ink: #52700e;
+  --bloom-core: #ff7fbf;
+  --bloom-edge: #c0397a;
+  --spec: #ffffff;
+
+  /* semantic (always pair with icon/label, never hue alone) */
+  --info: #2e7ba8;
+  --success: #52700e;
+  --error: #b02e5b;
+  --warning: #b5661f;
+
+  /* fonts */
+  --font-display: 'Hanken Grotesk', system-ui, sans-serif;
   --font-ui: 'Inter', system-ui, sans-serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-mono: 'Space Mono', ui-monospace, monospace;
+
+  /* radius / space / border / shadow / motion */
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --r-pill: 999px;
+  --shadow-1: 0 2px 8px rgba(23, 37, 46, 0.1);
+  --shadow-2: 0 8px 30px rgba(23, 37, 46, 0.16);
+  --shadow-bloom: 0 10px 40px rgba(240, 88, 159, 0.35);
+  --dur-fast: 120ms;
+  --dur: 180ms;
+  --ease: cubic-bezier(0.3, 0.7, 0, 1);
 }
 
 html,
@@ -26,61 +56,75 @@ body {
   font-family: var(--font-ui);
 }
 
+/* Global grain: authored fractal-noise overlay, kept subtle. */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
 #map {
   position: absolute;
   inset: 0;
 }
 
-/* --- Floating control panel: obsidian glass --- */
+/* --- Floating control panel: frosted glass on sky --- */
 #controls {
   position: absolute;
   top: 14px;
   left: 14px;
   right: 14px;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   gap: 10px;
   max-width: 360px;
   padding: 16px;
-  background: var(--glass);
+  /* Solid fallback first, blur layered on top where supported. */
+  background: var(--surface-1);
+  background: rgba(244, 250, 253, 1);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid var(--brass-line);
-  border-radius: 14px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-2);
 }
 
-/* --- Illuminated wordmark (the signature) --- */
+/* --- Wordmark (the signature) --- */
 #brand {
+  position: relative;
   margin: 0 0 2px;
 }
 
 .brand-word {
   margin: 0;
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 42px;
+  font-weight: 800;
+  font-size: 40px;
   line-height: 0.9;
-  letter-spacing: 0.01em;
-  color: var(--vellum);
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+  color: var(--text-strong);
 }
 
 .brand-drop {
-  color: var(--gold);
-  font-size: 1.15em;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  color: var(--primary);
 }
 
 .brand-sub {
   margin: 6px 0 0;
   font-family: var(--font-mono);
   font-size: 10px;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--vellum-dim);
+  color: var(--text-faint);
   padding-top: 8px;
-  border-top: 1px solid var(--brass-line);
+  border-top: 1px solid var(--border-soft);
 }
 
 /* --- Search --- */
@@ -88,30 +132,29 @@ body {
   font-family: var(--font-ui);
   padding: 10px 13px;
   font-size: 14px;
-  color: var(--vellum);
-  background: var(--ink-2);
-  border: 1px solid var(--brass-line);
-  border-radius: 8px;
-  caret-color: var(--gold);
+  color: var(--text-strong);
+  background: var(--surface-2);
+  border: 1px solid var(--border-ui);
+  border-radius: var(--r-md);
+  caret-color: var(--primary);
 }
 
 #search-input::placeholder {
-  color: var(--vellum-dim);
+  color: var(--text-faint);
 }
 
 #search-input:focus-visible {
-  outline: none;
-  border-color: var(--gold);
-  box-shadow: 0 0 0 2px rgba(200, 162, 74, 0.3);
+  outline: 2px solid var(--primary-strong);
+  outline-offset: 2px;
 }
 
 #search-results {
   list-style: none;
   margin: 0;
   padding: 4px;
-  background: var(--ink-2);
-  border: 1px solid var(--brass-line);
-  border-radius: 8px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--r-md);
   max-height: 220px;
   overflow-y: auto;
 }
@@ -126,19 +169,31 @@ body {
   text-align: left;
   padding: 9px 11px;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--r-sm);
   background: none;
   font-family: var(--font-ui);
   font-size: 13px;
-  color: var(--vellum);
+  color: var(--text-strong);
   cursor: pointer;
 }
 
 .search-result:hover,
 .search-result:focus-visible {
-  background: var(--glass-row);
-  color: var(--gold-soft);
+  background: var(--surface-0);
+  color: var(--primary-ink);
   outline: none;
+}
+
+.search-result:focus-visible {
+  outline: 2px solid var(--primary-strong);
+  outline-offset: -2px;
+}
+
+.search-empty {
+  padding: 9px 11px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--text-faint);
 }
 
 /* --- Category chips --- */
@@ -153,16 +208,19 @@ body {
   align-items: center;
   gap: 6px;
   font-family: var(--font-ui);
-  border: 1px solid var(--brass);
-  border-radius: 999px;
+  border: 1px solid var(--border-ui);
+  border-radius: var(--r-pill);
   padding: 6px 12px;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.02em;
   cursor: pointer;
   background: transparent;
-  color: var(--vellum-dim);
-  transition: transform 0.12s ease, background 0.12s ease, color 0.12s ease;
+  color: var(--text-muted);
+  transition:
+    transform var(--dur-fast) var(--ease),
+    background var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease);
 }
 
 .chip svg {
@@ -177,23 +235,21 @@ body {
 
 .chip:hover {
   transform: translateY(-1px);
-  color: var(--vellum);
-  border-color: var(--gold);
 }
 
-/* Active = illuminated gold. */
+/* Active = lime fill, ink text — never white text on pink. */
 .chip[aria-pressed='true'] {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: var(--ink);
+  background: var(--secondary);
+  border-color: var(--border-ui);
+  color: var(--text-on-accent);
 }
 
 .chip:focus-visible {
-  outline: 2px solid var(--gold-soft);
+  outline: 2px solid var(--primary-strong);
   outline-offset: 2px;
 }
 
-/* --- Detail panel: vellum manuscript card --- */
+/* --- Detail panel --- */
 #detail {
   position: absolute;
   top: 0;
@@ -201,20 +257,14 @@ body {
   bottom: 0;
   width: 340px;
   max-width: 100%;
-  background: var(--vellum);
-  /* faint parchment tint */
-  background-image: radial-gradient(
-    120% 80% at 100% 0%,
-    rgba(200, 162, 74, 0.12),
-    transparent 60%
-  );
-  border-top: 3px solid var(--gold);
-  box-shadow: -6px 0 30px rgba(0, 0, 0, 0.35);
+  background: var(--surface-1);
+  border-top: 3px solid var(--primary);
+  box-shadow: var(--shadow-2);
   z-index: 2;
   padding: 22px 20px;
   overflow-y: auto;
-  color: var(--ink);
-  animation: slide-in 0.28s ease;
+  color: var(--text-strong);
+  animation: slide-in var(--dur) var(--ease);
 }
 
 @keyframes slide-in {
@@ -237,61 +287,70 @@ body {
   font-size: 22px;
   line-height: 1;
   cursor: pointer;
-  color: var(--brass);
+  color: var(--text-faint);
   padding: 4px 8px;
 }
 
 #detail-close:hover {
-  color: var(--oxblood);
+  color: var(--primary-ink);
 }
 
 #detail-close:focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--primary-strong);
   outline-offset: 2px;
 }
 
 #detail h2 {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 800;
   margin: 0 32px 6px 0;
-  font-size: 27px;
+  font-size: 26px;
   line-height: 1.05;
-  color: var(--ink);
+  color: var(--text-strong);
 }
 
 .detail-categories {
-  color: var(--brass);
+  color: var(--text-faint);
   font-family: var(--font-mono);
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.16em;
   margin: 0 0 12px;
   padding-bottom: 12px;
-  border-bottom: 1px solid var(--brass-line);
+  border-bottom: 1px solid var(--border-soft);
 }
 
 #detail p {
   font-size: 14px;
   line-height: 1.5;
-  color: #2a2a24;
+  color: var(--text-muted);
 }
 
 .detail-address {
-  color: #57503d;
+  color: var(--text-faint);
   font-size: 13px;
+}
+
+#detail a {
+  color: var(--primary-ink);
+}
+
+#detail a:focus-visible {
+  outline: 2px solid var(--primary-strong);
+  outline-offset: 2px;
 }
 
 .detail-enrich {
   margin-top: 14px;
   padding-top: 12px;
-  border-top: 1px solid var(--brass-line);
+  border-top: 1px solid var(--border-soft);
   font-size: 13px;
 }
 
 .detail-enrich img {
   max-width: 100%;
-  border-radius: 4px;
-  border: 1px solid var(--brass);
+  border-radius: var(--r-sm);
+  border: 1px solid var(--border-soft);
   margin-bottom: 10px;
 }
 
@@ -299,39 +358,39 @@ body {
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.06em;
-  color: var(--brass);
+  color: var(--text-faint);
 }
 
 .detail-credit a {
-  color: var(--oxblood);
+  color: var(--primary-ink);
 }
 
-/* --- Fee badge --- */
+/* --- Fee badge (always paired with its text label, never hue alone) --- */
 .fee-badge {
   display: inline-block;
   padding: 3px 11px;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
 
 .fee-badge.fee-free {
-  background: rgba(47, 107, 79, 0.15);
-  color: var(--green);
+  background: rgba(82, 112, 14, 0.15);
+  color: var(--success);
 }
 
 .fee-badge.fee-paid {
-  background: rgba(122, 45, 42, 0.14);
-  color: var(--oxblood);
+  background: rgba(176, 46, 91, 0.14);
+  color: var(--error);
 }
 
 .fee-badge.fee-unknown {
-  background: rgba(154, 123, 63, 0.15);
-  color: var(--brass);
+  background: var(--surface-0);
+  color: var(--text-faint);
 }
 
-/* --- Mobile: control panel compact, detail as bottom sheet --- */
+/* --- Mobile: control panel full-width, detail as bottom sheet --- */
 @media (max-width: 600px) {
   #controls {
     max-width: none;
@@ -339,7 +398,7 @@ body {
   }
 
   .brand-word {
-    font-size: 34px;
+    font-size: 32px;
   }
 
   #detail {
@@ -349,8 +408,8 @@ body {
     width: auto;
     max-height: 62vh;
     border-radius: 16px 16px 0 0;
-    border-top: 3px solid var(--gold);
-    animation: sheet-up 0.28s ease;
+    border-top: 3px solid var(--primary);
+    animation: sheet-up var(--dur) var(--ease);
   }
 
   @keyframes sheet-up {
@@ -363,7 +422,8 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   #detail,
-  .chip {
+  .chip,
+  .bloom {
     animation: none;
     transition: none;
   }

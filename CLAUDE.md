@@ -27,18 +27,49 @@ vite.config.js             base: '/dublin-todo/'  ← project-site base path
 .github/workflows/deploy.yml  build + deploy to Pages
 ```
 
-## Design system ("Illuminated Dublin")
+## Design system ("Romance")
 
-Dark obsidian-glass chrome framing a light map; Book-of-Kells gold accent,
-manuscript vellum detail panel, oxblood/insular-green fee badges. All colors and
-fonts are CSS custom properties on `:root` in `src/style.css` — use the tokens,
-never raw hex. Key tokens: `--ink #0e1611`, `--vellum #efe7d2`, `--gold #c8a24a`,
-`--oxblood`, `--green`, `--brass`. Fonts: `--font-display` Cormorant Garamond
-(headings only, sparingly), `--font-ui` Inter, `--font-mono` IBM Plex Mono
-(counts/credits). Map markers are gold `#c8a24a` (hard-coded in the layer paint
-in `main.js` since MapLibre paint can't read CSS vars — keep in sync with
-`--gold`). Fonts load from Google Fonts CDN via `index.html` (external request;
-swap to `@fontsource` if fully self-hosted assets are ever required).
+Light pastel chrome on a sky-blue map: chrome-pink primary, acid-lime
+secondary, blue-tinted white surfaces. All colors and fonts are CSS custom
+properties on `:root` in `src/style.css` — use the tokens, never raw hex
+(MapLibre paint is the one exception, below). Surfaces: `--surface-0/1/2`,
+`--surface-sky`, `--border-soft`, `--border-ui`. Text: `--text-strong`,
+`--text-muted`, `--text-faint`, `--text-on-accent`. Accents: `--primary`
+`#f0589f`, `--secondary` (lime) `#b4dd3a`, plus `-strong`/`-ink` variants and a
+`--bloom-core`/`--bloom-edge`/`--spec` trio for the one glossy-blob signature
+element. Semantic `--info`/`--success`/`--error`/`--warning` are always paired
+with an icon or label, never hue alone.
+
+**Hard rule: no white text on `--primary` pink** — it fails 4.5:1 contrast.
+Text on any fill is always `--text-on-accent` (`#17252e`). Active chips use
+`--secondary` fill + ink text (10:1); pink-as-text uses `--primary-ink`;
+lime-as-text uses `--secondary-ink`. Focus rings are 2px `--primary-strong`
+outline + 2px offset on every focusable control.
+
+Fonts: `--font-display` Hanken Grotesk (wght 700/800, wordmark + `#detail h2`),
+`--font-ui` Inter (wght 400/500/600, body/UI), `--font-mono` Space Mono (wght
+400/700, counts/credits/category labels). All OFL, loaded from Google Fonts CDN
+via `index.html` (external request; swap to `@fontsource` if fully self-hosted
+assets are ever required).
+
+Map markers (`src/main.js`, `src/icons.js`) are hard-coded hex in the layer
+paint since MapLibre paint can't read CSS vars — keep in sync with the tokens:
+`pois` layer is `--primary` `#f0589f` fill / `#17252e` stroke; icon glyph
+strokes are `#17252e`. A dedicated `poi-selected` circle layer (above
+`poi-icons`, same source) highlights the active POI with a larger radius and a
+`--secondary` lime stroke ring; its filter is set/cleared by
+`selectPOI()`/`closeDetail()` via the `id` property (the source has no
+top-level feature id, so this is a property filter, not feature-state). On
+load, `retuneBasemap()` walks `map.getStyle().layers` and recolors the
+OpenFreeMap Liberty basemap into the palette (background → `--surface-0`,
+water → `--surface-sky`, other fills flattened to `--surface-0`, lines →
+white, symbol text → `--text-muted`/`--surface-1` halo), skipping our own POI
+layers.
+
+The `.bloom` radial-gradient glossy blob (signature element) is used in
+exactly two places: behind the `#brand` wordmark (CSS) and the selected-marker
+highlight on the map (the lime-ringed `poi-selected` layer, described above) —
+do not add it anywhere else.
 
 ## Critical conventions
 
