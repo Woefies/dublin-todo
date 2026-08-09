@@ -30,6 +30,47 @@ function directionsUrl(feature) {
   return `https://www.google.com/maps/dir/?api=1&destination=${lat},${lon}`;
 }
 
+// Material Symbols glyph paths (viewBox 0 -960 960 960).
+const STAR_FILLED =
+  'm233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z';
+const STAR_OUTLINE =
+  'm323-245 157-94 157 95-42-178 138-120-182-16-71-168-71 167-182 16 138 120-42 178Zm-90 125 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-355Z';
+const LINK_PATH =
+  'M450-280H280q-83 0-141.5-58.5T80-480q0-83 58.5-141.5T280-680h170v60H280q-58.33 0-99.17 40.76-40.83 40.77-40.83 99Q140-422 180.83-381q40.84 41 99.17 41h170v60ZM325-450v-60h310v60H325Zm185 170v-60h170q58.33 0 99.17-40.76 40.83-40.77 40.83-99Q820-538 779.17-579q-40.84-41-99.17-41H510v-60h170q83 0 141.5 58.5T880-480q0 83-58.5 141.5T680-280H510Z';
+
+function svgIcon(d, { size, cls } = {}) {
+  const dims = size ? ` width="${size}" height="${size}"` : cls ? ` class="${cls}"` : '';
+  return `<svg${dims} viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="${d}"/></svg>`;
+}
+
+// Favorites: a Set of POI ids in localStorage. Per-device, so it's kept out of
+// the shareable hash (a saved-only view would render empty for anyone else).
+const FAV_KEY = 'dublin-todo-favorites';
+const favorites = new Set(loadFavorites());
+let savedOnly = false;
+// Assigned once the layer loads (module-scope so the delegated star handler can
+// re-run the category/saved filter and refresh the Saved chip's count).
+let applyFilters = () => {};
+let refreshSavedChip = () => {};
+
+function loadFavorites() {
+  try {
+    return JSON.parse(localStorage.getItem(FAV_KEY)) ?? [];
+  } catch {
+    return [];
+  }
+}
+function saveFavorites() {
+  try {
+    localStorage.setItem(FAV_KEY, JSON.stringify([...favorites]));
+  } catch {
+    /* private mode / storage disabled — favorites just don't persist */
+  }
+}
+function favCount() {
+  return data ? data.features.filter((f) => favorites.has(f.properties.id)).length : 0;
+}
+
 const map = createMap('map');
 
 const detail = document.getElementById('detail');
@@ -99,7 +140,13 @@ function openDetail(feature) {
   const labels = p.categories.map((c) => categoryLabels.get(c) ?? c).join(', ');
   const fee = FEE_LABELS[p.fee] ?? FEE_LABELS.unknown;
 
+  const saved = favorites.has(p.id);
   detailBody.innerHTML = `
+    <button id="detail-fav" type="button" aria-pressed="${saved}"
+      aria-label="${saved ? 'Remove from saved' : 'Save this place'}">${svgIcon(
+        saved ? STAR_FILLED : STAR_OUTLINE,
+        { size: 22 },
+      )}</button>
     <h2>${escapeHtml(p.name)}</h2>
     <p class="detail-categories">${escapeHtml(labels)}</p>
     ${p.summary ? `<p>${escapeHtml(p.summary)}</p>` : ''}
@@ -108,6 +155,7 @@ function openDetail(feature) {
     <div class="detail-actions">
       ${p.url ? `<a class="detail-cta" href="${escapeHtml(p.url)}" target="_blank" rel="noopener">Visit website${ARROW_ICON}</a>` : ''}
       <a class="detail-cta detail-cta-directions" href="${escapeHtml(directionsUrl(feature))}" target="_blank" rel="noopener">Directions${DIRECTIONS_ICON}</a>
+      <button type="button" class="detail-cta detail-cta-directions detail-share">Copy link${svgIcon(LINK_PATH, { cls: 'cta-arrow' })}</button>
     </div>
     <div class="detail-enrich" aria-live="polite"></div>
   `;
@@ -118,6 +166,37 @@ function openDetail(feature) {
 
   fillEnrichment(feature);
 }
+
+// Star + Copy-link live in the rebuilt-per-open panel, so bind once by delegation.
+detailBody.addEventListener('click', (e) => {
+  const favBtn = e.target.closest('#detail-fav');
+  if (favBtn) {
+    if (!selectedId) return;
+    if (favorites.has(selectedId)) favorites.delete(selectedId);
+    else favorites.add(selectedId);
+    saveFavorites();
+    const on = favorites.has(selectedId);
+    favBtn.setAttribute('aria-pressed', String(on));
+    favBtn.setAttribute('aria-label', on ? 'Remove from saved' : 'Save this place');
+    favBtn.innerHTML = svgIcon(on ? STAR_FILLED : STAR_OUTLINE, { size: 22 });
+    refreshSavedChip();
+    if (savedOnly) applyFilters(); // membership of the saved-only view changed
+    return;
+  }
+
+  const shareBtn = e.target.closest('.detail-share');
+  if (shareBtn && navigator.clipboard) {
+    navigator.clipboard.writeText(location.href).then(() => {
+      const prev = shareBtn.innerHTML;
+      shareBtn.innerHTML = 'Link copied';
+      shareBtn.disabled = true;
+      setTimeout(() => {
+        shareBtn.innerHTML = prev;
+        shareBtn.disabled = false;
+      }, 1600);
+    }).catch(() => {});
+  }
+});
 
 // Lazily add a Wikipedia extract + image to the open panel. Race-guarded: if the
 // user selects another POI (or closes) before the fetch resolves, discard it.
@@ -349,17 +428,41 @@ map.on('load', async () => {
   // re-aggregates only the shown POIs. Empty active = "All"; otherwise a POI
   // shows if it has ANY active category.
   const apply = () => {
-    const features =
+    let features =
       active.size === 0
         ? data.features
         : data.features.filter((f) =>
             f.properties.categories.some((c) => active.has(c)),
           );
+    if (savedOnly) features = features.filter((f) => favorites.has(f.properties.id));
     map.getSource('pois').setData({ type: 'FeatureCollection', features });
     writeHash();
   };
+  applyFilters = apply;
 
-  renderChips(document.getElementById('filters'), categories, active, apply);
+  const filtersEl = document.getElementById('filters');
+  renderChips(filtersEl, categories, active, apply);
+
+  // "Saved" chip: a favorites narrowing, orthogonal to the OR-match category
+  // chips (they still AND together). renderChips owns the category chips; this
+  // one is appended after and drives savedOnly on its own.
+  const savedChip = document.createElement('button');
+  savedChip.type = 'button';
+  savedChip.className = 'chip chip-saved';
+  refreshSavedChip = () => {
+    savedChip.setAttribute('aria-pressed', String(savedOnly));
+    savedChip.innerHTML =
+      `${svgIcon(STAR_OUTLINE, { size: 15 })}<span>Saved</span>` +
+      `<span class="chip-count">${favCount()}</span>`;
+  };
+  savedChip.addEventListener('click', () => {
+    savedOnly = !savedOnly;
+    refreshSavedChip();
+    apply();
+  });
+  refreshSavedChip();
+  filtersEl.appendChild(savedChip);
+
   apply();
 
   for (const layer of POI_LAYERS) {

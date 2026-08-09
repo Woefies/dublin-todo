@@ -593,10 +593,38 @@ body,
   outline-offset: 2px;
 }
 
+/* Favorite toggle: icon-only star, left of the close button. Filled + accent
+   when saved (icon is swapped in JS), faint outline otherwise. */
+#detail-fav {
+  position: absolute;
+  top: 10px;
+  right: 46px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 4px 6px;
+  line-height: 0;
+  color: var(--text-faint);
+  transition: color var(--dur-fast) var(--ease);
+}
+
+#detail-fav[aria-pressed='true'] {
+  color: var(--accent);
+}
+
+#detail-fav:hover {
+  color: var(--accent-ink);
+}
+
+#detail-fav:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
 #detail h2 {
   font-family: var(--font-display);
   font-weight: 800;
-  margin: 0 32px 6px 0;
+  margin: 0 76px 6px 0; /* clear both top-right buttons: star + close */
   font-size: var(--fs-2xl);
   line-height: 1.05;
   color: var(--text);
@@ -642,7 +670,7 @@ body,
 
 /* Visit-website call to action: a filled accent button (ink text — never white
    on pink, per the contrast rule). id+element+class beats the plain #detail a. */
-#detail a.detail-cta {
+#detail .detail-cta {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -656,41 +684,47 @@ body,
   text-decoration: none;
   border-radius: var(--r-sm);
   box-shadow: var(--shadow-1);
+  cursor: pointer; /* covers the Copy-link <button> variant, not just anchors */
   transition:
     background var(--dur-fast) var(--ease),
     transform var(--dur-fast) var(--ease);
 }
 
-#detail a.detail-cta .cta-arrow {
+#detail .detail-cta[disabled] {
+  cursor: default;
+  opacity: 0.85;
+}
+
+#detail .detail-cta .cta-arrow {
   width: 20px;
   height: 20px;
   flex: 0 0 auto;
   transition: transform var(--dur-fast) var(--ease);
 }
 
-#detail a.detail-cta:hover {
+#detail .detail-cta:hover {
   background: var(--accent-2);
 }
 
-#detail a.detail-cta:hover .cta-arrow {
+#detail .detail-cta:hover .cta-arrow {
   transform: translateX(3px);
 }
 
-#detail a.detail-cta:focus-visible {
+#detail .detail-cta:focus-visible {
   outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
 /* Directions: secondary outline — transparent fill, accent-ink text + strong
    border. Extra class raises specificity over the filled base above. */
-#detail a.detail-cta.detail-cta-directions {
+#detail .detail-cta.detail-cta-directions {
   background: transparent;
   color: var(--accent-ink);
   border: 1px solid var(--border-strong);
   box-shadow: none;
 }
 
-#detail a.detail-cta.detail-cta-directions:hover {
+#detail .detail-cta.detail-cta-directions:hover {
   background: var(--accent-2);
   color: var(--text-on-accent);
 }
