@@ -44,14 +44,16 @@ export function buildTitleUrl(title) {
   return `${API}?${params}`;
 }
 
-// Pure: Wikidata call to resolve a QID to its English Wikipedia article title.
+// Pure: one Wikidata call for a QID → enwiki article title (sitelinks) AND the
+// curated main image (P18 claim). sitefilter only trims sitelinks, so claims
+// still come back — no second request needed.
 export function buildWikidataUrl(qid) {
   const params = new URLSearchParams({
     action: 'wbgetentities',
     format: 'json',
     origin: '*',
     ids: qid,
-    props: 'sitelinks',
+    props: 'sitelinks|claims',
     sitefilter: 'enwiki',
   });
   return `${WIKIDATA_API}?${params}`;
@@ -60,6 +62,14 @@ export function buildWikidataUrl(qid) {
 // Pure: pull the enwiki article title out of a wbgetentities response, or null.
 export function parseSitelinkTitle(json, qid) {
   return json?.entities?.[qid]?.sitelinks?.enwiki?.title ?? null;
+}
+
+// Pure: P18 (image) claim → a width-scaled Commons URL, or null. Special:FilePath
+// redirects a bare filename to the file, and ?width= serves a thumbnail.
+export function parseWikidataImage(json, qid, width = 480) {
+  const file = json?.entities?.[qid]?.claims?.P18?.[0]?.mainsnak?.datavalue?.value;
+  if (!file) return null;
+  return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}?width=${width}`;
 }
 
 // Pure: pull the single page out of a query response, or null if none/no text.
@@ -89,9 +99,14 @@ export async function enrich(feature) {
     // to a name search, but reject a hit whose intro isn't about a Dublin/Ireland
     // place — that's what pulled up "Blackbird" the film for the pub.
     let title = null;
+    let image = null;
     if (p.wikidata) {
       const wd = await fetch(buildWikidataUrl(p.wikidata));
-      if (wd.ok) title = parseSitelinkTitle(await wd.json(), p.wikidata);
+      if (wd.ok) {
+        const wj = await wd.json();
+        title = parseSitelinkTitle(wj, p.wikidata);
+        image = parseWikidataImage(wj, p.wikidata); // curated P18, same request
+      }
     }
     if (title) {
       const res = await fetch(buildTitleUrl(title));
@@ -103,6 +118,8 @@ export async function enrich(feature) {
         result = hit && /dublin|ireland/i.test(hit.extract) ? hit : null;
       }
     }
+    // Prefer the curated P18 over the article's pageimages thumbnail.
+    if (result && image) result.thumbnail = image;
   } catch {
     result = null;
   }

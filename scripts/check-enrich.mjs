@@ -5,6 +5,7 @@ import {
   buildTitleUrl,
   buildWikidataUrl,
   parseSitelinkTitle,
+  parseWikidataImage,
   parseWikiResponse,
 } from '../src/enrich.js';
 
@@ -41,10 +42,20 @@ assert.match(buildTitleUrl('The Cobblestone'), /titles=The\+Cobblestone/);
 assert.match(buildTitleUrl('x'), /redirects=1/);
 assert.match(buildWikidataUrl('Q42'), /^https:\/\/www\.wikidata\.org\/w\/api\.php\?/);
 assert.match(buildWikidataUrl('Q42'), /ids=Q42/);
+assert.match(buildWikidataUrl('Q42'), /props=sitelinks%7Cclaims/); // one call, both
 assert.equal(
   parseSitelinkTitle({ entities: { Q42: { sitelinks: { enwiki: { title: 'Foo' } } } } }, 'Q42'),
   'Foo',
 );
 assert.equal(parseSitelinkTitle({ entities: { Q42: { sitelinks: {} } } }, 'Q42'), null);
+
+// P18 image claim → width-scaled Commons FilePath URL; absent claim → null.
+const p18 = { entities: { Q42: { claims: { P18: [{ mainsnak: { datavalue: { value: 'Foo Bar.jpg' } } }] } } } };
+assert.equal(
+  parseWikidataImage(p18, 'Q42'),
+  'https://commons.wikimedia.org/wiki/Special:FilePath/Foo%20Bar.jpg?width=480',
+);
+assert.equal(parseWikidataImage({ entities: { Q42: { claims: {} } } }, 'Q42'), null);
+assert.equal(parseWikidataImage({}, 'Q42'), null);
 
 console.log('✓ enrich ok');
