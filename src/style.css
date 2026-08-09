@@ -631,6 +631,15 @@ body,
   outline-offset: 2px;
 }
 
+/* Action row: website (primary fill) + directions (secondary outline). */
+.detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+}
+
 /* Visit-website call to action: a filled accent button (ink text — never white
    on pink, per the contrast rule). id+element+class beats the plain #detail a. */
 #detail a.detail-cta {
@@ -670,6 +679,20 @@ body,
 #detail a.detail-cta:focus-visible {
   outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
+}
+
+/* Directions: secondary outline — transparent fill, accent-ink text + strong
+   border. Extra class raises specificity over the filled base above. */
+#detail a.detail-cta.detail-cta-directions {
+  background: transparent;
+  color: var(--accent-ink);
+  border: 1px solid var(--border-strong);
+  box-shadow: none;
+}
+
+#detail a.detail-cta.detail-cta-directions:hover {
+  background: var(--accent-2);
+  color: var(--text-on-accent);
 }
 
 .detail-enrich {

@@ -18,6 +18,18 @@ const ARROW_ICON =
   '<svg class="cta-arrow" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">' +
   '<path d="m560-242-43-42 168-168H160v-60h525L516-681l43-42 241 241-240 240Z"/></svg>';
 
+// Material Symbol directions (viewBox 0 -960 960 960), currentColor.
+const DIRECTIONS_ICON =
+  '<svg class="cta-arrow" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">' +
+  '<path d="M320-360h60v-130h184v85l116-115-116-116v86H350q-12.75 0-21.37 8.62Q320-532.75 320-520v160ZM479.95-77Q468-77 456.5-81T437-93L93-437q-8-8-12-19.55t-4-23.5q0-11.95 4-23.45T93-523l344-344q8-8 19.55-12t23.5-4q11.95 0 23.45 4t19.5 12l344 344q8 8 12 19.55t4 23.5q0 11.95-4 23.45T867-437L523-93q-8 8-19.55 12t-23.5 4ZM308-308l172 172 344-344-344-344-344 344 172 172Zm172-172Z"/></svg>';
+
+// Google Maps directions URL to the POI's own coords (geometry is [lon, lat]).
+// Universal api=1 form: opens the native app on mobile, web on desktop.
+function directionsUrl(feature) {
+  const [lon, lat] = feature.geometry.coordinates;
+  return `https://www.google.com/maps/dir/?api=1&destination=${lat},${lon}`;
+}
+
 const map = createMap('map');
 
 const detail = document.getElementById('detail');
@@ -93,7 +105,10 @@ function openDetail(feature) {
     ${p.summary ? `<p>${escapeHtml(p.summary)}</p>` : ''}
     ${p.address ? `<p class="detail-address">${escapeHtml(p.address)}</p>` : ''}
     <p class="fee-badge fee-${p.fee ?? 'unknown'}">${fee}</p>
-    ${p.url ? `<p><a class="detail-cta" href="${escapeHtml(p.url)}" target="_blank" rel="noopener">Visit website${ARROW_ICON}</a></p>` : ''}
+    <div class="detail-actions">
+      ${p.url ? `<a class="detail-cta" href="${escapeHtml(p.url)}" target="_blank" rel="noopener">Visit website${ARROW_ICON}</a>` : ''}
+      <a class="detail-cta detail-cta-directions" href="${escapeHtml(directionsUrl(feature))}" target="_blank" rel="noopener">Directions${DIRECTIONS_ICON}</a>
+    </div>
     <div class="detail-enrich" aria-live="polite"></div>
   `;
 
