@@ -9,9 +9,12 @@
    3. Semantic tokens — role-named, theme-agnostic names bound to this theme's
       primitives. Components reference ONLY these.
 
-   Romance is the default theme (on :root). Every other theme lives in a
+   Cyanotype is the default theme (on :root). Every other theme lives in a
    [data-theme="…"] block and MUST redefine the complete semantic set — no theme
    relies on inheriting another's values. Adding a token = add it to every theme.
+   Romance is PARKED below under :root[data-theme='romance'] — preserved but
+   never active (the toggle only cycles cyanotype ↔ historic). Revive it by
+   restoring it to a bare :root and adding it back to the toggle.
    ============================================================================ */
 
 /* ---- Layer 1: shared non-color primitives (fonts + grain are per-theme) ---- */
@@ -37,8 +40,92 @@
   --fs-brand: 40px;
 }
 
-/* ============================ ROMANCE (default) ============================ */
+/* ============================ CYANOTYPE (default) ============================
+   Herschel's 1842 iron-salt process — Anna Atkins' botanical photograms. One
+   hue: ferric-Prussian blue where UV struck the coating, bare paper-white where
+   it was masked. The whole UI is that single chemical blue — luminous pale marks
+   glow off a deep plate, and the only warmth is a copper split-tone kept strictly
+   for danger (a real cyanotype toning effect). Texture is paper fibre lifted off
+   the plate by a screen-blend grain, not multiply ink.
+
+   Faces (OFL, via Google Fonts in index.html):
+   - Fraunces   — display/wordmark. Old-style "wonky" optical-size serif; reads
+     like a Victorian botanical-plate title.
+   - Inter      — body/UI.
+   - Space Mono — counts/credits/labels (drafting numerals).
+   ============================================================================ */
 :root {
+  /* fonts (per-theme) */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-ui: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, monospace;
+
+  /* ---- Layer 2: color primitives (only literals live here) ---- */
+  --cyan-950: #04192b; /* deepest plate — sunken wells, glyph ink */
+  --cyan-900: #08304d; /* base ground — page + map land (classic cyanotype) */
+  --cyan-800: #0f3f5f; /* raised panels */
+  --cyan-700: #1b567a; /* soft border, map road lines */
+  --cyan-600: #2e6f97; /* strong border, map water */
+  --cyan-500: #4a90b8; /* mid tone — UI borders */
+  --cyan-300: #8fc7e0; /* ghost highlight — accent, faint text */
+  --cyan-200: #b6ddf0; /* brighter exposed highlight */
+  --paper-200: #cfe6f4; /* washed paper — secondary fill, muted text */
+  --paper-100: #e8f4fb; /* bare paper white — body text */
+  --copper-400: #e08a5f; /* split-tone copper — error only */
+  --amber-400: #e0b877; /* toned amber — warning */
+  --teal-800: #0d4d5e; /* deep teal — success text on pale fill */
+  /* raw tints + shadow colors (still primitives) */
+  --tint-success: rgba(13, 77, 94, 0.18);
+  --tint-error: rgba(224, 138, 95, 0.16);
+  --shadow-ambient: rgba(2, 12, 22, 0.5);
+  --shadow-cast: rgba(2, 12, 22, 0.62);
+
+  /* ---- Layer 3: semantic tokens (components use ONLY these) ---- */
+  --surface: var(--cyan-900);
+  --surface-raised: var(--cyan-800);
+  --surface-sunken: var(--cyan-950);
+  --surface-map-water: var(--cyan-600);
+
+  --border: var(--cyan-700);
+  --border-strong: var(--cyan-500);
+
+  --text: var(--paper-100);
+  --text-muted: var(--cyan-200);
+  --text-faint: var(--cyan-300);
+  --text-on-accent: var(--cyan-950); /* accents are LIGHT here — dark ink text */
+
+  --accent: var(--cyan-300);
+  --accent-strong: var(--cyan-200);
+  --accent-ink: var(--cyan-200); /* accent-as-text on dark ground → light */
+  --accent-2: var(--paper-200);
+  --accent-2-strong: var(--paper-100);
+  --accent-2-ink: var(--teal-800);
+  --focus-ring: var(--accent-strong);
+
+  /* semantic states (always paired with icon/label, never hue alone) */
+  --info: var(--cyan-300);
+  --success: var(--teal-800);
+  --success-bg: var(--tint-success);
+  --error: var(--copper-400);
+  --error-bg: var(--tint-error);
+  --warning: var(--amber-400);
+
+  /* signature effect trio — a cyan photogram glow, not a warm bloom */
+  --bloom-core: var(--cyan-200);
+  --bloom-edge: var(--cyan-600);
+  --spec: var(--paper-100);
+
+  /* shadows — numeric parts fixed, color is per-theme */
+  --shadow-1: 0 2px 10px var(--shadow-ambient);
+  --shadow-2: 0 10px 34px var(--shadow-cast);
+
+  /* texture — paper fibre lifted off the plate (screen lightens on dark) */
+  --grain-opacity: 0.06;
+  --grain-blend: screen;
+}
+
+/* ===================== ROMANCE (parked — see banner above) ================= */
+:root[data-theme='romance'] {
   /* fonts (per-theme) */
   --font-display: 'Hanken Grotesk', system-ui, sans-serif;
   --font-ui: 'Inter', system-ui, sans-serif;

@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dublin · Things To Do</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IM+Fell+English:ital@0;1&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..900&family=Hanken+Grotesk:wght@700;800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IM+Fell+English:ital@0;1&display=swap"
       rel="stylesheet"
     />
     <!-- Set the theme before first paint so a stored/preferred theme never
@@ -16,8 +17,8 @@
       (function () {
         try {
           var t = localStorage.getItem('dublin-todo-theme');
-          if (t !== 'romance' && t !== 'historic')
-            t = matchMedia('(prefers-color-scheme: dark)').matches ? 'historic' : 'romance';
+          if (t !== 'cyanotype' && t !== 'historic')
+            t = matchMedia('(prefers-color-scheme: dark)').matches ? 'historic' : 'cyanotype';
           document.documentElement.dataset.theme = t;
         } catch (e) {}
       })();

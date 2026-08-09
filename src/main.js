@@ -27,7 +27,7 @@ const searchInput = document.getElementById('search-input');
 const searchResults = document.getElementById('search-results');
 const themeToggle = document.getElementById('theme-toggle');
 
-const THEME_LABELS = { romance: 'Romance', historic: 'Historic' };
+const THEME_LABELS = { cyanotype: 'Cyanotype', historic: 'Historic' };
 
 function refreshToggle() {
   const target = nextTheme();
@@ -184,7 +184,7 @@ function renderSearchResults(results, query) {
   }
 }
 
-// Recolor the OpenFreeMap Liberty basemap to sit in the Romance palette. Skips
+// Recolor the OpenFreeMap Liberty basemap to sit in the active theme's palette. Skips
 // our own POI layers. Best-effort per layer — a style-schema change upstream
 // shouldn't break the whole map.
 function retuneBasemap(map) {

@@ -5,6 +5,28 @@
 // in style.css.
 
 export const THEMES = {
+  cyanotype: {
+    // The map IS the cyanotype print: Prussian land, cyan pool water, pale
+    // "exposed" road lines, pale labels. Basemap recolor (retuneBasemap).
+    map: {
+      bg: '#08304d', // --surface (cyan-900)
+      water: '#2e6f97', // --surface-map-water (cyan-600)
+      fill: '#08304d', // --surface
+      line: '#8fc7e0', // ghost highlight — exposed lines on the plate
+      text: '#cfe6f4', // pale paper labels
+      halo: '#04192b', // --surface-sunken (cyan-950) plate
+    },
+    // Pins are luminous photogram marks: pale paper disc, prussian-ink glyph,
+    // bright-cyan selected halo.
+    marker: {
+      disc: '#d6ebf7', // exposed paper white
+      glyph: '#062033', // prussian ink
+      selected: '#7fc4e6', // --accent-strong-ish (luminous cyan ring)
+    },
+  },
+  // PARKED — Romance (former default). Kept in sync but never selected; the
+  // toggle cycles cyanotype ↔ historic. Revive by re-adding to nextTheme +
+  // THEME_LABELS and restoring its :root block in style.css.
   romance: {
     // Basemap recolor (retuneBasemap in main.js).
     map: {
@@ -42,7 +64,7 @@ export const THEMES = {
 };
 
 const STORAGE_KEY = 'dublin-todo-theme';
-export const DEFAULT_THEME = 'romance';
+export const DEFAULT_THEME = 'cyanotype';
 const THEME_IDS = Object.keys(THEMES);
 
 // Active theme = the data-theme on <html> (the head script sets it before paint),
@@ -57,7 +79,7 @@ export function palette(theme = activeTheme()) {
 }
 
 export function nextTheme(theme = activeTheme()) {
-  return theme === 'historic' ? 'romance' : 'historic';
+  return theme === 'historic' ? 'cyanotype' : 'historic';
 }
 
 // Persist and apply a theme to <html>. Painting the map is the caller's job

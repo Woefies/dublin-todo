@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Cyanotype plate -->
+  <rect width="32" height="32" rx="7" fill="#08304d"/>
+  <!-- Exposed paper map-pin (the app's signature mark) -->
+  <path d="M16 4.5c-4.7 0-8.5 3.8-8.5 8.5 0 5.9 8.5 14.5 8.5 14.5s8.5-8.6 8.5-14.5c0-4.7-3.8-8.5-8.5-8.5z" fill="#d6ebf7"/>
+  <!-- Ground shows through — the masked spot -->
+  <circle cx="16" cy="13" r="3.4" fill="#08304d"/>
+</svg>
