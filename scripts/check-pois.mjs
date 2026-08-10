@@ -12,7 +12,7 @@ const FEES = new Set(['free', 'paid', 'unknown']);
 // Keep in sync with CATEGORY_ORDER in src/filters.js. A typo'd category would
 // silently spawn a stray chip, so fail loudly instead.
 const CATEGORIES = new Set([
-  'historic', 'museum', 'arts', 'landmarks', 'music',
+  'historic', 'museum', 'arts', 'theatre', 'landmarks', 'music',
   'pubs', 'food', 'shopping', 'parks', 'nature',
 ]);
 

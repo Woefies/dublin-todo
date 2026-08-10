@@ -1115,7 +1115,8 @@
         "image": null,
         "fee": "free",
         "address": "77 North King Street, Dublin, D07 TP22",
-        "wikidata": "Q131191440"
+        "wikidata": "Q131191440",
+        "summary": "Smithfield pub renowned for its nightly traditional Irish music sessions."
       }
     },
     {
@@ -1265,7 +1266,8 @@
         "image": null,
         "fee": "unknown",
         "address": "6-7 Exchange Street Lower, Dublin, D08 T2V0",
-        "wikidata": "Q7545740"
+        "wikidata": "Q7545740",
+        "summary": "Theatre on the site of a 1662 playhouse, restored within a former church."
       }
     },
     {
@@ -1288,7 +1290,8 @@
         "image": null,
         "fee": "free",
         "address": "25 Wexford Street, Dublin, D02 H527",
-        "wikidata": "Q7992381"
+        "wikidata": "Q7992381",
+        "summary": "Wexford Street live-music venue and pub, a Dublin gig-scene fixture since 1989."
       }
     },
     {
@@ -1677,7 +1680,8 @@
         "image": null,
         "fee": "unknown",
         "address": "St. Patrick's Close, Dublin, D08 H6X3",
-        "wikidata": "Q1238147"
+        "wikidata": "Q1238147",
+        "summary": "Ireland’s first public library (1707), its original oak bookcases still in place."
       }
     },
     {
@@ -1762,7 +1766,8 @@
         "url": "https://www.spottedbylocals.com/dublin/whitefriar-street-church/",
         "image": null,
         "fee": "unknown",
-        "address": "Aungier Street, Dublin, D02 RW67"
+        "address": "Aungier Street, Dublin, D02 RW67",
+        "summary": "Carmelite church on Aungier Street that holds relics of St Valentine."
       }
     },
     {
@@ -1849,7 +1854,8 @@
         "image": null,
         "fee": "free",
         "address": "Sir John Rogerson's Quay, Dublin, D02 E448",
-        "wikidata": "Q1193916"
+        "wikidata": "Q1193916",
+        "summary": "Calatrava’s harp-shaped cable-stayed bridge over the Liffey, opened 2009."
       }
     },
     {
@@ -1872,7 +1878,8 @@
         "image": null,
         "fee": "free",
         "address": "Great South Wall, Dublin",
-        "wikidata": "Q7228600"
+        "wikidata": "Q7228600",
+        "summary": "Red lighthouse at the end of the Great South Wall, reached by a long sea-wall walk."
       }
     },
     {
@@ -1937,7 +1944,8 @@
         "image": null,
         "fee": "free",
         "address": "39-40 Fenian Street, Dublin, D02 KD51",
-        "wikidata": "Q65330193"
+        "wikidata": "Q65330193",
+        "summary": "Traditional pub on Fenian Street near Trinity, named after J.P. Donleavy’s novel."
       }
     },
     {
@@ -2235,7 +2243,8 @@
         "name": "Irish Film Institute",
         "categories": [
           "arts",
-          "food"
+          "food",
+          "theatre"
         ],
         "url": "https://www.spottedbylocals.com/dublin/irish-film-institute/",
         "image": null,
@@ -2499,7 +2508,8 @@
         "image": null,
         "fee": "free",
         "address": "Parnell Street, Dublin, D01 H308",
-        "wikidata": "Q99473068"
+        "wikidata": "Q99473068",
+        "summary": "Large independent bookshop on Parnell Street, new and second-hand stock."
       }
     },
     {
@@ -2801,7 +2811,8 @@
         "url": "https://www.spottedbylocals.com/dublin/the-national-botanical-gardens/",
         "image": null,
         "fee": "free",
-        "address": "River Gardens, Dublin"
+        "address": "River Gardens, Dublin",
+        "summary": "National Botanic Gardens at Glasnevin, with restored Victorian glasshouses; free entry."
       }
     },
     {
@@ -2822,7 +2833,8 @@
         "url": "https://www.spottedbylocals.com/dublin/the-famine-memorial/",
         "image": null,
         "fee": "free",
-        "address": "Custom House Quay, Dublin 1, Ireland"
+        "address": "Custom House Quay, Dublin 1, Ireland",
+        "summary": "Rowan Gillespie’s bronze figures on Custom House Quay commemorating the Great Famine."
       }
     },
     {
@@ -2908,7 +2920,8 @@
         "url": "https://www.spottedbylocals.com/dublin/farmleigh-house/",
         "image": null,
         "fee": "free",
-        "address": "White's Road, Castleknock"
+        "address": "White's Road, Castleknock",
+        "summary": "Edwardian estate in Phoenix Park, the State guesthouse, with gardens open to visitors."
       }
     },
     {
@@ -3018,6 +3031,779 @@
         "image": null,
         "fee": "free",
         "address": "80-81 Parnell Street, Dublin, D01 CK74"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.265845126195306,
+          53.34038406203899
+        ]
+      },
+      "properties": {
+        "id": "high-rollers-skateboard-store",
+        "name": "High Rollers Skateboard Store",
+        "categories": [
+          "shopping"
+        ],
+        "url": "https://highrollersdublin.com/",
+        "image": null,
+        "fee": "paid",
+        "address": "65 Aungier St, Dublin 2, D02 E189, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.263411116742032,
+          53.34462706457461
+        ]
+      },
+      "properties": {
+        "id": "sharps-ville",
+        "name": "Sharp's Ville",
+        "categories": [
+          "shopping"
+        ],
+        "url": null,
+        "image": null,
+        "fee": "paid",
+        "address": "4 Fownes St Upper, Temple Bar, Dublin, D02 Y798, Ireland",
+        "summary": "Second-hand and vintage clothing store in Temple Bar."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.277867,
+          53.3423942
+        ]
+      },
+      "properties": {
+        "id": "vicar-street",
+        "name": "Vicar Street",
+        "categories": [
+          "music"
+        ],
+        "summary": "Intimate 1,500-capacity venue in the Liberties, prized for its acoustics.",
+        "url": "https://vicarstreet.ie/",
+        "image": null,
+        "fee": "paid",
+        "address": "58-59 Thomas Street, Merchants Quay, Dublin, D08 V0R1, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2645379,
+          53.3449694
+        ]
+      },
+      "properties": {
+        "id": "button-factory",
+        "name": "The Button Factory",
+        "categories": [
+          "music"
+        ],
+        "summary": "Temple Bar live-music and club venue; IMRO Venue of the Year 2025.",
+        "url": "https://buttonfactory.ie/",
+        "image": null,
+        "fee": "paid",
+        "address": "Curved Street, Temple Bar, Dublin, D02 YP77, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2619173,
+          53.3480108
+        ]
+      },
+      "properties": {
+        "id": "the-academy",
+        "name": "The Academy",
+        "categories": [
+          "music"
+        ],
+        "summary": "Multi-room live venue on Middle Abbey Street for touring and local acts.",
+        "url": null,
+        "image": null,
+        "fee": "paid",
+        "address": "57 Middle Abbey Street, Dublin, D01 W573, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2635756,
+          53.3468239
+        ]
+      },
+      "properties": {
+        "id": "grand-social",
+        "name": "The Grand Social",
+        "categories": [
+          "music",
+          "pubs"
+        ],
+        "summary": "Three-floor bar and gig venue by the Ha'penny Bridge.",
+        "url": null,
+        "image": null,
+        "fee": "paid",
+        "address": "35 Liffey Street Lower, Dublin, D01 C3N0, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2632943,
+          53.3452485
+        ]
+      },
+      "properties": {
+        "id": "tola-vintage",
+        "name": "Tola Vintage",
+        "categories": [
+          "shopping"
+        ],
+        "summary": "Curated 80s and 90s vintage clothing in Temple Bar.",
+        "url": "https://tolavintage.com/",
+        "image": null,
+        "fee": "paid",
+        "address": "Fownes Street Upper, Temple Bar, Dublin, D02 EC60, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2641959,
+          53.3447802
+        ]
+      },
+      "properties": {
+        "id": "nine-crows",
+        "name": "Nine Crows Vintage",
+        "categories": [
+          "shopping"
+        ],
+        "summary": "Well-curated 90s and 00s vintage, on Temple Lane since 2008.",
+        "url": "https://ninecrows.com/",
+        "image": null,
+        "fee": "paid",
+        "address": "Temple Lane South, Temple Bar, Dublin, D02 HX78, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2677429,
+          53.3463423
+        ]
+      },
+      "properties": {
+        "id": "dublin-vintage-shop",
+        "name": "Dublin Vintage Shop",
+        "categories": [
+          "shopping"
+        ],
+        "summary": "Old-school thrift-style vintage store on Capel Street.",
+        "url": null,
+        "image": null,
+        "fee": "paid",
+        "address": "4 Capel Street, Dublin, D01 XD72, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.266410478231368,
+          53.34545197351007
+        ]
+      },
+      "properties": {
+        "id": "workmans-club",
+        "name": "The Workman's Club",
+        "categories": [
+          "music",
+          "pubs"
+        ],
+        "summary": "Multi-room bar and gig venue on Wellington Quay overlooking the Liffey.",
+        "url": null,
+        "image": null,
+        "fee": "paid",
+        "address": "10 Wellington Quay, Temple Bar, Dublin, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.263532463095962,
+          53.34224264592801
+        ]
+      },
+      "properties": {
+        "id": "loot-vintage",
+        "name": "Loot",
+        "categories": [
+          "shopping"
+        ],
+        "summary": "Luxury vintage — Prada, Burberry, Versace — on Drury Street.",
+        "url": null,
+        "image": null,
+        "fee": "paid",
+        "address": "Drury Street, Dublin 2, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.264213487788942,
+          53.34212253111493
+        ]
+      },
+      "properties": {
+        "id": "thirty-five-vintage",
+        "name": "35 Vintage",
+        "categories": [
+          "shopping"
+        ],
+        "summary": "Handpicked vintage treasures on Fade Street.",
+        "url": null,
+        "image": null,
+        "fee": "paid",
+        "address": "Fade Street, Dublin 2, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2284132,
+          53.3476206
+        ]
+      },
+      "properties": {
+        "id": "3arena",
+        "name": "3Arena",
+        "categories": [
+          "music"
+        ],
+        "summary": "Dublin's largest indoor arena, on North Wall Quay in the Docklands.",
+        "url": "https://www.3arena.ie/",
+        "image": null,
+        "fee": "paid",
+        "address": "North Wall Quay, North Dock, Dublin 1, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2770756,
+          53.3481166
+        ]
+      },
+      "properties": {
+        "id": "jameson-distillery",
+        "name": "Jameson Distillery Bow St.",
+        "categories": [
+          "museum"
+        ],
+        "summary": "Guided whiskey tours and tastings at the original Bow Street distillery.",
+        "url": "https://www.jamesonwhiskey.com/en-ie/visit-us/",
+        "image": null,
+        "fee": "paid",
+        "address": "Bow Street, Smithfield, Dublin 7, D07 DE0E, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.277099,
+          53.337626
+        ]
+      },
+      "properties": {
+        "id": "teeling-distillery",
+        "name": "Teeling Whiskey Distillery",
+        "categories": [
+          "museum"
+        ],
+        "summary": "Working city-centre distillery in the Liberties with tours and tastings.",
+        "url": "https://teelingdistillery.com/",
+        "image": null,
+        "fee": "paid",
+        "address": "13-17 Newmarket, Merchants Quay, Dublin 8, D08 V221, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3085304,
+          53.3588883
+        ]
+      },
+      "properties": {
+        "id": "dublin-zoo",
+        "name": "Dublin Zoo",
+        "categories": [
+          "nature",
+          "landmarks"
+        ],
+        "summary": "One of the world's oldest zoos, set within Phoenix Park.",
+        "url": "https://www.dublinzoo.ie/",
+        "image": null,
+        "fee": "paid",
+        "address": "Phoenix Park, Dublin 8, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2785783,
+          53.372077
+        ]
+      },
+      "properties": {
+        "id": "glasnevin-cemetery",
+        "name": "Glasnevin Cemetery",
+        "categories": [
+          "historic"
+        ],
+        "summary": "Ireland's national cemetery — graves of Collins, Parnell and de Valera; museum and tours.",
+        "url": "https://www.dctrust.ie/",
+        "image": null,
+        "fee": "free",
+        "address": "Finglas Road, Glasnevin, Dublin 11, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2571266,
+          53.3485445
+        ]
+      },
+      "properties": {
+        "id": "abbey-theatre",
+        "name": "Abbey Theatre",
+        "categories": [
+          "theatre"
+        ],
+        "summary": "Ireland's national theatre, founded 1904 by W.B. Yeats and Lady Gregory.",
+        "url": "https://www.abbeytheatre.ie/",
+        "image": null,
+        "fee": "paid",
+        "address": "26 Abbey Street Lower, Dublin 1, D01 K0F1, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2615513,
+          53.3405094
+        ]
+      },
+      "properties": {
+        "id": "gaiety-theatre",
+        "name": "Gaiety Theatre",
+        "categories": [
+          "theatre"
+        ],
+        "summary": "Victorian theatre off Grafton Street staging musicals, opera and panto.",
+        "url": "https://www.gaietytheatre.ie/",
+        "image": null,
+        "fee": "paid",
+        "address": "46-50 South King Street, Dublin 2, D02 FN73, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2622302,
+          53.3531467
+        ]
+      },
+      "properties": {
+        "id": "gate-theatre",
+        "name": "Gate Theatre",
+        "categories": [
+          "theatre"
+        ],
+        "summary": "Renowned playhouse in a Georgian building on Cavendish Row.",
+        "url": "https://www.gatetheatre.ie/",
+        "image": null,
+        "fee": "paid",
+        "address": "Cavendish Row, Rotunda, Dublin 1, D01 R243, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2660593,
+          53.3445707
+        ]
+      },
+      "properties": {
+        "id": "olympia-theatre",
+        "name": "Olympia Theatre",
+        "categories": [
+          "theatre",
+          "music"
+        ],
+        "summary": "Victorian music-hall on Dame Street hosting theatre, comedy and gigs.",
+        "url": "https://www.3olympia.ie/",
+        "image": null,
+        "fee": "paid",
+        "address": "72 Dame Street, Dublin 2, D02 YH90, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2858188802713,
+          53.343860250096675
+        ]
+      },
+      "properties": {
+        "id": "roe-and-co-distillery",
+        "name": "Roe & Co Distillery",
+        "categories": [
+          "museum"
+        ],
+        "summary": "Guinness-owned whiskey distillery on James's Street with tours and a cocktail bar.",
+        "url": "https://www.roeandcowhiskey.com/",
+        "image": null,
+        "fee": "paid",
+        "address": "92 James's Street, Dublin 8, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2680105,
+          53.3503631
+        ]
+      },
+      "properties": {
+        "id": "cineworld-parnell",
+        "name": "Cineworld Dublin",
+        "categories": [
+          "theatre"
+        ],
+        "summary": "Large multiplex cinema on Parnell Street.",
+        "url": "https://www.cineworld.ie/",
+        "image": null,
+        "fee": "paid",
+        "address": "Parnell Street, Dublin 1, D01 K5N8, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2663315,
+          53.3223765
+        ]
+      },
+      "properties": {
+        "id": "stella-rathmines",
+        "name": "Stella Cinema Rathmines",
+        "categories": [
+          "theatre"
+        ],
+        "summary": "Restored 1923 cinema with armchair seating and a cocktail bar.",
+        "url": "https://stellacinemas.ie/",
+        "image": null,
+        "fee": "paid",
+        "address": "207-209 Rathmines Road Lower, Rathmines, Dublin 6, D06 XE36, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.278933255799216,
+          53.348819926309226
+        ]
+      },
+      "properties": {
+        "id": "light-house-cinema",
+        "name": "Light House Cinema",
+        "categories": [
+          "theatre"
+        ],
+        "summary": "Independent arthouse cinema in Smithfield's Market Square.",
+        "url": "https://lighthousecinema.ie/",
+        "image": null,
+        "fee": "paid",
+        "address": "Market Square, Smithfield, Dublin 7, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.260124043036912,
+          53.35133177773697
+        ]
+      },
+      "properties": {
+        "id": "savoy-cinema",
+        "name": "Savoy Cinema",
+        "categories": [
+          "theatre"
+        ],
+        "summary": "Landmark 1929 cinema on O'Connell Street, home of Irish film premieres.",
+        "url": "https://www.imc.ie/cinemas/imc-savoy-dublin",
+        "image": null,
+        "fee": "paid",
+        "address": "Upper O'Connell Street, Dublin 1, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.265037312569446,
+          53.334060665741
+        ]
+      },
+      "properties": {
+        "id": "pickle-restaurant",
+        "name": "Pickle",
+        "categories": [
+          "food"
+        ],
+        "summary": "Northern Indian cooking with Irish produce; a Michelin-listed Camden Street favourite.",
+        "url": "https://picklerestaurant.com/",
+        "image": null,
+        "fee": "paid",
+        "address": "43 Lower Camden Street, Dublin 2, D02 N998, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.143137650440224,
+          53.29634778136384
+        ]
+      },
+      "properties": {
+        "id": "delhi-rasoi",
+        "name": "Delhi Rasoi",
+        "categories": [
+          "food"
+        ],
+        "summary": "Authentic Indian restaurant in Dún Laoghaire.",
+        "url": "https://delhirasoi.ie/",
+        "image": null,
+        "fee": "paid",
+        "address": "7 Cumberland Street, Dún Laoghaire, Co. Dublin, A96 T972, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.197783414330575,
+          53.28863756380062
+        ]
+      },
+      "properties": {
+        "id": "monsoon-stillorgan",
+        "name": "Monsoon",
+        "categories": [
+          "food"
+        ],
+        "summary": "Indian restaurant and takeaway in Stillorgan.",
+        "url": "https://www.monsoon.ie/",
+        "image": null,
+        "fee": "paid",
+        "address": "4-5 The Hill, Stillorgan, Co. Dublin, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2659607,
+          53.3372139
+        ]
+      },
+      "properties": {
+        "id": "bunsen",
+        "name": "Bunsen",
+        "categories": [
+          "food"
+        ],
+        "summary": "No-frills burger joint — a short menu that fits on a business card.",
+        "url": "https://www.bunsen.ie/",
+        "image": null,
+        "fee": "paid",
+        "address": "36 Wexford Street, Dublin 2, D02 K232, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2684435,
+          53.3471313
+        ]
+      },
+      "properties": {
+        "id": "brother-hubbard-north",
+        "name": "Brother Hubbard North",
+        "categories": [
+          "food"
+        ],
+        "summary": "Middle-Eastern-leaning brunch and lunch — soups, sandwiches and mezze.",
+        "url": "https://brotherhubbard.ie/",
+        "image": null,
+        "fee": "paid",
+        "address": "153 Capel Street, Dublin 1, D01 RT73, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2673339,
+          53.3448869
+        ]
+      },
+      "properties": {
+        "id": "zaytoon",
+        "name": "Zaytoon",
+        "categories": [
+          "food"
+        ],
+        "summary": "Fast-casual Persian grill and kebabs, generous portions, open late.",
+        "url": "https://www.zaytoon.ie/",
+        "image": null,
+        "fee": "paid",
+        "address": "14-15 Parliament Street, Temple Bar, Dublin 2, D02 YP97, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2649791,
+          53.3312357
+        ]
+      },
+      "properties": {
+        "id": "bretzel-bakery",
+        "name": "The Bretzel Bakery",
+        "categories": [
+          "food"
+        ],
+        "summary": "One of Dublin's oldest bakeries (est. 1870) in Portobello — breads and sandwiches.",
+        "url": "https://www.bretzel.ie/",
+        "image": null,
+        "fee": "paid",
+        "address": "1a Lennox Street, Portobello, Dublin 8, D08 W599, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2729585,
+          53.3370634
+        ]
+      },
+      "properties": {
+        "id": "the-fumbally",
+        "name": "The Fumbally",
+        "categories": [
+          "food"
+        ],
+        "summary": "Airy Dublin 8 café known for toasties, homemade cakes and healthy plates.",
+        "url": "https://thefumbally.ie/",
+        "image": null,
+        "fee": "paid",
+        "address": "Fumbally Lane, Dublin 8, D08 HFF2, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2655397,
+          53.3440395
+        ]
+      },
+      "properties": {
+        "id": "umi-falafel",
+        "name": "Umi Falafel",
+        "categories": [
+          "food"
+        ],
+        "summary": "Fresh Middle Eastern falafel wraps and pita, a budget-friendly local favourite.",
+        "url": "https://umifalafel.ie/",
+        "image": null,
+        "fee": "paid",
+        "address": "13 Dame Street, Dublin 2, D02 RT72, Ireland"
       }
     }
   ]

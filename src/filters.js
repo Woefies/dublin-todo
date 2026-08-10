@@ -5,13 +5,14 @@
 import { categoryIconSvg } from './icons.js';
 
 const CATEGORY_ORDER = [
-  'historic', 'museum', 'arts', 'landmarks', 'music',
+  'historic', 'museum', 'arts', 'theatre', 'landmarks', 'music',
   'pubs', 'food', 'shopping', 'parks', 'nature',
 ];
 const LABELS = {
   historic: 'Historic',
   museum: 'Museums',
   arts: 'Arts',
+  theatre: 'Theatre & Cinema',
   landmarks: 'Landmarks',
   music: 'Music',
   pubs: 'Pubs',

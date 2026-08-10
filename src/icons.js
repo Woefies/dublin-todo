@@ -6,7 +6,8 @@
 // Material Symbols (Outlined) glyph paths, viewBox "0 -960 960 960", filled.
 // Source: fonts.gstatic.com material symbols. historic=castle, museum=museum,
 // parks=park, food=restaurant, pubs=sports_bar, shopping=shopping_bag,
-// music=music_note, arts=palette, landmarks=tour, nature=landscape.
+// music=music_note, arts=palette, landmarks=tour, nature=landscape,
+// theatre=theaters.
 import { palette } from './theme.js';
 
 const VIEWBOX = '0 -960 960 960';
@@ -27,6 +28,8 @@ const ICONS = {
   landmarks:
     'M200-80v-800h60v84h580l-81 193 81 193H260v330h-60Zm352-472.21q21-21.21 21-51T551.79-654q-21.21-21-51-21T450-653.79q-21 21.21-21 51T450.21-552q21.21 21 51 21T552-552.21Z',
   nature: 'm40-240 240-320 195 260h75L397-503l163-217 360 480H40Z',
+  theatre:
+    'M160-120v-720h60v60h120v-60h280v60h120v-60h60v720h-60v-60H620v60H340v-60H220v60h-60Zm60-120h120v-120H220v120Zm0-180h120v-120H220v120Zm0-180h120v-120H220v120Zm400 360h120v-120H620v120Zm0-180h120v-120H620v120Zm0-180h120v-120H620v120ZM400-180h160v-600H400v600Zm0-600h160-160Z',
 };
 
 // Priority when a POI has multiple categories. 'historic' is last, so it only
@@ -34,7 +37,7 @@ const ICONS = {
 // the more specific category is the useful glyph). New specific categories come
 // first so e.g. a music-pub shows the music glyph, a beach shows nature.
 const PRIORITY = [
-  'music', 'arts', 'landmarks', 'nature',
+  'music', 'theatre', 'arts', 'landmarks', 'nature',
   'museum', 'parks', 'pubs', 'food', 'shopping', 'historic',
 ];
 
