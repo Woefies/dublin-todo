@@ -48,6 +48,7 @@ function svgIcon(d, { size, cls } = {}) {
 const FAV_KEY = 'dublin-todo-favorites';
 const favorites = new Set(loadFavorites());
 let savedOnly = false;
+let freeOnly = false; // "Free" chip: narrow to fee === 'free' (device-local, not in hash)
 // Assigned once the layer loads (module-scope so the delegated star handler can
 // re-run the category/saved filter and refresh the Saved chip's count).
 let applyFilters = () => {};
@@ -471,6 +472,7 @@ map.on('load', async () => {
             f.properties.categories.some((c) => active.has(c)),
           );
     if (savedOnly) features = features.filter((f) => favorites.has(f.properties.id));
+    if (freeOnly) features = features.filter((f) => f.properties.fee === 'free');
     map.getSource('pois').setData({ type: 'FeatureCollection', features });
     writeHash();
   };
@@ -480,6 +482,24 @@ map.on('load', async () => {
   const controlsEl = document.getElementById('controls');
   const controlsH0 = controlsEl.offsetHeight; // panel height before chips fill #filters
   renderChips(filtersEl, categories, active, apply);
+
+  // "Free" chip: narrows to free POIs, orthogonal to category + Saved (all AND
+  // together). Count is static (fee doesn't change), so no module-scope refresh.
+  const freeCount = data.features.filter((f) => f.properties.fee === 'free').length;
+  const freeChip = document.createElement('button');
+  freeChip.type = 'button';
+  freeChip.className = 'chip chip-free';
+  const refreshFreeChip = () => {
+    freeChip.setAttribute('aria-pressed', String(freeOnly));
+    freeChip.innerHTML = `<span>Free</span><span class="chip-count">${freeCount}</span>`;
+  };
+  freeChip.addEventListener('click', () => {
+    freeOnly = !freeOnly;
+    refreshFreeChip();
+    apply();
+  });
+  refreshFreeChip();
+  filtersEl.appendChild(freeChip);
 
   // "Saved" chip: a favorites narrowing, orthogonal to the OR-match category
   // chips (they still AND together). renderChips owns the category chips; this
