@@ -502,6 +502,75 @@ body,
   }
 }
 
+/* --- POI list (sidebar, under the filters) --- */
+.poi-list-count {
+  margin: 4px 0 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--text-faint);
+}
+
+#poi-list {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  max-height: 40vh;
+  overflow-y: auto;
+}
+
+/* colour/bg transitions come from the theme :where() rule above */
+.poi-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  border: none;
+  border-radius: var(--r-sm);
+  background: none;
+  font-family: var(--font-ui);
+  font-size: var(--fs-base);
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* Category glyph inherits the row's text colour (currentColor); muted until the
+   row is hovered/active, so the name stays the focus. */
+.poi-item svg {
+  flex: 0 0 auto;
+  opacity: 0.7;
+}
+
+.poi-item[aria-current='true'] svg {
+  opacity: 1;
+}
+
+.poi-item:hover,
+.poi-item:focus-visible {
+  background: var(--surface);
+  color: var(--accent-ink);
+  outline: none;
+}
+
+.poi-item:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: -2px;
+}
+
+.poi-item[aria-current='true'] {
+  background: var(--accent-2);
+  color: var(--text-on-accent);
+  font-weight: 600;
+}
+
+.poi-empty {
+  padding: 8px 10px;
+  font-family: var(--font-ui);
+  font-size: var(--fs-base);
+  color: var(--text-faint);
+}
+
 .chip {
   display: inline-flex;
   align-items: center;
@@ -673,7 +742,7 @@ body,
   color: var(--text-muted);
 }
 
-.detail-address {
+#detail .detail-address {
   color: var(--text-faint);
   font-size: var(--fs-base);
 }
@@ -800,6 +869,7 @@ body,
 #detail .fee-badge.fee-paid {
   background: var(--accent);
   color: var(--text-on-accent);
+  margin-top: 0;
 }
 
 #detail .fee-badge.fee-unknown {
@@ -808,7 +878,27 @@ body,
 }
 
 /* --- Mobile: control panel full-width, detail as bottom sheet --- */
-@media (max-width: 600px) {
+/* Tablet / small desktop: keep the floating card but shrink it so it stops
+   covering half the map. Detail stays a side panel down to the phone breakpoint. */
+@media (max-width: 1024px) {
+  #controls {
+    max-width: 330px;
+    padding: 13px;
+    gap: 8px;
+  }
+
+  #detail {
+    width: 330px;
+  }
+
+  #poi-list {
+    max-height: 30vh;
+  }
+}
+
+/* Phone: full-width compact bar, horizontal-scroll chips, detail as bottom sheet.
+   Triggers at tablet-portrait width to avoid a cluttered, oversized card. */
+@media (max-width: 768px) {
   #controls {
     max-width: none;
     top: 10px;
@@ -852,15 +942,32 @@ body,
     flex: 0 0 auto;
   }
 
+  /* Keep the floating card compact on phones — a few rows, then scroll. */
+  #poi-list {
+    max-height: 108px;
+  }
+
   #detail {
     top: auto;
     left: 0;
     right: 0;
     width: auto;
-    max-height: 62vh;
+    height: 42dvh;
     border-radius: 16px 16px 0 0;
     border-top: 3px solid var(--accent);
     animation: sheet-up var(--dur) var(--ease);
+  }
+
+  #detail-body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  #detail #detail-body .fee-badge {
+    width: fit-content;
+  }
+  #detail-body .detail-actions{
+    margin-top: auto;
   }
 
   @keyframes sheet-up {

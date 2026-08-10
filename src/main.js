@@ -5,7 +5,7 @@ import { orderedCategories, renderChips } from './filters.js';
 import { searchPOIs } from './search.js';
 import { parseHash, buildHash } from './urlstate.js';
 import { enrich } from './enrich.js';
-import { addCategoryIcons, primaryCategory, pinImageId } from './icons.js';
+import { addCategoryIcons, primaryCategory, pinImageId, categoryIconSvg } from './icons.js';
 import { palette, setTheme, nextTheme } from './theme.js';
 
 // Layers that represent clickable POIs — filter + interaction apply to these.
@@ -80,6 +80,8 @@ const detailClose = document.getElementById('detail-close');
 const searchInput = document.getElementById('search-input');
 const searchResults = document.getElementById('search-results');
 const themeToggle = document.getElementById('theme-toggle');
+const poiListEl = document.getElementById('poi-list');
+const poiListCount = document.getElementById('poi-list-count');
 
 const THEME_LABELS = { cyanotype: 'Cyanotype', historic: 'Historic' };
 
@@ -267,6 +269,7 @@ function closeDetail() {
   lastFocused = null;
   selectedId = null;
   setSelectedMarker(null);
+  highlightList(null);
   writeHash();
 }
 
@@ -286,6 +289,7 @@ export function selectPOI(id) {
   openDetail(feature);
   selectedId = id;
   setSelectedMarker(id);
+  highlightList(id);
   writeHash();
 }
 
@@ -311,6 +315,51 @@ function renderSearchResults(results, query) {
     });
     li.appendChild(btn);
     searchResults.appendChild(li);
+  }
+}
+
+// Sidebar list of the currently-filtered POIs (name order). Click a row → select
+// on the map; the active row tracks the map/detail selection. Rebuilt by apply()
+// whenever the filter set changes.
+function renderList(features) {
+  poiListEl.innerHTML = '';
+  poiListCount.textContent = `${features.length} place${features.length === 1 ? '' : 's'}`;
+  if (features.length === 0) {
+    const li = document.createElement('li');
+    li.className = 'poi-empty';
+    li.textContent = 'No places match these filters.';
+    poiListEl.appendChild(li);
+    return;
+  }
+  const sorted = [...features].sort((a, b) =>
+    a.properties.name.localeCompare(b.properties.name),
+  );
+  for (const f of sorted) {
+    const li = document.createElement('li');
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'poi-item';
+    btn.dataset.id = f.properties.id;
+    if (f.properties.id === selectedId) btn.setAttribute('aria-current', 'true');
+    // Primary-category glyph (same one the pin uses) for quick identification.
+    const cat = primaryCategory(f.properties.categories);
+    btn.innerHTML = `${categoryIconSvg(cat, 16)}<span>${escapeHtml(f.properties.name)}</span>`;
+    btn.addEventListener('click', () => selectPOI(f.properties.id));
+    li.appendChild(btn);
+    poiListEl.appendChild(li);
+  }
+}
+
+// Move the list's active highlight to the given id (or clear it), scrolling the
+// row into view — keeps the list in sync when a pin is picked on the map.
+function highlightList(id) {
+  const prev = poiListEl.querySelector('.poi-item[aria-current]');
+  if (prev) prev.removeAttribute('aria-current');
+  if (!id) return;
+  const el = poiListEl.querySelector(`.poi-item[data-id="${CSS.escape(id)}"]`);
+  if (el) {
+    el.setAttribute('aria-current', 'true');
+    el.scrollIntoView({ block: 'nearest' });
   }
 }
 
@@ -474,6 +523,7 @@ map.on('load', async () => {
     if (savedOnly) features = features.filter((f) => favorites.has(f.properties.id));
     if (freeOnly) features = features.filter((f) => f.properties.fee === 'free');
     map.getSource('pois').setData({ type: 'FeatureCollection', features });
+    renderList(features);
     writeHash();
   };
   applyFilters = apply;
@@ -522,9 +572,11 @@ map.on('load', async () => {
   filtersEl.appendChild(savedChip);
   filtersEl.classList.add('is-ready'); // fade+lift the chips in (no pop)
 
+  apply(); // fills the map source AND the sidebar list, before we measure below
+
   // Grow #controls from its chip-less height to full so the panel eases open
-  // instead of snapping when the chips land. WAAPI reverts height to auto on
-  // finish (no leftover inline height); overflow clips the chips mid-grow.
+  // instead of snapping when the chips + list land. WAAPI reverts height to auto
+  // on finish (no leftover inline height); overflow clips the content mid-grow.
   if (!reducedMotion.matches) {
     const controlsH1 = controlsEl.offsetHeight;
     controlsEl.style.overflow = 'hidden';
@@ -537,8 +589,6 @@ map.on('load', async () => {
         controlsEl.style.overflow = '';
       });
   }
-
-  apply();
 
   for (const layer of POI_LAYERS) {
     map.on('click', layer, (e) => {
