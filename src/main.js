@@ -477,6 +477,8 @@ map.on('load', async () => {
   applyFilters = apply;
 
   const filtersEl = document.getElementById('filters');
+  const controlsEl = document.getElementById('controls');
+  const controlsH0 = controlsEl.offsetHeight; // panel height before chips fill #filters
   renderChips(filtersEl, categories, active, apply);
 
   // "Saved" chip: a favorites narrowing, orthogonal to the OR-match category
@@ -498,6 +500,23 @@ map.on('load', async () => {
   });
   refreshSavedChip();
   filtersEl.appendChild(savedChip);
+  filtersEl.classList.add('is-ready'); // fade+lift the chips in (no pop)
+
+  // Grow #controls from its chip-less height to full so the panel eases open
+  // instead of snapping when the chips land. WAAPI reverts height to auto on
+  // finish (no leftover inline height); overflow clips the chips mid-grow.
+  if (!reducedMotion.matches) {
+    const controlsH1 = controlsEl.offsetHeight;
+    controlsEl.style.overflow = 'hidden';
+    controlsEl
+      .animate(
+        { height: [`${controlsH0}px`, `${controlsH1}px`] },
+        { duration: DUR, easing: 'cubic-bezier(0.3, 0.7, 0, 1)' },
+      )
+      .finished.finally(() => {
+        controlsEl.style.overflow = '';
+      });
+  }
 
   apply();
 

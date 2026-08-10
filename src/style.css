@@ -489,6 +489,19 @@ body,
   gap: 6px;
 }
 
+/* Chips build only once the map + data load, so #filters is empty on first
+   paint. JS adds .is-ready after populating it — fade+lift in instead of pop. */
+#filters.is-ready {
+  animation: filters-in var(--dur) var(--ease);
+}
+
+@keyframes filters-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
 .chip {
   display: inline-flex;
   align-items: center;
