@@ -201,7 +201,7 @@
         "id": "ha-penny-bridge",
         "name": "Ha'penny Bridge",
         "categories": [
-          "historic"
+          "landmarks"
         ],
         "summary": "Cast-iron 1816 pedestrian bridge over the Liffey.",
         "address": "Bachelors Walk, Dublin 1",
@@ -224,7 +224,7 @@
         "id": "spire-of-dublin",
         "name": "Spire of Dublin",
         "categories": [
-          "historic"
+          "landmarks"
         ],
         "summary": "120m stainless-steel monument on O'Connell Street.",
         "address": "O'Connell St, Dublin 1",
@@ -317,7 +317,7 @@
         "id": "molly-malone-statue",
         "name": "Molly Malone Statue",
         "categories": [
-          "historic"
+          "landmarks"
         ],
         "summary": "Bronze statue of the fabled fishmonger of the city song.",
         "address": "Suffolk St, Dublin 2",
@@ -666,7 +666,7 @@
         "name": "Garden of Remembrance",
         "categories": [
           "parks",
-          "historic"
+          "landmarks"
         ],
         "summary": "Memorial garden to those who died for Irish freedom.",
         "address": "Parnell Sq E, Dublin 1",
@@ -810,8 +810,7 @@
         "id": "the-long-hall",
         "name": "The Long Hall",
         "categories": [
-          "pubs",
-          "historic"
+          "pubs"
         ],
         "summary": "Ornate Victorian bar with mirrors and chandeliers.",
         "address": "51 South Great George's St, Dublin 2",
@@ -881,8 +880,7 @@
         "id": "the-stags-head",
         "name": "The Stag's Head",
         "categories": [
-          "pubs",
-          "historic"
+          "pubs"
         ],
         "summary": "Victorian pub with mahogany, marble and stained glass.",
         "address": "1 Dame Ct, Dublin 2",
@@ -905,8 +903,7 @@
         "id": "mulligans",
         "name": "Mulligan's",
         "categories": [
-          "pubs",
-          "historic"
+          "pubs"
         ],
         "summary": "Storied 1782 pub famed for its pint of stout.",
         "address": "8 Poolbeg St, Dublin 2",
@@ -1978,8 +1975,7 @@
         "id": "the-confession-box",
         "name": "The Confession Box",
         "categories": [
-          "pubs",
-          "historic"
+          "pubs"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-confession-box/",
         "image": null,
