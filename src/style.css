@@ -592,11 +592,10 @@ body,
   right: 10px;
   border: none;
   background: none;
-  font-size: var(--fs-xl);
-  line-height: 1;
+  line-height: 0;
   cursor: pointer;
   color: var(--text-faint);
-  padding: 4px 8px;
+  padding: 4px 6px;
   transition: color var(--dur-fast) var(--ease);
 }
 
