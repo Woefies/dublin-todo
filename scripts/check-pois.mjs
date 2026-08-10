@@ -13,7 +13,7 @@ const FEES = new Set(['free', 'paid', 'unknown']);
 // silently spawn a stray chip, so fail loudly instead.
 const CATEGORIES = new Set([
   'historic', 'museum', 'arts', 'theatre', 'landmarks', 'music',
-  'pubs', 'food', 'shopping', 'parks', 'nature',
+  'pubs', 'food', 'cafe', 'shopping', 'parks', 'nature',
 ]);
 
 const fc = JSON.parse(readFileSync(path, 'utf8'));

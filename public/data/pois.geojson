@@ -689,7 +689,8 @@
         "id": "queen-of-tarts",
         "name": "Queen of Tarts",
         "categories": [
-          "food"
+          "food",
+          "cafe"
         ],
         "summary": "Beloved cafe for cakes, tarts and hearty breakfasts.",
         "address": "Cork Hill, Dame St, Dublin 2",
@@ -713,7 +714,8 @@
         "name": "Avoca Cafe",
         "categories": [
           "food",
-          "shopping"
+          "shopping",
+          "cafe"
         ],
         "summary": "Cafe atop a well-known Irish food and craft store.",
         "address": "11-13 Suffolk St, Dublin 2",
@@ -760,7 +762,8 @@
         "name": "Bewley's Grafton Street",
         "categories": [
           "food",
-          "historic"
+          "historic",
+          "cafe"
         ],
         "summary": "Landmark 1927 cafe with Harry Clarke stained glass.",
         "address": "78-79 Grafton St, Dublin 2",
@@ -783,7 +786,8 @@
         "id": "brother-hubbard",
         "name": "Brother Hubbard",
         "categories": [
-          "food"
+          "food",
+          "cafe"
         ],
         "summary": "Middle-Eastern-leaning brunch and coffee spot.",
         "address": "153 Capel St, Dublin 1",
@@ -1551,7 +1555,8 @@
         "id": "green-bench-cafe",
         "name": "Green Bench Cafe",
         "categories": [
-          "food"
+          "food",
+          "cafe"
         ],
         "url": "https://www.spottedbylocals.com/dublin/green-bench-cafe/",
         "image": null,
@@ -1704,7 +1709,8 @@
         "id": "luncheonette",
         "name": "Luncheonette",
         "categories": [
-          "food"
+          "food",
+          "cafe"
         ],
         "url": "https://www.spottedbylocals.com/dublin/luncheonette/",
         "image": null,
@@ -1726,7 +1732,8 @@
         "name": "Lolly and Cooks",
         "categories": [
           "food",
-          "shopping"
+          "shopping",
+          "cafe"
         ],
         "url": "https://www.spottedbylocals.com/dublin/lolly-and-cooks/",
         "image": null,
@@ -1747,7 +1754,8 @@
         "id": "the-pepper-pot-cafe",
         "name": "The Pepper Pot Cafe",
         "categories": [
-          "food"
+          "food",
+          "cafe"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-pepper-pot-cafe/",
         "image": null,
@@ -2187,7 +2195,8 @@
         "id": "the-tram-caf",
         "name": "The Tram Café",
         "categories": [
-          "food"
+          "food",
+          "cafe"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-tram-cafe/",
         "image": null,
@@ -2627,7 +2636,8 @@
         "id": "dublin-barista-school",
         "name": "Dublin Barista School",
         "categories": [
-          "food"
+          "food",
+          "cafe"
         ],
         "url": "https://www.spottedbylocals.com/dublin/dublin-barista-school/",
         "image": null,
@@ -2671,7 +2681,8 @@
         "name": "The Dog House & Blue’s Tea Rooms",
         "categories": [
           "pubs",
-          "food"
+          "food",
+          "cafe"
         ],
         "url": "https://www.spottedbylocals.com/dublin/the-dog-house-blues-tea-rooms/",
         "image": null,
@@ -2692,7 +2703,8 @@
         "id": "beanhive-coffee",
         "name": "Beanhive Coffee",
         "categories": [
-          "food"
+          "food",
+          "cafe"
         ],
         "url": "https://www.spottedbylocals.com/dublin/beanhive-coffee/",
         "image": null,
@@ -2713,7 +2725,8 @@
         "id": "artisan-brew-academy",
         "name": "Artisan Brew Academy",
         "categories": [
-          "food"
+          "food",
+          "cafe"
         ],
         "url": "https://www.spottedbylocals.com/dublin/artisan-brew-academy/",
         "image": null,
@@ -3791,7 +3804,8 @@
         "id": "the-fumbally",
         "name": "The Fumbally",
         "categories": [
-          "food"
+          "food",
+          "cafe"
         ],
         "summary": "Airy Dublin 8 café known for toasties, homemade cakes and healthy plates.",
         "url": "https://thefumbally.ie/",
@@ -3820,6 +3834,116 @@
         "image": null,
         "fee": "paid",
         "address": "13 Dame Street, Dublin 2, D02 RT72, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.278069,
+          53.3475482
+        ]
+      },
+      "properties": {
+        "id": "proper-order-coffee",
+        "name": "Proper Order Coffee Co.",
+        "categories": [
+          "cafe"
+        ],
+        "summary": "Smithfield specialty café, a local benchmark for espresso and cappuccino.",
+        "url": "https://www.properordercoffee.com/",
+        "image": null,
+        "fee": "paid",
+        "address": "Smithfield, Dublin 7, D07 P440, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2633012,
+          53.3425924
+        ]
+      },
+      "properties": {
+        "id": "kaph",
+        "name": "Kaph",
+        "categories": [
+          "cafe"
+        ],
+        "summary": "Drury Street coffee bar with a sunny upstairs room; crafted espresso and pour-overs.",
+        "url": "https://kaph.ie/",
+        "image": null,
+        "fee": "paid",
+        "address": "31 Drury Street, Dublin 2, D02 RX95, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2787436,
+          53.3477867
+        ]
+      },
+      "properties": {
+        "id": "third-space",
+        "name": "Third Space",
+        "categories": [
+          "cafe"
+        ],
+        "summary": "Roomy, laptop-friendly Smithfield café serving specialty coffee.",
+        "url": "https://www.thirdspace.ie/",
+        "image": null,
+        "fee": "paid",
+        "address": "Unit 14, Smithfield, Dublin 7, D07 P440, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2552509,
+          53.3471648
+        ]
+      },
+      "properties": {
+        "id": "shoe-lane-coffee",
+        "name": "Shoe Lane Coffee",
+        "categories": [
+          "cafe"
+        ],
+        "summary": "Tara Street café often rated the city centre's best flat white; seating is tight at peak.",
+        "url": "https://www.shoelanecoffee.ie/",
+        "image": null,
+        "fee": "paid",
+        "address": "Tara Street, Dublin 2, D02 YY95, Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2655092,
+          53.3471683
+        ]
+      },
+      "properties": {
+        "id": "lemon-jelly-cafe",
+        "name": "Lemon Jelly Café",
+        "categories": [
+          "cafe"
+        ],
+        "summary": "Café on Millennium Walkway with a big heated courtyard, near Grafton Street.",
+        "url": "https://lemonjelly.ie/",
+        "image": null,
+        "fee": "paid",
+        "address": "Unit 11, Millennium Walkway, Dublin 1, D01 Y027, Ireland"
       }
     }
   ]

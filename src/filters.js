@@ -6,7 +6,7 @@ import { categoryIconSvg } from './icons.js';
 
 const CATEGORY_ORDER = [
   'historic', 'museum', 'arts', 'theatre', 'landmarks', 'music',
-  'pubs', 'food', 'shopping', 'parks', 'nature',
+  'pubs', 'food', 'cafe', 'shopping', 'parks', 'nature',
 ];
 const LABELS = {
   historic: 'Historic',
@@ -17,6 +17,7 @@ const LABELS = {
   music: 'Music',
   pubs: 'Pubs',
   food: 'Food',
+  cafe: 'Cafés',
   shopping: 'Shopping',
   parks: 'Parks',
   nature: 'Nature',

@@ -7,7 +7,7 @@
 // Source: fonts.gstatic.com material symbols. historic=castle, museum=museum,
 // parks=park, food=restaurant, pubs=sports_bar, shopping=shopping_bag,
 // music=music_note, arts=palette, landmarks=tour, nature=landscape,
-// theatre=theaters.
+// theatre=theaters, cafe=local_cafe.
 import { palette } from './theme.js';
 
 const VIEWBOX = '0 -960 960 960';
@@ -30,6 +30,8 @@ const ICONS = {
   nature: 'm40-240 240-320 195 260h75L397-503l163-217 360 480H40Z',
   theatre:
     'M160-120v-720h60v60h120v-60h280v60h120v-60h60v720h-60v-60H620v60H340v-60H220v60h-60Zm60-120h120v-120H220v120Zm0-180h120v-120H220v120Zm0-180h120v-120H220v120Zm400 360h120v-120H620v120Zm0-180h120v-120H620v120Zm0-180h120v-120H620v120ZM400-180h160v-600H400v600Zm0-600h160-160Z',
+  cafe:
+    'M160-120v-60h640v60H160Zm151-140q-63 0-107-43.5T160-410v-430h660q24.75 0 42.38 17.62Q880-804.75 880-780v160q0 24.75-17.62 42.37Q844.75-560 820-560h-96v150q0 63-44 106.5T573-260H311Zm0-60h261.98q36.02 0 63.52-27.5T664-410v-370H220v370q0 35 28 62.5t63 27.5Zm413-300h96v-160h-96v160ZM311-320h-91 444-353Z',
 };
 
 // Priority when a POI has multiple categories. 'historic' is last, so it only
@@ -38,7 +40,7 @@ const ICONS = {
 // first so e.g. a music-pub shows the music glyph, a beach shows nature.
 const PRIORITY = [
   'music', 'theatre', 'arts', 'landmarks', 'nature',
-  'museum', 'parks', 'pubs', 'food', 'shopping', 'historic',
+  'museum', 'parks', 'pubs', 'cafe', 'food', 'shopping', 'historic',
 ];
 
 export const CATEGORY_ICON_IDS = Object.keys(ICONS);
