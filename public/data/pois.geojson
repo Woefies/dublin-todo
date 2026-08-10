@@ -1244,7 +1244,8 @@
         "url": "https://www.spottedbylocals.com/dublin/croppies-acre-memorial-park/",
         "image": null,
         "fee": "free",
-        "address": "Benburb Street, Dublin"
+        "address": "Benburb Street, Dublin",
+        "summary": "Riverside park by Collins Barracks honouring the 1798 United Irishmen."
       }
     },
     {
@@ -1378,7 +1379,8 @@
         "url": "https://www.spottedbylocals.com/dublin/st-audoens-park/",
         "image": null,
         "fee": "free",
-        "address": "Cook Street, Dublin"
+        "address": "Cook Street, Dublin",
+        "summary": "Park beside medieval St Audoen’s Church, with a surviving stretch of the city walls."
       }
     },
     {
@@ -1422,7 +1424,8 @@
         "image": null,
         "fee": "paid",
         "address": "South Great George's Street, Dublin, D02 EC94",
-        "wikidata": "Q5535867"
+        "wikidata": "Q5535867",
+        "summary": "Victorian red-brick covered market (1881) with food, vintage and craft stalls."
       }
     },
     {
@@ -1487,7 +1490,8 @@
         "url": "https://www.spottedbylocals.com/dublin/international-bar/",
         "image": null,
         "fee": "free",
-        "address": "23 Wicklow Street, Dublin, D02 VH59"
+        "address": "23 Wicklow Street, Dublin, D02 VH59",
+        "summary": "Wicklow Street pub with a long-running upstairs comedy and music venue."
       }
     },
     {
@@ -1508,7 +1512,8 @@
         "url": "https://www.spottedbylocals.com/dublin/panti-bar/",
         "image": null,
         "fee": "free",
-        "address": "7-8 Capel Street, Dublin, D01 RT73"
+        "address": "7-8 Capel Street, Dublin, D01 RT73",
+        "summary": "Landmark LGBTQ+ bar on Capel Street run by drag performer Panti Bliss."
       }
     },
     {
@@ -1635,7 +1640,8 @@
         "url": "https://www.spottedbylocals.com/dublin/bushy-park/",
         "image": null,
         "fee": "free",
-        "address": "Rathdown Avenue, Dublin"
+        "address": "Rathdown Avenue, Dublin",
+        "summary": "Large public park in Terenure with playgrounds, tennis courts and a duck pond."
       }
     },
     {
@@ -1657,7 +1663,8 @@
         "image": null,
         "fee": "free",
         "address": "Primrose Street, Dublin",
-        "wikidata": "Q883906"
+        "wikidata": "Q883906",
+        "summary": "Secluded 1810 former reservoir in Phibsborough, known as the Secret Garden."
       }
     },
     {
@@ -1900,7 +1907,8 @@
         "url": "https://www.spottedbylocals.com/dublin/diving-bell/",
         "image": null,
         "fee": "free",
-        "address": "Sir John Rogerson's Quay, Dublin, D02 KV60"
+        "address": "Sir John Rogerson's Quay, Dublin, D02 KV60",
+        "summary": "Restored 1866 diving bell on Sir John Rogerson’s Quay, now a small museum."
       }
     },
     {
@@ -1922,7 +1930,8 @@
         "image": null,
         "fee": "free",
         "address": "Home Villas, Dublin",
-        "wikidata": "Q4342218"
+        "wikidata": "Q4342218",
+        "summary": "Edwardian public park in Ballsbridge with ponds, pitches and a weekend market."
       }
     },
     {
@@ -2140,7 +2149,8 @@
         "url": "https://www.spottedbylocals.com/dublin/the-grand-canal/",
         "image": null,
         "fee": "free",
-        "address": "40 Mespil Road, Dublin, D04 E7N2"
+        "address": "40 Mespil Road, Dublin, D04 E7N2",
+        "summary": "Tree-lined canal ringing the south city; Patrick Kavanagh’s poetry haunt."
       }
     },
     {
@@ -2250,7 +2260,8 @@
         "image": null,
         "fee": "paid",
         "address": "6 Eustace Street, Dublin, D02 PD85",
-        "wikidata": "Q6070747"
+        "wikidata": "Q6070747",
+        "summary": "Arthouse cinema, film archive and bar in a former Temple Bar Quaker meeting house."
       }
     },
     {
@@ -2378,7 +2389,8 @@
         "url": "https://www.spottedbylocals.com/dublin/sandymount-beach/",
         "image": null,
         "fee": "free",
-        "address": "Strand Road, Dublin"
+        "address": "Strand Road, Dublin",
+        "summary": "Broad tidal strand on Dublin Bay, immortalised in Joyce’s Ulysses."
       }
     },
     {
@@ -2399,7 +2411,8 @@
         "url": "https://www.spottedbylocals.com/dublin/merrion-square-park/",
         "image": null,
         "fee": "free",
-        "address": "Merrion Square North, Dublin"
+        "address": "Merrion Square North, Dublin",
+        "summary": "Georgian garden square with rose beds and the reclining Oscar Wilde statue."
       }
     },
     {
@@ -2422,7 +2435,8 @@
         "image": null,
         "fee": "free",
         "address": "13 Moore Street, Dublin",
-        "wikidata": "Q6908239"
+        "wikidata": "Q6908239",
+        "summary": "Dublin’s oldest open-air street market, long known for its fruit and veg traders."
       }
     },
     {
@@ -2444,7 +2458,8 @@
         "image": null,
         "fee": "free",
         "address": "Rosie Hackett Bridge, Dublin, D01 V6F4",
-        "wikidata": "Q6771685"
+        "wikidata": "Q6771685",
+        "summary": "Liffey bridge (2014) named for trade-union activist Rosie Hackett."
       }
     },
     {
@@ -2531,7 +2546,8 @@
         "url": "https://www.spottedbylocals.com/dublin/wall-of-fame/",
         "image": null,
         "fee": "free",
-        "address": "Curved Street, Dublin, D02 YP77"
+        "address": "Curved Street, Dublin, D02 YP77",
+        "summary": "Photo mural of Irish music legends on the Button Factory wall in Temple Bar."
       }
     },
     {
