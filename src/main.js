@@ -283,7 +283,7 @@ function renderSearchResults(results, query) {
 // shouldn't break the whole map.
 function retuneBasemap(map) {
   const { map: c } = palette();
-  const ownLayers = new Set(['pois', 'poi-selected']);
+  const ownLayers = new Set(['pois', 'poi-selected', 'clusters', 'cluster-count']);
   // Basemap POI layers to keep (kept visible, icons intact, text recolored) —
   // public-transport stops (bus/rail/tram/Luas) stay useful alongside our pins.
   const keepPoi = new Set(['poi_transit']);
