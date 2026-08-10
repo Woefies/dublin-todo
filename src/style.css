@@ -395,16 +395,15 @@ body::after {
   outline-offset: 2px;
 }
 
-/* Colors cross-fade on theme switch; instant for reduced-motion (below). */
+/* Colors cross-fade on theme switch; instant for reduced-motion (below).
+   The :where() selector has ZERO specificity, so every text/content element
+   under the chrome and panel gets the fade, yet any component with its own
+   transition (chips, CTAs, toggle) still overrides it — nothing snaps, nothing
+   is clobbered. New elements are covered automatically. */
 body,
 #controls,
 #detail,
-#search-input,
-#search-results,
-.search-result,
-.chip,
-.fee-badge,
-#theme-toggle {
+:where(#controls, #detail) * {
   transition:
     background-color var(--dur) var(--ease),
     color var(--dur) var(--ease),
@@ -459,6 +458,9 @@ body,
   font-size: var(--fs-base);
   color: var(--text);
   cursor: pointer;
+  transition:
+    background var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease);
 }
 
 .search-result:hover,
@@ -567,6 +569,19 @@ body,
   }
 }
 
+/* Exit: JS adds .closing, then sets [hidden] on animationend (reduced-motion
+   path skips the animation and hides immediately — see closeDetail). */
+#detail.closing {
+  animation: slide-out var(--dur) var(--ease) forwards;
+}
+
+@keyframes slide-out {
+  to {
+    transform: translateX(16px);
+    opacity: 0;
+  }
+}
+
 #detail[hidden] {
   display: none;
 }
@@ -582,6 +597,7 @@ body,
   cursor: pointer;
   color: var(--text-faint);
   padding: 4px 8px;
+  transition: color var(--dur-fast) var(--ease);
 }
 
 #detail-close:hover {
@@ -687,6 +703,7 @@ body,
   cursor: pointer; /* covers the Copy-link <button> variant, not just anchors */
   transition:
     background var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease),
     transform var(--dur-fast) var(--ease);
 }
 
@@ -765,7 +782,7 @@ body,
 
 #detail .fee-badge.fee-free {
   background: var(--accent-2);
-  color: var(--success);
+  color: var(--text-on-accent);
 }
 
 #detail .fee-badge.fee-paid {

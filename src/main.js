@@ -88,17 +88,33 @@ function refreshToggle() {
   themeToggle.setAttribute('aria-label', `Switch to ${THEME_LABELS[target]} theme`);
 }
 
+// Theme-switch paint timing. Colors that can tween (basemap, selected halo)
+// morph over DUR to match the CSS chrome cross-fade (--dur in style.css).
+// Clusters snap at 0ms so they change in lockstep with the pins — pins are
+// composited raster images (updateImage) that can't tween, so matching them
+// means everything on the map moves as one. Reduced-motion forces all instant.
+const DUR = 180; // keep in sync with --dur in style.css
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+
+// Set a paint property together with its transition duration (MapLibre's default
+// is 300ms, which is what caused pins and clusters to move at different speeds).
+function setPaintFade(id, prop, value, duration) {
+  map.setPaintProperty(id, `${prop}-transition`, { duration, delay: 0 });
+  map.setPaintProperty(id, prop, value);
+}
+
 // Repaint everything MapLibre owns for the active theme. No-op until the POI
 // layers exist — the load handler builds them with the already-active theme.
 async function applyMapTheme() {
   if (!map.getLayer('pois')) return;
-  retuneBasemap(map);
-  await addCategoryIcons(map); // updates pin images in place
+  const fade = reducedMotion.matches ? 0 : DUR;
+  retuneBasemap(map, fade);
+  await addCategoryIcons(map); // updates pin images in place (instant, can't tween)
   const { marker } = palette();
-  map.setPaintProperty('poi-selected', 'circle-color', marker.selected);
-  map.setPaintProperty('clusters', 'circle-color', marker.disc);
-  map.setPaintProperty('clusters', 'circle-stroke-color', marker.glyph);
-  map.setPaintProperty('cluster-count', 'text-color', marker.glyph);
+  setPaintFade('poi-selected', 'circle-color', marker.selected, fade);
+  setPaintFade('clusters', 'circle-color', marker.disc, 0); // snap with pins
+  setPaintFade('clusters', 'circle-stroke-color', marker.glyph, 0);
+  setPaintFade('cluster-count', 'text-color', marker.glyph, 0);
 }
 
 themeToggle.addEventListener('click', async () => {
@@ -161,6 +177,7 @@ function openDetail(feature) {
   `;
 
   lastFocused = document.activeElement;
+  detail.classList.remove('closing'); // cancel any in-flight exit animation
   detail.hidden = false;
   detailClose.focus();
 
@@ -226,7 +243,25 @@ function setSelectedMarker(id) {
 }
 
 function closeDetail() {
-  detail.hidden = true;
+  // Animate out, then hide. Reduced-motion (or no-animation contexts) hide at
+  // once — animationend would never fire, so don't wait on it. The handler
+  // re-checks .closing so a quick reopen (selectPOI clears it) can't hide the
+  // freshly-opened panel.
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    detail.hidden = true;
+  } else {
+    detail.classList.add('closing');
+    detail.addEventListener(
+      'animationend',
+      () => {
+        if (detail.classList.contains('closing')) {
+          detail.hidden = true;
+          detail.classList.remove('closing');
+        }
+      },
+      { once: true },
+    );
+  }
   if (lastFocused && document.contains(lastFocused)) lastFocused.focus();
   lastFocused = null;
   selectedId = null;
@@ -281,7 +316,7 @@ function renderSearchResults(results, query) {
 // Recolor the OpenFreeMap Liberty basemap to sit in the active theme's palette. Skips
 // our own POI layers. Best-effort per layer — a style-schema change upstream
 // shouldn't break the whole map.
-function retuneBasemap(map) {
+function retuneBasemap(map, fade = 0) {
   const { map: c } = palette();
   const ownLayers = new Set(['pois', 'poi-selected', 'clusters', 'cluster-count']);
   // Basemap POI layers to keep (kept visible, icons intact, text recolored) —
@@ -298,20 +333,21 @@ function retuneBasemap(map) {
         continue;
       }
       if (layer.type === 'background') {
-        map.setPaintProperty(layer.id, 'background-color', c.bg);
+        setPaintFade(layer.id, 'background-color', c.bg, fade);
       } else if (layer.id.includes('water')) {
-        map.setPaintProperty(
+        setPaintFade(
           layer.id,
           layer.type === 'fill' ? 'fill-color' : 'line-color',
           c.water,
+          fade,
         );
       } else if (layer.type === 'fill') {
-        map.setPaintProperty(layer.id, 'fill-color', c.fill);
+        setPaintFade(layer.id, 'fill-color', c.fill, fade);
       } else if (layer.type === 'line') {
-        map.setPaintProperty(layer.id, 'line-color', c.line);
+        setPaintFade(layer.id, 'line-color', c.line, fade);
       } else if (layer.type === 'symbol') {
-        map.setPaintProperty(layer.id, 'text-color', c.text);
-        map.setPaintProperty(layer.id, 'text-halo-color', c.halo);
+        setPaintFade(layer.id, 'text-color', c.text, fade);
+        setPaintFade(layer.id, 'text-halo-color', c.halo, fade);
         // Hide the basemap's own POI sprite icons (brown Maki glyphs with white
         // halos) so only our pins carry iconography — except kept layers like
         // transit stops, whose icons we want to show.
