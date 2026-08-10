@@ -310,7 +310,7 @@ body::after {
   inset: 0;
 }
 
-/* --- Floating control panel: frosted glass on sky --- */
+/* --- Floating control panel: frosted glass --- */
 #controls {
   position: absolute;
   top: 14px;
@@ -606,10 +606,9 @@ body,
   color: var(--text-on-accent);
 }
 
-/* Active = secondary fill, on-accent text (lime+ink in Romance, green+stone in
-   Historic — both ≥10:1). Hover on an active chip keeps the light-enough fill
-   and adds an inset ring for feedback, so text-on-accent never lands on a dark
-   fill it wasn't sized for. */
+/* Active = secondary fill, on-accent text (both themes ≥10:1). Hover on an active
+   chip keeps the light-enough fill and adds an inset ring for feedback, so
+   text-on-accent never lands on a dark fill it wasn't sized for. */
 .chip[aria-pressed='true'] {
   background: var(--accent-2);
   border-color: var(--border-strong);
@@ -766,7 +765,8 @@ body,
 }
 
 /* Visit-website call to action: a filled accent button (ink text — never white
-   on pink, per the contrast rule). id+element+class beats the plain #detail a. */
+   on the accent fill, per the contrast rule). id+element+class beats the plain
+   #detail a. */
 #detail .detail-cta {
   display: inline-flex;
   align-items: center;
@@ -877,7 +877,6 @@ body,
   color: var(--text-faint);
 }
 
-/* --- Mobile: control panel full-width, detail as bottom sheet --- */
 /* Tablet / small desktop: keep the floating card but shrink it so it stops
    covering half the map. Detail stays a side panel down to the phone breakpoint. */
 @media (max-width: 1024px) {

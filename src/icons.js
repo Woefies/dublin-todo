@@ -51,7 +51,7 @@ export function primaryCategory(categories) {
 }
 
 // Inline SVG markup for a chip glyph. fill=currentColor so it inherits the
-// chip's text color (ink on active lime, muted otherwise). '' for unknown ids.
+// element's text color. '' for unknown ids.
 export function categoryIconSvg(id, size = 15) {
   const d = ICONS[id];
   if (!d) return '';
@@ -61,10 +61,10 @@ export function categoryIconSvg(id, size = 15) {
   );
 }
 
-// A complete pin image: chrome-pink disc + ink glyph, composited so it renders
-// as one unit (pins stay whole when overlapping; basemap can't bleed through the
-// glyph's open areas). Glyph is placed by mapping the Material viewBox centre
-// (480, -480) onto the pin centre (30, 30).
+// A complete pin image: disc + glyph (colors passed in per theme), composited so
+// it renders as one unit (pins stay whole when overlapping; basemap can't bleed
+// through the glyph's open areas). Glyph is placed by mapping the Material viewBox
+// centre (480, -480) onto the pin centre (30, 30).
 function svgDoc(d, disc, glyph) {
   return (
     '<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">' +

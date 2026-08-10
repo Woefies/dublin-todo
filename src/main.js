@@ -279,7 +279,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 // Reusable: fly to a POI by id and open its detail panel. Safe no-op if the
-// data hasn't loaded yet or the id is unknown (Phase 3b calls this from URL state).
+// data hasn't loaded yet or the id is unknown.
 export function selectPOI(id) {
   if (!data) return;
   const feature = data.features.find((f) => f.properties.id === id);
@@ -432,8 +432,8 @@ map.on('load', async () => {
   });
   const { marker } = palette();
 
-  // Selected-marker halo: a lime disc drawn UNDER the pins, so a lime rim shows
-  // around the selected pin. Filtered to the selected id (no top-level feature
+  // Selected-marker halo: a disc drawn UNDER the pins, so the theme's halo color
+  // rings the selected pin. Filtered to the selected id (no top-level feature
   // id in this source, so filter on the id property, not feature-state).
   map.addLayer({
     id: 'poi-selected',
@@ -475,7 +475,7 @@ map.on('load', async () => {
     paint: { 'text-color': marker.glyph },
   });
 
-  // Pins: one composited image each (pink disc + ink Material glyph), so pins
+  // Pins: one composited image each (theme disc + Material glyph), so pins
   // stay whole when they overlap and the basemap never bleeds through the glyph.
   // Filtered to unclustered features so a pin and its cluster never both draw.
   map.addLayer({
